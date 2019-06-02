@@ -25,7 +25,7 @@ print(output2) # --> False
 ### !placeholder
 
 ```python
-def isOldEnoughToDrink(age)
+def isOldEnoughToDrink(self, age):
     #your code here
     pass
 ```
@@ -36,19 +36,25 @@ def isOldEnoughToDrink(age)
 
 ```python
 
-# describe("isOldEnoughToDrink", function() {
-#   it("should return a boolean", function() {
-#     expect(typeof isOldEnoughToDrink(40)).to.deep.eq("boolean");
-#   });
-#   it("should return whether the age is greater than 21", function() {
-#     expect(isOldEnoughToDrink(40)).to.deep.eq(true);
-#   });
-#   it("should return true if the age is 21", function() {
-#     expect(isOldEnoughToDrink(21)).to.deep.eq(true);
-#   });
-# });
+import unittest
+import main
 
+class TestScript(unittest.TestCase):
+    
+    def test1(self):
+        # #it should return False for age < 21
+        self.assertEqual(main.isOldEnoughToDrink(11), False, "11 is not old enough to drink.")
+        
+    def test2(self):
+        #it should return True for age = 21
+        self.assertEqual(main.isOldEnoughToDrink(21), True, "21 is old enough to drink.")
+
+    def test3(self):
+        #it should return True for age > 21
+        self.assertEqual(main.isOldEnoughToDrink(50), True, "50 is old enough to drink.")
+ 
 ```
+
 
 ### !end-tests
 

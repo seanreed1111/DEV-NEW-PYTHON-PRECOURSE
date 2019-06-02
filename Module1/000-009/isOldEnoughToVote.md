@@ -22,7 +22,7 @@ print(output) # True
 ### !placeholder
 
 ```python
-def isOldEnoughToVote(age)
+def isOldEnoughToVote(age):
     # your code here
     pass
 ```
@@ -30,21 +30,22 @@ def isOldEnoughToVote(age)
 ### !end-placeholder
 
 ### !tests
-
 ```python
+import main
+import unittest
 
-# describe("isOldEnoughToVote", function() {
-#   it("should return a boolean", function() {
-#     expect(typeof isOldEnoughToVote(40)).to.deep.eq("boolean");
-#   });
-#   it("should return whether the age is greater than 18", function() {
-#     expect(isOldEnoughToVote(40)).to.deep.eq(true);
-#   });
-#   it("should return true if the age is 18", function() {
-#     expect(isOldEnoughToVote(18)).to.deep.eq(true);
-#   });
-# });
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should return True if the age is 18
+        self.assertEqual(main.isOldEnoughToVote(18),True,"18 is old enough to vote.")
 
+    def test2(self):
+        #it should return False if the age is less than 18
+        self.assertEqual(main.isOldEnoughToVote(15),True,"15 is not old enough to vote.")
+
+    def test3(self):
+        #it should return True if the age is greater than 18
+        self.assertEqual(main.isOldEnoughToVote(25),True,"25 is old enough to vote.")
 ```
 
 ### !end-tests

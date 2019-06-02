@@ -23,7 +23,7 @@ print(output)# --> False
 ### !placeholder
 
 ```python
-def isOldEnoughToDrinkAndDrive(age)
+def isOldEnoughToDrinkAndDrive(age):
   # your code here
     pass
 
@@ -34,15 +34,13 @@ def isOldEnoughToDrinkAndDrive(age)
 ### !tests
 
 ```python
+import unittest
+import main
 
-# describe("isOldEnoughToDrinkAndDrive", function() {
-#   it("should return a boolean", function() {
-#     expect(typeof isOldEnoughToDrinkAndDrive(19)).to.deep.eq("boolean");
-#   });
-#   it("should return false", function() {
-#     expect(isOldEnoughToDrinkAndDrive(99999)).to.deep.eq(false);
-#   });
-# });
+class TestScript(unittest.TestCase):
+    def test1(self):
+    # it should always return False
+    self.assertEqual(main.isOldEnoughToDrinkAndDrive(99),False,"99 is not old enough to drink and drive.")
 
 ```
 
