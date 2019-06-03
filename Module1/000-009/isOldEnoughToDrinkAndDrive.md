@@ -1,3 +1,7 @@
+## Checkpoint
+
+Please verify your understanding of [unit lessons] with the following exercises.
+
 ### !challenge
 
 * type: code-snippet
