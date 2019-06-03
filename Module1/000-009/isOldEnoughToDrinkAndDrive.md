@@ -27,7 +27,7 @@ print(output)# --> False
 ### !placeholder
 
 ```python
-def isOldEnoughToDrinkAndDrive(self,age):
+def isOldEnoughToDrinkAndDrive(age):
   # your code here
     pass
 
