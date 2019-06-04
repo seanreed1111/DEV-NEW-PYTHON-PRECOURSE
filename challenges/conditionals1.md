@@ -40,30 +40,16 @@ import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
-        # it {} 
-        pass
+        #it "should return True if the age is greater than 21"
+        self.assertTrue(isOldEnoughToDrink(40),"should return True if age is greater than 21")
 
     def test2(self):
-        #it {}
-        pass
-
+        #it "should return true if the age is 21"
+        self.assertTrue(isOldEnoughToDrink(21),"should return True if age is 21")
+    
     def test3(self):
-        #it {}
-        pass
-```
-
-
-```python
-
-describe("isOldEnoughToDrink", function():it("should return a boolean", function():expect(typeof isOldEnoughToDrink(40)).to.deep.eq("boolean")
-  )
-  it("should return whether the age is greater than 21", function():expect(isOldEnoughToDrink(40)).to.deep.eq(true)
-  )
-  it("should return true if the age is 21", function():expect(isOldEnoughToDrink(21)).to.deep.eq(true)
-  )
-  it("should return false if the age is 20", function():expect(isOldEnoughToDrink(20)).to.deep.eq(false)
-  )
-)
+        #it "should return false if the age is 20"
+        self.assertFalse(isOldEnoughToDrink(20),"should return False if age is less than 21")
 
 ```
 
@@ -115,29 +101,12 @@ import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
-        # it {} 
-        pass
+        #it "should return true if the age is 16"
+        self.assertTrue(isOldEnoughToDrive(16),"it should return True if the age is 16")
 
     def test2(self):
-        #it {}
-        pass
-
-    def test3(self):
-        #it {}
-        pass
-```
-
-
-```python
-
-describe("isOldEnoughToDrive", function():it("should return a boolean", function():expect(typeof isOldEnoughToDrive(40)).to.deep.eq("boolean")
-  )
-  it("should return true if the age is 16", function():expect(isOldEnoughToDrive(16)).to.deep.eq(true)
-  )
-  it("should return false if the age is less than 16", function():expect(isOldEnoughToDrive(15)).to.deep.eq(false)
-  )
-)
-
+        #it "should return false if the age is less than 16"
+        self.assertFalse(isOldEnoughToDrive(15),"it should return False if the age is under 16")
 ```
 
 ### !end-tests
@@ -188,30 +157,18 @@ import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
-        # it {} 
-        pass
+        #it "should return whether the age is greater than 18"
+        self.assertTrue(isOldEnoughToVote(19), "should return True if age is greater than 18")
 
     def test2(self):
-        #it {}
-        pass
-
+        #it "should return true if the age is 18"
+        self.assertTrue(isOldEnoughToVote(18), "should return True if age is 18")
+        
     def test3(self):
-        #it {}
-        pass
+        #it "should return false if the age is under 18"
+        self.assertFalse(isOldEnoughToVote(17), "should return False if age is under 18")     
 ```
 
-
-```python
-
-describe("isOldEnoughToVote", function():it("should return a boolean", function():expect(typeof isOldEnoughToVote(40)).to.deep.eq("boolean")
-  )
-  it("should return whether the age is greater than 18", function():expect(isOldEnoughToVote(40)).to.deep.eq(true)
-  )
-  it("should return true if the age is 18", function():expect(isOldEnoughToVote(18)).to.deep.eq(true)
-  )
-)
-
-```
 
 ### !end-tests
 
@@ -262,28 +219,10 @@ import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
-        # it {} 
-        pass
-
-    def test2(self):
-        #it {}
-        pass
-
-    def test3(self):
-        #it {}
-        pass
+        # it "should return false"
+        self.assertFalse(isOldEnoughToDrinkAndDrive(99), "No one is old enough to drink and drive.")
 ```
 
-
-```python
-
-describe("isOldEnoughToDrinkAndDrive", function():it("should return a boolean", function():expect(typeof isOldEnoughToDrinkAndDrive(19)).to.deep.eq("boolean")
-  )
-  it("should return false", function():expect(isOldEnoughToDrinkAndDrive(99999)).to.deep.eq(false)
-  )
-)
-
-```
 
 ### !end-tests
 

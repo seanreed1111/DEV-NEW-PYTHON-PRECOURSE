@@ -11,15 +11,15 @@ import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
-        # it {} 
+        # it  
         pass
 
     def test2(self):
-        #it {}
+        #it 
         pass
 
     def test3(self):
-        #it {}
+        #it 
         pass
 ```
 '''
@@ -38,5 +38,6 @@ with open(source_path, "rt") as f:
     data = re.sub(r'`js',r'`python',data)
     data = re.sub(r'!tests',"!tests\n"+test_class_string,data)
     data = re.sub(r'\)\s+:',r'):',data)
+    
 with open(target_path, "wt") as f:
     f.write(data)

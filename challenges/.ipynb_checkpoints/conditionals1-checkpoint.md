@@ -3,7 +3,7 @@
 ### !challenge
 
 * type: local-snippet
-* language: javascript
+* language: python3.6
 * id: aa5deeb1-c053-4c31-90e7-4a5fb0546afa
 * title: isOldEnoughToDrink
 
@@ -15,41 +15,41 @@ Notes:
 * The legal drinking age in the United States is 21.
 
 ```
-var output = isOldEnoughToDrink(22);
-console.log(output); // --> true
+output = isOldEnoughToDrink(22)
+print(output) # --> true
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isOldEnoughToDrink(age) {
-  // your code here
+```python
+def isOldEnoughToDrink(age):
+    # your code here
+    pass
   
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import unittest
 
-describe("isOldEnoughToDrink", function() {
-  it("should return a boolean", function() {
-    expect(typeof isOldEnoughToDrink(40)).to.deep.eq("boolean");
-  });
-  it("should return whether the age is greater than 21", function() {
-    expect(isOldEnoughToDrink(40)).to.deep.eq(true);
-  });
-  it("should return true if the age is 21", function() {
-    expect(isOldEnoughToDrink(21)).to.deep.eq(true);
-  });
-  it("should return false if the age is 20", function() {
-    expect(isOldEnoughToDrink(20)).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        #it "should return True if the age is greater than 21"
+        self.assertTrue(isOldEnoughToDrink(40),"should return True if age is greater than 21")
+
+    def test2(self):
+        #it "should return true if the age is 21"
+        self.assertTrue(isOldEnoughToDrink(21),"should return True if age is 21")
+    
+    def test3(self):
+        #it "should return false if the age is 20"
+        self.assertFalse(isOldEnoughToDrink(20),"should return False if age is less than 21")
 
 ```
 
@@ -64,7 +64,7 @@ describe("isOldEnoughToDrink", function() {
 ### !challenge
 
 * type: local-snippet
-* language: javascript
+* language: python3.6
 * id: 4b181e05-9f6d-4e2d-beaa-ad80ab8d3c26
 * title: isOldEnoughToDrive
 
@@ -76,39 +76,37 @@ Notes:
 * The legal driving age in the United States is 16.
 
 ```
-var output = isOldEnoughToDrive(22);
-console.log(output); // --> true
+output = isOldEnoughToDrive(22)
+print(output) # --> true
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isOldEnoughToDrive(age) {
-  // your code here
+```python
+def isOldEnoughToDrive(age):
+    # your code here
+    pass
   
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import unittest
 
-describe("isOldEnoughToDrive", function() {
-  it("should return a boolean", function() {
-    expect(typeof isOldEnoughToDrive(40)).to.deep.eq("boolean");
-  });
-  it("should return true if the age is 16", function() {
-    expect(isOldEnoughToDrive(16)).to.deep.eq(true);
-  });
-  it("should return false if the age is less than 16", function() {
-    expect(isOldEnoughToDrive(15)).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        #it "should return true if the age is 16"
+        self.assertTrue(isOldEnoughToDrive(16),"it should return True if the age is 16")
 
+    def test2(self):
+        #it "should return false if the age is less than 16"
+        self.assertFalse(isOldEnoughToDrive(15),"it should return False if the age is under 16")
 ```
 
 ### !end-tests
@@ -122,7 +120,7 @@ describe("isOldEnoughToDrive", function() {
 ### !challenge
 
 * type: local-snippet
-* language: javascript
+* language: python3.6
 * id: 8aa5586d-36c6-4677-bd29-bbadd91027b8
 * title: isOldEnoughToVote
 
@@ -134,40 +132,43 @@ Notes:
 * The legal voting age in the United States is 18.
 
 ```
-var output = isOldEnoughToVote(22);
-console.log(output); // --> true
+output = isOldEnoughToVote(22)
+print(output) # --> true
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isOldEnoughToVote(age) {
-  // your code here
+```python
+def isOldEnoughToVote(age):
+    # your code here
+    pass
   
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import unittest
 
-describe("isOldEnoughToVote", function() {
-  it("should return a boolean", function() {
-    expect(typeof isOldEnoughToVote(40)).to.deep.eq("boolean");
-  });
-  it("should return whether the age is greater than 18", function() {
-    expect(isOldEnoughToVote(40)).to.deep.eq(true);
-  });
-  it("should return true if the age is 18", function() {
-    expect(isOldEnoughToVote(18)).to.deep.eq(true);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        #it "should return whether the age is greater than 18"
+        self.assertTrue(isOldEnoughToVote(19), "should return True if age is greater than 18")
 
+    def test2(self):
+        #it "should return true if the age is 18"
+        self.assertTrue(isOldEnoughToVote(18), "should return True if age is 18")
+        
+    def test3(self):
+        #it "should return false if the age is under 18"
+        self.assertFalse(isOldEnoughToVote(17), "should return False if age is under 18")     
 ```
+
 
 ### !end-tests
 
@@ -180,7 +181,7 @@ describe("isOldEnoughToVote", function() {
 ### !challenge
 
 * type: local-snippet
-* language: javascript
+* language: python3.6
 * id: 4031a186-73da-4384-95c9-8d8510aa67a9
 * title: isOldEnoughToDrinkAndDrive
 
@@ -193,37 +194,35 @@ Notes:
 * It is always illegal to drink and drive in the United States.
 
 ```
-var output = isOldEnoughToDrinkAndDrive(22);
-console.log(output); // --> false
+output = isOldEnoughToDrinkAndDrive(22)
+print(output) # --> false
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isOldEnoughToDrinkAndDrive(age) {
-  // your code here
+```python
+def isOldEnoughToDrinkAndDrive(age):
+    # your code here
+    pass
   
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import unittest
 
-describe("isOldEnoughToDrinkAndDrive", function() {
-  it("should return a boolean", function() {
-    expect(typeof isOldEnoughToDrinkAndDrive(19)).to.deep.eq("boolean");
-  });
-  it("should return false", function() {
-    expect(isOldEnoughToDrinkAndDrive(99999)).to.deep.eq(false);
-  });
-});
-
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it "should return false"
+        self.assertFalse(isOldEnoughToDrinkAndDrive(99), "No one is old enough to drink and drive.")
 ```
+
 
 ### !end-tests
 
