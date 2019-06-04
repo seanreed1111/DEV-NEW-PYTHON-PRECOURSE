@@ -28,10 +28,10 @@ Standards:
       - Solve JavaScript code challenges
       # - [(optional) Another success criteria, uncomment to use]
     ContentFiles:
-      -
-        Type: Lesson
-        UID: 9c7f3591-9dc7-4847-a833-9c6140e598ae
-        Path: /reading/synopsis.md
+      # -
+      #   Type: Lesson
+      #   UID: 9c7f3591-9dc7-4847-a833-9c6140e598ae
+      #   Path: /reading/synopsis.md
       -
         Type: Lesson
         UID: a4588fae-b578-4d0b-a906-3ffed48865cb
@@ -340,25 +340,25 @@ Standards:
       -
         Type: Lesson
         UID: c3bd9a0a-c98b-4ef0-bbd9-377dcd632800
-        Path: /Module_1/147-convertArrayToObject2.md
+        Path: /diagnostic/147-convertArrayToObject2.md
       -
         Type: Lesson
         UID: 882d1b16-6e23-4f10-b385-06a0b13ae65e
-        Path: /Module_1/148-convertArrayToObject3.md
+        Path: /diagnostic/148-convertArrayToObject3.md
       -
         Type: Lesson
         UID: ce7a6f05-9558-485b-858f-aebac959f6d6
-        Path: /Module_1/149-convertObjectToList1.md
+        Path: /diagnostic/149-convertObjectToList1.md
       -
         Type: Lesson
         UID: fc319ecb-3275-48ad-bca6-b13f5311d057
-        Path: /Module_1/150-convertObjectToList2.md
+        Path: /diagnostic/150-convertObjectToList2.md
       -
         Type: Lesson
         UID: 3f2e29ad-4332-4158-8cb2-f9ef1385d2e4
-        Path: /Module_1/151-convertObjectToList3.md
+        Path: /diagnostic/151-convertObjectToList3.md
       -
         Type: Lesson
         UID: unique-id (option-command-G from uuidgen plugin)
-        Path: /Module_1/152-greetCustomer.md
+        Path: /diagnostic/152-greetCustomer.md
         Autoscore: true
