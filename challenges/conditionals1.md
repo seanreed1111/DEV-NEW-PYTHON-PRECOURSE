@@ -23,7 +23,7 @@ print(output) # --> true
 
 ### !placeholder
 
-```python3.6
+```python
 def isOldEnoughToDrink(age):
   # your code here
   pass
@@ -84,10 +84,10 @@ print(output) # --> true
 
 ### !placeholder
 
-```python3.6
+```python
 def isOldEnoughToDrive(age):
-  # your code here
-  pass
+    # your code here
+    pass
   
 ```
 
@@ -205,7 +205,7 @@ print(output) # --> false
 def isOldEnoughToDrinkAndDrive(age):
     # your code here
     pass
-  
+
 
 ```
 
