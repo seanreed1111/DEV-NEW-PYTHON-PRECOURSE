@@ -22,7 +22,7 @@ print(output) # True
 ### !placeholder
 
 ```python
-def isOldEnoughToVote(self, age):
+def isOldEnoughToVote(age):
     # your code here
     pass
 ```
@@ -31,21 +31,20 @@ def isOldEnoughToVote(self, age):
 
 ### !tests
 ```python
-import main
 import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
         # it should return True if the age is 18
-        self.assertEqual(main.isOldEnoughToVote(18),True,"18 is old enough to vote.")
+        self.assertEqual(isOldEnoughToVote(18),True,"18 is old enough to vote.")
 
     def test2(self):
         #it should return False if the age is less than 18
-        self.assertEqual(main.isOldEnoughToVote(15),True,"15 is not old enough to vote.")
+        self.assertEqual(isOldEnoughToVote(15),True,"15 is not old enough to vote.")
 
     def test3(self):
         #it should return True if the age is greater than 18
-        self.assertEqual(main.isOldEnoughToVote(25),True,"25 is old enough to vote.")
+        self.assertEqual(isOldEnoughToVote(25),True,"25 is old enough to vote.")
 ```
 
 ### !end-tests

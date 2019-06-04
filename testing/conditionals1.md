@@ -24,7 +24,7 @@ print(output) # --> true
 ### !placeholder
 
 ```python
-def isOldEnoughToDrink(age):
+defisOldEnoughToDrink(age) :
     # your code here
     pass
   
@@ -55,13 +55,13 @@ class TestScript(unittest.TestCase):
 
 ```python
 
-describe("isOldEnoughToDrink", function():it("should return a boolean", function():expect(typeof isOldEnoughToDrink(40)).to.deep.eq("boolean")
+describe("isOldEnoughToDrink", function() :it("should return a boolean", function() :expect(typeof isOldEnoughToDrink(40)).to.deep.eq("boolean")
   )
-  it("should return whether the age is greater than 21", function():expect(isOldEnoughToDrink(40)).to.deep.eq(true)
+  it("should return whether the age is greater than 21", function() :expect(isOldEnoughToDrink(40)).to.deep.eq(true)
   )
-  it("should return true if the age is 21", function():expect(isOldEnoughToDrink(21)).to.deep.eq(true)
+  it("should return true if the age is 21", function() :expect(isOldEnoughToDrink(21)).to.deep.eq(true)
   )
-  it("should return false if the age is 20", function():expect(isOldEnoughToDrink(20)).to.deep.eq(false)
+  it("should return false if the age is 20", function() :expect(isOldEnoughToDrink(20)).to.deep.eq(false)
   )
 )
 
@@ -99,7 +99,7 @@ print(output) # --> true
 ### !placeholder
 
 ```python
-def isOldEnoughToDrive(age):
+defisOldEnoughToDrive(age) :
     # your code here
     pass
   
@@ -130,11 +130,11 @@ class TestScript(unittest.TestCase):
 
 ```python
 
-describe("isOldEnoughToDrive", function():it("should return a boolean", function():expect(typeof isOldEnoughToDrive(40)).to.deep.eq("boolean")
+describe("isOldEnoughToDrive", function() :it("should return a boolean", function() :expect(typeof isOldEnoughToDrive(40)).to.deep.eq("boolean")
   )
-  it("should return true if the age is 16", function():expect(isOldEnoughToDrive(16)).to.deep.eq(true)
+  it("should return true if the age is 16", function() :expect(isOldEnoughToDrive(16)).to.deep.eq(true)
   )
-  it("should return false if the age is less than 16", function():expect(isOldEnoughToDrive(15)).to.deep.eq(false)
+  it("should return false if the age is less than 16", function() :expect(isOldEnoughToDrive(15)).to.deep.eq(false)
   )
 )
 
@@ -172,7 +172,7 @@ print(output) # --> true
 ### !placeholder
 
 ```python
-def isOldEnoughToVote(age):
+defisOldEnoughToVote(age) :
     # your code here
     pass
   
@@ -203,11 +203,11 @@ class TestScript(unittest.TestCase):
 
 ```python
 
-describe("isOldEnoughToVote", function():it("should return a boolean", function():expect(typeof isOldEnoughToVote(40)).to.deep.eq("boolean")
+describe("isOldEnoughToVote", function() :it("should return a boolean", function() :expect(typeof isOldEnoughToVote(40)).to.deep.eq("boolean")
   )
-  it("should return whether the age is greater than 18", function():expect(isOldEnoughToVote(40)).to.deep.eq(true)
+  it("should return whether the age is greater than 18", function() :expect(isOldEnoughToVote(40)).to.deep.eq(true)
   )
-  it("should return true if the age is 18", function():expect(isOldEnoughToVote(18)).to.deep.eq(true)
+  it("should return true if the age is 18", function() :expect(isOldEnoughToVote(18)).to.deep.eq(true)
   )
 )
 
@@ -246,7 +246,7 @@ print(output) # --> false
 ### !placeholder
 
 ```python
-def isOldEnoughToDrinkAndDrive(age):
+defisOldEnoughToDrinkAndDrive(age) :
     # your code here
     pass
   
@@ -277,9 +277,9 @@ class TestScript(unittest.TestCase):
 
 ```python
 
-describe("isOldEnoughToDrinkAndDrive", function():it("should return a boolean", function():expect(typeof isOldEnoughToDrinkAndDrive(19)).to.deep.eq("boolean")
+describe("isOldEnoughToDrinkAndDrive", function() :it("should return a boolean", function() :expect(typeof isOldEnoughToDrinkAndDrive(19)).to.deep.eq("boolean")
   )
-  it("should return false", function():expect(isOldEnoughToDrinkAndDrive(99999)).to.deep.eq(false)
+  it("should return false", function() :expect(isOldEnoughToDrinkAndDrive(99999)).to.deep.eq(false)
   )
 )
 
