@@ -2,7 +2,7 @@
 
 ### !challenge
 
-* type: local-snippet
+* type: code-snippet
 * language: python3.6
 * id: bbd9c4ac-32ee-4474-b697-35173143e155
 * title: isOldEnoughToDrink
@@ -16,7 +16,7 @@ Notes:
 
 ```
 output = isOldEnoughToDrink(22)
-print(output) # --> true
+print(output) # --> True
 ```
 
 ### !end-question
@@ -76,7 +76,7 @@ Notes:
 
 ```
 output = isOldEnoughToDrive(22)
-print(output) # --> true
+print(output) # --> True
 ```
 
 ### !end-question
@@ -130,7 +130,7 @@ Notes:
 
 ```
 output = isOldEnoughToVote(22)
-print(output) # --> true
+print(output) # --> True
 ```
 
 ### !end-question
@@ -190,7 +190,7 @@ Notes:
 
 ```
 output = isOldEnoughToDrinkAndDrive(22)
-print(output) # --> false
+print(output) # --> False
 ```
 
 ### !end-question
