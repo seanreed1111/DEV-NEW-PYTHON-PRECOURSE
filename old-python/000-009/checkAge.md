@@ -23,7 +23,7 @@ print(output); # --> 'Welcome, Adrian!'
 ### !placeholder
 
 ```python
-def checkAge(name, age)
+def checkAge(name,age):
     #your code here
     pass
 
@@ -35,6 +35,11 @@ def checkAge(name, age)
 ### !tests
 
 ```python
+import unittest
+
+class TestScript(unittest.TestCase):
+    def test1(self):
+        pass
 
 # describe("checkAge", function() {
 #   it("should return a string", function() {

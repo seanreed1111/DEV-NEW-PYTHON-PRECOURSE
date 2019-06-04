@@ -37,22 +37,21 @@ def isOldEnoughToDrink(self, age):
 ```python
 
 import unittest
-import main
 
 class TestScript(unittest.TestCase):
-    
+
     def test1(self):
         # #it should return False for age < 21
-        self.assertEqual(main.isOldEnoughToDrink(11), False, "11 is not old enough to drink.")
-        
+        self.assertEqual(isOldEnoughToDrink(11), False, "11 is not old enough to drink.")
+
     def test2(self):
         #it should return True for age = 21
-        self.assertEqual(main.isOldEnoughToDrink(21), True, "21 is old enough to drink.")
+        self.assertEqual(isOldEnoughToDrink(21), True, "21 is old enough to drink.")
 
     def test3(self):
         #it should return True for age > 21
-        self.assertEqual(main.isOldEnoughToDrink(50), True, "50 is old enough to drink.")
- 
+        self.assertEqual(isOldEnoughToDrink(50), True, "50 is old enough to drink.")
+
 ```
 
 

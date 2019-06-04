@@ -1,0 +1,21 @@
+---
+# other galvanize-flavored-markdown commands you can use when working on this file--
+# `lessonyaml`: add one lesson
+# `unityaml`: add a standard, including one checkpoint and lesson
+# Be sure to place the cursor at the appropriate indentation level before running either of these.
+Standards:
+  - Title: isOldEnoughToDrink
+    UID: 8d196af6-7611-432b-8368-e6e2174f3d8a
+    Description: Functions in Python
+    SuccessCriteria:
+      - Student can write one line functions in Python
+      # - [(optional) Another success criteria, uncomment to use]
+    ContentFiles:
+      # -
+      #   Type: Lesson
+      #   UID: [unique-id (option-command-G from uuidgen plugin)]
+      #   Path: /[folder/file.md]
+      - Type: Checkpoint
+        UID: d32e505c-5a78-4943-8545-ebe38121a0d7
+        Path: /Module1/000-009/isOldEnoughToDrinkAndDrive.md
+        Autoscore: true
