@@ -11,21 +11,22 @@ import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
-        # it  
+        # it should
         pass
 
     def test2(self):
-        #it 
+        #it should
         pass
 
     def test3(self):
-        #it 
+        #it should
         pass
 ```
 '''
 
 with open(source_path, "rt") as f:
     data = f.read()
+    data = re.sub(r'local-snippet','code-snippet')
     data = re.sub(r'javascript',r'python3.6',data)
     data = re.sub(r'var\s+','',data)
     data = re.sub(r';','',data)
@@ -38,6 +39,6 @@ with open(source_path, "rt") as f:
     data = re.sub(r'`js',r'`python',data)
     data = re.sub(r'!tests',"!tests\n"+test_class_string,data)
     data = re.sub(r'\)\s+:',r'):',data)
-    
+
 with open(target_path, "wt") as f:
     f.write(data)
