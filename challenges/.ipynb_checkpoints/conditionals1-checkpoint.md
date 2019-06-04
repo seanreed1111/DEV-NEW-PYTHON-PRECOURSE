@@ -23,10 +23,10 @@ print(output) # --> true
 
 ### !placeholder
 
-```python
+```python3.6
 def isOldEnoughToDrink(age):
-    # your code here
-    pass
+  # your code here
+  pass
   
 
 ```
@@ -84,12 +84,11 @@ print(output) # --> true
 
 ### !placeholder
 
-```python
+```python3.6
 def isOldEnoughToDrive(age):
-    # your code here
-    pass
+  # your code here
+  pass
   
-
 ```
 
 ### !end-placeholder
@@ -102,7 +101,7 @@ import unittest
 class TestScript(unittest.TestCase):
     def test1(self):
         #it "should return true if the age is 16"
-        self.assertTrue(isOldEnoughToDrive(16),"it should return True if the age is 16")
+        self.assertTrue(isOldEnoughToDrive(16),"it should return True if the age greater than or equal to 16")
 
     def test2(self):
         #it "should return false if the age is less than 16"
