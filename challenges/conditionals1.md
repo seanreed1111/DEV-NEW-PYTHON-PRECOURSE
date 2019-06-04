@@ -62,7 +62,7 @@ class TestScript(unittest.TestCase):
 
 ### !challenge
 
-* type: local-snippet
+* type: code-snippet
 * language: python3.6
 * id: 4b181e05-9f6d-4e2d-beaa-ad80ab8d3c26
 * title: isOldEnoughToDrive
@@ -116,7 +116,7 @@ class TestScript(unittest.TestCase):
 
 ### !challenge
 
-* type: local-snippet
+* type: code-snippet
 * language: python3.6
 * id: 8aa5586d-36c6-4677-bd29-bbadd91027b8
 * title: isOldEnoughToVote
@@ -175,7 +175,7 @@ class TestScript(unittest.TestCase):
 
 ### !challenge
 
-* type: local-snippet
+* type: code-snippet
 * language: python3.6
 * id: 4031a186-73da-4384-95c9-8d8510aa67a9
 * title: isOldEnoughToDrinkAndDrive
