@@ -35,20 +35,21 @@ def isOldEnoughToDrink(age):
 ### !tests
 
 ```python
+import main
 import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
         #it "should return True if the age is greater than 21"
-        self.assertTrue(isOldEnoughToDrink(40),"should return True if age is greater than 21")
+        self.assertTrue(main.isOldEnoughToDrink(40),"should return True if age is greater than 21")
 
     def test2(self):
         #it "should return true if the age is 21"
-        self.assertTrue(isOldEnoughToDrink(21),"should return True if age is 21")
+        self.assertTrue(main.isOldEnoughToDrink(21),"should return True if age is 21")
 
     def test3(self):
         #it "should return false if the age is 20"
-        self.assertFalse(isOldEnoughToDrink(20),"should return False if age is less than 21")
+        self.assertFalse(main.isOldEnoughToDrink(20),"should return False if age is less than 21")
 
 ```
 
@@ -94,16 +95,17 @@ def isOldEnoughToDrive(age):
 ### !tests
 
 ```python
+import main
 import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
         #it "should return true if the age is 16"
-        self.assertTrue(isOldEnoughToDrive(16),"it should return True if the age greater than or equal to 16")
+        self.assertTrue(main.isOldEnoughToDrive(16),"it should return True if the age greater than or equal to 16")
 
     def test2(self):
         #it "should return false if the age is less than 16"
-        self.assertFalse(isOldEnoughToDrive(15),"it should return False if the age is under 16")
+        self.assertFalse(main.isOldEnoughToDrive(15),"it should return False if the age is under 16")
 ```
 
 ### !end-tests
@@ -148,20 +150,21 @@ def isOldEnoughToVote(age):
 ### !tests
 
 ```python
+import main
 import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
         #it "should return whether the age is greater than 18"
-        self.assertTrue(isOldEnoughToVote(19), "should return True if age is greater than 18")
+        self.assertTrue(main.isOldEnoughToVote(19), "should return True if age is greater than 18")
 
     def test2(self):
         #it "should return true if the age is 18"
-        self.assertTrue(isOldEnoughToVote(18), "should return True if age is 18")
+        self.assertTrue(main.isOldEnoughToVote(18), "should return True if age is 18")
 
     def test3(self):
         #it "should return false if the age is under 18"
-        self.assertFalse(isOldEnoughToVote(17), "should return False if age is under 18")     
+        self.assertFalse(main.isOldEnoughToVote(17), "should return False if age is under 18")     
 ```
 
 
@@ -208,12 +211,13 @@ def isOldEnoughToDrinkAndDrive(age):
 ### !tests
 
 ```python
+import main
 import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
         # it "should return false"
-        self.assertFalse(isOldEnoughToDrinkAndDrive(99), "No one is old enough to drink and drive.")
+        self.assertFalse(main.isOldEnoughToDrinkAndDrive(99), "No one is old enough to drink and drive.")
 ```
 
 

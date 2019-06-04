@@ -7,6 +7,7 @@ target_path = os.path.join("challenges",source_file_name)
 
 test_class_string ='''
 ```python
+import main
 import unittest
 
 class TestScript(unittest.TestCase):
