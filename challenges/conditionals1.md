@@ -4,7 +4,7 @@
 
 * type: local-snippet
 * language: python3.6
-* id: aa5deeb1-c053-4c31-90e7-4a5fb0546afa
+* id: bbd9c4ac-32ee-4474-b697-35173143e155
 * title: isOldEnoughToDrink
 
 ### !question
@@ -45,7 +45,7 @@ class TestScript(unittest.TestCase):
     def test2(self):
         #it "should return true if the age is 21"
         self.assertTrue(isOldEnoughToDrink(21),"should return True if age is 21")
-    
+
     def test3(self):
         #it "should return false if the age is 20"
         self.assertFalse(isOldEnoughToDrink(20),"should return False if age is less than 21")
@@ -158,7 +158,7 @@ class TestScript(unittest.TestCase):
     def test2(self):
         #it "should return true if the age is 18"
         self.assertTrue(isOldEnoughToVote(18), "should return True if age is 18")
-        
+
     def test3(self):
         #it "should return false if the age is under 18"
         self.assertFalse(isOldEnoughToVote(17), "should return False if age is under 18")     

@@ -22,7 +22,7 @@ Standards:
   #       Autoscore: true
   -
     Title: Part 1
-    UID: 47567dbe-9f6a-451b-b52c-803b1ea45025
+    UID: 93c723b7-5c5a-4b11-8db3-b888e49e6af6
     Description: Solve Code Challenges
     SuccessCriteria:
       - Solve Python code challenges
@@ -34,7 +34,7 @@ Standards:
       #   Path: /reading/synopsis.md
       -
         Type: Lesson
-        UID: bbd9c4ac-32ee-4474-b697-35173143e155
+        UID: a4588fae-b578-4d0b-a906-3ffed48865cb
         Path: /challenges/conditionals1.md
       -
         Type: Lesson
