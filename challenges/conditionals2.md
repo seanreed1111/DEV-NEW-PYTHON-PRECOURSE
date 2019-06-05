@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 3a5dfe0d-e0ea-49b3-a9b1-d7e973f03133
 * title: checkAge
 
@@ -11,24 +11,25 @@
 
 Write a function called "checkAge".
 Given a person's name and age, "checkAge" returns one of two messages:
-"Go home, {insert_name_here}!", if they are younger than 21.
-"Welcome, {insert_name_here}!", if they are 21 or older.
-Naturally, replace "{insert_name_here}" with the given name. :)
+"Go home, :insert_name_here!", if they are younger than 21.
+"Welcome, :insert_name_here!", if they are 21 or older.
+Naturally, replace ":insert_name_here" with the given name. :)
 
 ```
-var output = checkAge('Adrian', 22);
-console.log(output); // --> 'Welcome, Adrian!'
+output = checkAge('Adrian', 22)
+print(output) # --> 'Welcome, Adrian!'
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function checkAge(name, age) {
-  // your code here
-  
-}
+```python
+def checkAge(name, age):
+    # your code here
+    pass
+
+
 
 ```
 
@@ -36,23 +37,28 @@ function checkAge(name, age) {
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("checkAge", function() {
-  it("should return a string", function() {
-    expect(typeof(checkAge("Dan", "24"))).to.deep.eq("string");
-  });
-  it("should welcome someone over 21", function() {
-    expect(checkAge("Dan", "24")).to.deep.eq("Welcome, Dan!");
-  });
-  it("should welcome a 21 year old", function() {
-    expect(checkAge("Toni", "21")).to.deep.eq("Welcome, Toni!");
-  });
-  it("should bounce someone under 21", function() {
-    expect(checkAge("Rad", "4")).to.deep.eq("Go home, Rad!");
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should  return a string
+        self.assertIs(type(main.checkAge("Dan",24)),str,"it should return a string")
 
+    def test2(self):
+        #it should welcome someone over 21
+        self.assertEqual(main.checkAge("Dan",24), "Welcome, Dan!",
+        "it should welcome someone over 21")
+
+    def test3(self):
+        self.assertEqual(main.checkAge("Toni",21), "Welcome, Toni!",
+        "it should welcome a 21 year old")
+
+    def test4(self):
+        #it should bounce someone under 21
+        self.assertEqual(main.checkAge("Rad",4), "Go home, Rad!",
+        "it should bounce someone under 21")
 ```
 
 ### !end-tests
@@ -65,8 +71,8 @@ describe("checkAge", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 9f1f81f6-8067-40a8-82ce-c9de9c13bcae
 * title: isGreaterThanTen
 
@@ -76,42 +82,46 @@ Write a function called "isGreaterThan10".
 Given a number, "isGreaterThan10" returns whether the given number is greater than 10.
 
 ```
-var output = isGreaterThan10(11);
-console.log(output); // --> true
+output = isGreaterThan10(11)
+print(output) # --> True
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isGreaterThan10(num) {
-  // your code here
-  
-}
+```python
+def isGreaterThan10(num):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("isGreaterThan10", function() {
-  it("should return a boolean", function() {
-    expect(typeof isGreaterThan10(40)).to.deep.eq("boolean");
-  });
-  it("should return false for a number less than 10", function() {
-    expect(isGreaterThan10(4)).to.deep.eq(false);
-  });
-  it("should return true for a number greater than 10", function() {
-    expect(isGreaterThan10(40)).to.deep.eq(true);
-  });
-  it("should return false for the number 10", function() {
-    expect(isGreaterThan10(10)).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should return a bool
+        self.assertIs(type(main.isGreaterThan10(40)),bool,"it should return a bool")
 
+    def test2(self):
+        #it should return False for a number less than 10
+        self.assertFalse(main.isGreaterThan10(4), "it should return False for a number less than 10")
+
+    def test3(self):
+        #it should return True for a number greater than 10
+        self.assertTrue(main.isGreaterThan10(40),"it should return True for a number greater than 10")
+
+    def test4(self):
+        #it should return False for the number 10
+        self.assertFalse(main.isGreaterThan10(10),"it should return False for the number 10")
 ```
 
 ### !end-tests
@@ -124,8 +134,8 @@ describe("isGreaterThan10", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 49586ccf-27da-4265-abb8-7ba92a2202cc
 * title: isLessThan30
 
@@ -135,41 +145,60 @@ Write a function called "isLessThan30".
 Given a number, "isLessThan30" returns whether the given number is less than 30.
 
 ```
-var output = isLessThan30(9);
-console.log(output); // --> true
+output = isLessThan30(9)
+print(output) # --> True
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isLessThan30(num) {
-  // your code here
-  
-}
+```python
+def isLessThan30(num):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("isLessThan30", function() {
-  it("should return a boolean", function() {
-    expect(typeof isLessThan30(40)).to.deep.eq("boolean");
-  });
-  it("should return true for a number less than 30", function() {
-    expect(isLessThan30(4)).to.deep.eq(true);
-  });
-  it("should return false for a number greater than 30", function() {
-    expect(isLessThan30(400)).to.deep.eq(false);
-  });
-  it("should return false for the number 30", function() {
-    expect(isLessThan30(30)).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should return a boolean
+        assertIs(type(main.isLessThan30(40)), bool, "it should return a boolean")
+
+    def test2(self):
+        #it should return True for a number less than 30
+        pass
+
+    def test3(self):
+        #it should return False for a number greater than 30
+        pass
+
+    def test4(self):
+        #it should return False for a number greater than 30
+        pass
+```
+
+
+```python
+
+describe("isLessThan30", function():it("should return a boolean", function():expect(typeof isLessThan30(40)).to.deep.eq("boolean")
+  )
+  it("should return True for a number less than 30", function():expect(isLessThan30(4)).to.deep.eq(True)
+  )
+  it("should return False for a number greater than 30", function():expect(isLessThan30(400)).to.deep.eq(False)
+  )
+  it("should return False for the number 30", function():expect(isLessThan30(30)).to.deep.eq(False)
+  )
+)
 
 ```
 
@@ -183,8 +212,8 @@ describe("isLessThan30", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 1fa21321-c02b-43c3-b6b9-0bf633486f6f
 * title: equalsTen
 
@@ -194,41 +223,56 @@ Write a function called "equalsTen".
 Given a number, "equalsTen" returns whether or not the given number is 10.
 
 ```
-var output = equalsTen(9);
-console.log(output); // --> false
+output = equalsTen(9)
+print(output) # --> False
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function equalsTen(num) {
-  // your code here
-  
-}
+```python
+def equalsTen(num):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("equalsTen", function() {
-  it("should return a boolean", function() {
-    expect(typeof equalsTen(10)).to.deep.eq("boolean");
-  });
-  it("should return true for the number 10", function() {
-    expect(equalsTen(10)).to.deep.eq(true);
-  });
-  it("should return false for a number greater than 10", function() {
-    expect(equalsTen(400)).to.deep.eq(false);
-  });
-  it("should return false for the number 10", function() {
-    expect(equalsTen(3)).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should
+        pass
+
+    def test2(self):
+        #it should
+        pass
+
+    def test3(self):
+        #it should
+        pass
+```
+
+
+```python
+
+describe("equalsTen", function():it("should return a boolean", function():expect(typeof equalsTen(10)).to.deep.eq("boolean")
+  )
+  it("should return True for the number 10", function():expect(equalsTen(10)).to.deep.eq(True)
+  )
+  it("should return False for a number greater than 10", function():expect(equalsTen(400)).to.deep.eq(False)
+  )
+  it("should return False for the number 10", function():expect(equalsTen(3)).to.deep.eq(False)
+  )
+)
 
 ```
 
