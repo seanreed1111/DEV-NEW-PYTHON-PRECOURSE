@@ -132,6 +132,7 @@ class TestScript(unittest.TestCase):
 
 ### !end-challenge
 
+
 ### !challenge
 
 * type: code-snippet
@@ -176,31 +177,17 @@ class TestScript(unittest.TestCase):
 
     def test2(self):
         #it should return True for a number less than 30
-        pass
+        assertTrue(main.isLessThan30(10)), bool, "it should return True for a number less than 30")
 
     def test3(self):
         #it should return False for a number greater than 30
-        pass
+        assertFalse(main.isLessThan30(40)), "it should return False for a number greater than 30")
 
     def test4(self):
-        #it should return False for a number greater than 30
-        pass
+        #it should return False for the number 30
+        assertFalse(main.isLessThan30(30)), "it should return False for the number 30")
 ```
 
-
-```python
-
-describe("isLessThan30", function():it("should return a boolean", function():expect(typeof isLessThan30(40)).to.deep.eq("boolean")
-  )
-  it("should return True for a number less than 30", function():expect(isLessThan30(4)).to.deep.eq(True)
-  )
-  it("should return False for a number greater than 30", function():expect(isLessThan30(400)).to.deep.eq(False)
-  )
-  it("should return False for the number 30", function():expect(isLessThan30(30)).to.deep.eq(False)
-  )
-)
-
-```
 
 ### !end-tests
 
@@ -209,6 +196,7 @@ describe("isLessThan30", function():it("should return a boolean", function():exp
 ### !end-explanation
 
 ### !end-challenge
+
 
 ### !challenge
 
@@ -222,7 +210,7 @@ describe("isLessThan30", function():it("should return a boolean", function():exp
 Write a function called "equalsTen".
 Given a number, "equalsTen" returns whether or not the given number is 10.
 
-```
+```python
 output = equalsTen(9)
 print(output) # --> False
 ```
@@ -249,20 +237,24 @@ import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
-        # it should
-        pass
+        # it should return a boolean
+        assertIs(type(main.equalsTen(40)), bool, "it should return a boolean")
 
     def test2(self):
-        #it should
-        pass
+        #it should return False for a number less than 10
+        assertFalse(main.equalsTen(0)), bool, "it should return False for a number less than 10")
 
     def test3(self):
-        #it should
-        pass
+        #it should return False for a number greater than 10
+        assertFalse(main.equalsTen(11)), "it should return False for a number greater than 10")
+
+    def test4(self):
+        #it should return True for the number 10
+        assertTrue(main.equalsTen(10)), "it should return True for the number 10")
 ```
 
 
-```python
+<!-- ```js
 
 describe("equalsTen", function():it("should return a boolean", function():expect(typeof equalsTen(10)).to.deep.eq("boolean")
   )
@@ -274,7 +266,7 @@ describe("equalsTen", function():it("should return a boolean", function():expect
   )
 )
 
-```
+``` -->
 
 ### !end-tests
 

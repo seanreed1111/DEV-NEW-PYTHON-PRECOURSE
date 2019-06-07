@@ -13,15 +13,19 @@ import unittest
 class TestScript(unittest.TestCase):
     def test1(self):
         # it should
-        pass
+        self.assertTrue(main.myfunc(), msg="")
 
     def test2(self):
         #it should
-        pass
+        self.assertTrue(main.myfunc(), msg="")
 
     def test3(self):
         #it should
-        pass
+        self.assertTrue(main.myfunc(), msg="")
+
+    def test4(self):
+        #it should
+        self.assertTrue(main.myfunc(), msg="")
 ```
 '''
 
@@ -39,7 +43,7 @@ with open(source_path, "rt") as f:
     data = re.sub(r'//', r'#', data)
     data = re.sub(r'console.log', r'print', data)
     data = re.sub(r'function\s(?!called)', r'def ', data)
-    data = re.sub(r'`js', r'`python', data)
+#    data = re.sub(r'`js', r'`python', data)
     data = re.sub(r'!tests', "!tests\n"+test_class_string, data)
     data = re.sub(r'\)\s+:', r'):', data)
 
