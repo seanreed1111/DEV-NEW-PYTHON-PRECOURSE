@@ -237,15 +237,15 @@ class TestScript(unittest.TestCase):
 
     def test2(self):
         #it "should return False if both numbers are odd"
-        self.assertTrue(main.isEitherEven(17, 49), msg = "should return False if both numbers are odd")
+        self.assertFalse(main.isEitherEven(17, 49), msg = "should return False if both numbers are odd")
 
     def test3(self):
         #it "should return True if the first number is even"
-        self.assertFalse(main.isEitherEven(4, 7), msg = "should return True if the first number is even")
+        self.assertTrue(main.isEitherEven(4, 7), msg = "should return True if the first number is even")
 
     def test4(self):
         #it "should return True if the second number is even"
-        self.assertFalse(main.isEitherEven(71, 88), msg = "should return True if the second number is even")
+        self.assertTrue(main.isEitherEven(71, 88), msg = "should return True if the second number is even")
 
 ```
 
