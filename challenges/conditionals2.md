@@ -177,15 +177,15 @@ class TestScript(unittest.TestCase):
 
     def test2(self):
         #it should return True for a number less than 30
-        assertTrue(main.isLessThan30(10)), "it should return True for  a number less than 30")
+        assertTrue(main.isLessThan30(10), "it should return True for  a number less than 30")
 
     def test3(self):
         #it should return False for a number greater than 30
-        assertFalse(main.isLessThan30(40)), "it should return False for a number greater than 30")
+        assertFalse(main.isLessThan30(40), "it should return False for a number greater than 30")
 
     def test4(self):
         #it should return False for the number 30
-        assertFalse(main.isLessThan30(30)), "it should return False for the number 30")
+        assertFalse(main.isLessThan30(30), "it should return False for the number 30")
 ```
 
 
@@ -242,15 +242,15 @@ class TestScript(unittest.TestCase):
 
     def test2(self):
         #it should return False for a number less than 10
-        assertFalse(main.equalsTen(0)), bool, "it should return False for a number less than 10")
+        assertFalse(main.equalsTen(0), bool, "it should return False for a number less than 10")
 
     def test3(self):
         #it should return False for a number greater than 10
-        assertFalse(main.equalsTen(11)), "it should return False for a number greater than 10")
+        assertFalse(main.equalsTen(11), "it should return False for a number greater than 10")
 
     def test4(self):
         #it should return True for the number 10
-        assertTrue(main.equalsTen(10)), "it should return True for the number 10")
+        assertTrue(main.equalsTen(10), "it should return True for the number 10")
 ```
 
 
