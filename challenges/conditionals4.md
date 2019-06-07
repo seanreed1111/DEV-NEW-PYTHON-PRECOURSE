@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: c13afed5-de19-458a-a3b9-65fc3d34f842
 * title: isOdd
 
@@ -13,39 +13,50 @@ Write a function called "isOdd".
 Given a number, "isOdd" returns whether the given number is odd.
 
 ```
-var output = isOdd(9);
-console.log(output); // --> true
+output = isOdd(9)
+print(output) # --> True
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isOdd(num) {
-  // your code here
-  
-}
+```python
+def isOdd(num):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("isOdd", function() {
-  it("should return a boolean", function() {
-    expect(typeof isOdd(40)).to.deep.eq("boolean");
-  });
-  it("should return if the number is odd", function() {
-    expect(isOdd(7)).to.deep.eq(true);
-  });
-  it("should return false if the number is 0", function() {
-    expect(isOdd(0)).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    class TestScript(unittest.TestCase):
+        def test1(self):
+            # "it should return a bool"
+            self.assertIs(type(main.isOdd(8)), bool,
+            msg="it should return a bool")
 
+        def test2(self):
+            #it should return True if number is odd
+            for num in range(1,11,2):
+                    with self.subTest(num=num):
+                        self.assertTrue(main.isOdd(num),
+                        msg="it should return True if the number is odd")
+
+        def test3(self):
+            ##it should return False if number is not odd
+            for num in range(0,10,2):
+                    with self.subTest(num=num):
+                        self.assertFalse(main.isOdd(num),
+                        msg="it should return False if the number is not odd")
 ```
 
 ### !end-tests
@@ -58,8 +69,8 @@ describe("isOdd", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: d502830a-6d86-479d-9bd3-664e13d2a686
 * title: isSameLength
 
@@ -70,38 +81,42 @@ Write a function called "isSameLength".
 Given two words, "isSameLength" returns whether the given words have the same length.
 
 ```
-var output = isSameLength('words', 'super');
-console.log(output); // --> true
+output = isSameLength('words', 'super')
+print(output) # --> True
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isSameLength(word1, word2) {
-  // your code here
-  
-}
+```python
+def isSameLength(word1, word2):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("isSameLength", function() {
-  it("should return a boolean", function() {
-    expect(typeof isSameLength("hi", "there")).to.deep.eq("boolean");
-  });
-  it("should return true if the two words are the same length", function() {
-    expect(isSameLength("yes", "you")).to.deep.eq(true);
-  });
-  it("should return false if the two words are not the same length", function() {
-    expect(isSameLength("hi", "there")).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should
+        self.assertIs(type(main.isSameLength("book", "books")), bool, msg="it should return a bool")
+
+    def test2(self):
+        #it "should return True if the two words are the same length"
+        self.assertTrue(main.isSameLength("yes", "you"), msg="should return True if the two words are the same length")
+
+    def test3(self):
+        #it should return False if the two words are not the same length
+        self.assertFalse(main.isSameLength("book","books"), msg="it should return False if the two words are not the same length")
 
 ```
 
@@ -115,8 +130,8 @@ describe("isSameLength", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 2b052832-2dec-494d-9a24-090c8051db0a
 * title: areBothOdd
 
@@ -127,41 +142,46 @@ Write a function called "areBothOdd".
 Given 2 numbers, "areBothOdd" returns whether or not both of the given numbers are odd.
 
 ```
-var output = areBothOdd(1, 3);
-console.log(output); // --> true
+output = areBothOdd(1, 3)
+print(output) # --> True
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function areBothOdd(num1, num2) {
-  // your code here
-  
-}
+```python
+def areBothOdd(num1, num2):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("areBothOdd", function() {
-  it("should return a boolean", function() {
-    expect(typeof areBothOdd(40, 3)).to.deep.eq("boolean");
-  });
-  it("should return true if both numbers are odd", function() {
-    expect(areBothOdd(41, 3)).to.deep.eq(true);
-  });
-  it("should return false if the first number is even", function() {
-    expect(areBothOdd(4, 3)).to.deep.eq(false);
-  });
-  it("should return false if the second number is even", function() {
-    expect(areBothOdd(5, 30)).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it "should return a boolean"
+        self.assertIs(type(main.areBothOdd(6, 7)), bool, msg = "should return a boolean")
+
+    def test2(self):
+        #it "should return True if both numbers are odd"
+        self.assertTrue(main.areBothOdd(7, 9), msg = "should return True if both numbers are odd")
+
+    def test3(self):
+        #it "should return False if the first number is even"
+        self.assertFalse(main.areBothOdd(4, 7), msg = "should return False if the first number is even")
+
+    def test4(self):
+        #it "should return False if the second number is even"
+        self.assertFalse(main.areBothOdd(71, 88), msg = "should return False if the second number is even")
 
 ```
 
@@ -175,8 +195,8 @@ describe("areBothOdd", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 2aa4cdd8-0158-438d-8a53-b9c0283226c7
 * title: isEitherEven
 
@@ -187,19 +207,20 @@ Write a function called "isEitherEven".
 Given two numbers, "isEitherEven" returns whether or not either one of the given numbers is even.
 
 ```
-var output = isEitherEven(1, 4);
-console.log(output); // --> true
+output = isEitherEven(1, 4)
+print(output) # --> True
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isEitherEven(num1, num2) {
-  // your code here
-  
-}
+```python
+def isEitherEven(num1, num2):
+    # your code here
+    pass
+
+
 
 ```
 
@@ -207,27 +228,29 @@ function isEitherEven(num1, num2) {
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("isEitherEven", function() {
-  it("should return a boolean", function() {
-    expect(typeof isEitherEven(40, 3)).to.deep.eq("boolean");
-  });
-  it("should return true if the first number is even", function() {
-    expect(isEitherEven(4, 3)).to.deep.eq(true);
-  });
-  it("should return true if the second number is even", function() {
-    expect(isEitherEven(7, 30)).to.deep.eq(true);
-  });
-  it("should return true if the both numbers are even", function() {
-    expect(isEitherEven(70, 30)).to.deep.eq(true);
-  });
-  it("should return false if both numbers are odd", function() {
-    expect(isEitherEven(71, 31)).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it "should return a boolean"
+        self.assertIs(type(main.isEitherEven(6, 7)), bool, msg = "should return a boolean")
+
+    def test2(self):
+        #it "should return False if both numbers are odd"
+        self.assertTrue(main.isEitherEven(17, 49), msg = "should return False if both numbers are odd")
+
+    def test3(self):
+        #it "should return True if the first number is even"
+        self.assertFalse(main.isEitherEven(4, 7), msg = "should return True if the first number is even")
+
+    def test4(self):
+        #it "should return True if the second number is even"
+        self.assertFalse(main.isEitherEven(71, 88), msg = "should return True if the second number is even")
 
 ```
+
 
 ### !end-tests
 
