@@ -242,7 +242,7 @@ class TestScript(unittest.TestCase):
 
     def test2(self):
         #it should return False for a number less than 10
-        self.assertFalse(main.equalsTen(0), bool, "it should return False for a number less than 10")
+        self.assertFalse(main.equalsTen(0), "it should return False for a number less than 10")
 
     def test3(self):
         #it should return False for a number greater than 10
