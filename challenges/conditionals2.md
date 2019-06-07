@@ -177,7 +177,7 @@ class TestScript(unittest.TestCase):
 
     def test2(self):
         #it should return True for a number less than 30
-        assertTrue(main.isLessThan30(10)), bool, "it should return True for a number less than 30")
+        assertTrue(main.isLessThan30(10)), "it should return True for  a number less than 30")
 
     def test3(self):
         #it should return False for a number greater than 30
