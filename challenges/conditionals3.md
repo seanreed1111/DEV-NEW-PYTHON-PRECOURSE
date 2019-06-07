@@ -78,11 +78,10 @@ describe("isLessThan", function():it("should return a boolean", function():expec
 ### !end-explanation
 
 ### !end-challenge
+### !challenge
 
-<!-- ### !challenge
-
-* type: code-snippet
-* language: python3.6
+* type: local-snippet
+* language: javascript
 * id: 4fa4323d-3abd-4206-ba59-91c3df97203f
 * title: isGreaterThan
 
@@ -92,8 +91,8 @@ Write a function called "isGreaterThan".
 Given 2 numbers, "isGreaterThan" returns whether num2 is greater than num1.
 
 ```
-output = isGreaterThan(11, 10)
-print(output) # --> False
+var output = isGreaterThan(11, 10);
+console.log(output); // --> false
 ```
 
 ### !end-question
@@ -101,49 +100,29 @@ print(output) # --> False
 ### !placeholder
 
 ```js
-def isGreaterThan(num1, num2):
-    # your code here
-    pass
+function isGreaterThan(num1, num2) {
+  // your code here
 
-
+}
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```python
-import main
-import unittest
-
-class TestScript(unittest.TestCase):
-    def test1(self):
-        # it should
-        self.assertIs(type(main.myfunc()), msg="")
-
-    def test2(self):
-        #it should
-        self.assertTrue(main.myfunc(), msg="")
-
-    def test3(self):
-        #it should
-        self.assertTrue(main.myfunc(), msg="")
-
-    def test4(self):
-        #it should
-        self.assertTrue(main.myfunc(), msg="")
-```
-
-
 ```js
 
-describe("isGreaterThan", function():it("should return a boolean", function():expect(typeof isGreaterThan(40, 30)).to.deep.eq("boolean")
-  )
-  it("should return whether num2 is greater than num1", function():expect(isGreaterThan(20, 200)).to.deep.eq(True)
-  )
-  it("should return False if the numbers are equal", function():expect(isGreaterThan(20, 20)).to.deep.eq(False)
-  )
-)
+describe("isGreaterThan", function() {
+  it("should return a boolean", function() {
+    expect(typeof isGreaterThan(40, 30)).to.deep.eq("boolean");
+  });
+  it("should return whether num2 is greater than num1", function() {
+    expect(isGreaterThan(20, 200)).to.deep.eq(true);
+  });
+  it("should return false if the numbers are equal", function() {
+    expect(isGreaterThan(20, 20)).to.deep.eq(false);
+  });
+});
 
 ```
 
@@ -157,8 +136,8 @@ describe("isGreaterThan", function():it("should return a boolean", function():ex
 
 ### !challenge
 
-* type: code-snippet
-* language: python3.6
+* type: local-snippet
+* language: javascript
 * id: 9d6af24e-85e1-441c-a10c-d629d6381469
 * title: isEqualTo
 
@@ -168,8 +147,8 @@ Write a function called "isEqualTo".
 Given 2 numbers, "isEqualTo" returns whether num2 is equal to num1.
 
 ```
-output = isEqualTo(11, 10)
-print(output) # --> False
+var output = isEqualTo(11, 10);
+console.log(output); // --> false
 ```
 
 ### !end-question
@@ -177,51 +156,32 @@ print(output) # --> False
 ### !placeholder
 
 ```js
-def isEqualTo(num1, num2):
-    # your code here
-    pass
+function isEqualTo(num1, num2) {
+  // your code here
 
-
+}
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```python
-import main
-import unittest
-
-class TestScript(unittest.TestCase):
-    def test1(self):
-        # it should
-        self.assertIs(type(main.myfunc()), msg="")
-
-    def test2(self):
-        #it should
-        self.assertTrue(main.myfunc(), msg="")
-
-    def test3(self):
-        #it should
-        self.assertTrue(main.myfunc(), msg="")
-
-    def test4(self):
-        #it should
-        self.assertTrue(main.myfunc(), msg="")
-```
-
-
 ```js
 
-describe("isEqualTo", function():it("should return a boolean", function():expect(typeof isEqualTo(40, 30)).to.deep.eq("boolean")
-  )
-  it("should return False if num2 is greater than num1", function():expect(isEqualTo(20, 200)).to.deep.eq(False)
-  )
-  it("should return False if num2 is less than num1", function():expect(isEqualTo(20, 2)).to.deep.eq(False)
-  )
-  it("should return True if the numbers are equal", function():expect(isEqualTo(20, 20)).to.deep.eq(True)
-  )
-)
+describe("isEqualTo", function() {
+  it("should return a boolean", function() {
+    expect(typeof isEqualTo(40, 30)).to.deep.eq("boolean");
+  });
+  it("should return false if num2 is greater than num1", function() {
+    expect(isEqualTo(20, 200)).to.deep.eq(false);
+  });
+  it("should return false if num2 is less than num1", function() {
+    expect(isEqualTo(20, 2)).to.deep.eq(false);
+  });
+  it("should return true if the numbers are equal", function() {
+    expect(isEqualTo(20, 20)).to.deep.eq(true);
+  });
+});
 
 ```
 
@@ -235,8 +195,8 @@ describe("isEqualTo", function():it("should return a boolean", function():expect
 
 ### !challenge
 
-* type: code-snippet
-* language: python3.6
+* type: local-snippet
+* language: javascript
 * id: 32135330-a5c2-49cd-b9a4-cffe41db64b3
 * title: isEven
 
@@ -246,8 +206,8 @@ Write a function called "isEven".
 Given a number, "isEven" returns whether it is even.
 
 ```
-output = isEven(11)
-print(output) # --> False
+var output = isEven(11);
+console.log(output); // --> false
 ```
 
 ### !end-question
@@ -255,49 +215,29 @@ print(output) # --> False
 ### !placeholder
 
 ```js
-def isEven(num):
-    # your code here
-    pass
+function isEven(num) {
+  // your code here
 
-
+}
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```python
-import main
-import unittest
-
-class TestScript(unittest.TestCase):
-    def test1(self):
-        # it should
-        self.assertIs(type(main.myfunc()), msg="")
-
-    def test2(self):
-        #it should
-        self.assertTrue(main.myfunc(), msg="")
-
-    def test3(self):
-        #it should
-        self.assertTrue(main.myfunc(), msg="")
-
-    def test4(self):
-        #it should
-        self.assertTrue(main.myfunc(), msg="")
-```
-
-
 ```js
 
-describe("isEven", function():it("should return a boolean", function():expect(typeof isEven(40)).to.deep.eq("boolean")
-  )
-  it("should return if the number is even", function():expect(isEven(8)).to.deep.eq(True)
-  )
-  it("should return True if the number is 0", function():expect(isEven(0)).to.deep.eq(True)
-  )
-)
+describe("isEven", function() {
+  it("should return a boolean", function() {
+    expect(typeof isEven(40)).to.deep.eq("boolean");
+  });
+  it("should return if the number is even", function() {
+    expect(isEven(8)).to.deep.eq(true);
+  });
+  it("should return true if the number is 0", function() {
+    expect(isEven(0)).to.deep.eq(true);
+  });
+});
 
 ```
 
@@ -307,4 +247,4 @@ describe("isEven", function():it("should return a boolean", function():expect(ty
 
 ### !end-explanation
 
-### !end-challenge -->
+### !end-challenge
