@@ -70,10 +70,11 @@ class TestScript(unittest.TestCase):
 ### !end-explanation
 
 ### !end-challenge
+
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 4fa4323d-3abd-4206-ba59-91c3df97203f
 * title: isGreaterThan
 
@@ -82,40 +83,53 @@ class TestScript(unittest.TestCase):
 Write a function called "isGreaterThan".
 Given 2 numbers, "isGreaterThan" returns whether num2 is greater than num1.
 
-```
-var output = isGreaterThan(11, 10);
-console.log(output); // --> false
+```python
+output = isGreaterThan(11, 10)
+print(output) # --> False
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isGreaterThan(num1, num2) {
-  // your code here
+```python
+def isGreaterThan(num1, num2):
+    # your code here
+    pass
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("isGreaterThan", function() {
-  it("should return a boolean", function() {
-    expect(typeof isGreaterThan(40, 30)).to.deep.eq("boolean");
-  });
-  it("should return whether num2 is greater than num1", function() {
-    expect(isGreaterThan(20, 200)).to.deep.eq(true);
-  });
-  it("should return false if the numbers are equal", function() {
-    expect(isGreaterThan(20, 20)).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should return a boolean
+        self.assertIs(type(main.isGreaterThan(0,10)), bool, msg="it should return a boolean")
 
+    def test2(self):
+        #it should return True when num2 is greater than num1
+        for num in range(10):
+                with self.subTest(num=num):
+                    self.assertTrue(main.isGreaterThan(num - 1, num), msg="it should return True if num2 is greater than num1")
+
+    def test3(self):
+        #it should return False when num2 is less than than num1
+        for num in range(10):
+                with self.subTest(num=num):
+                    self.assertFalse(main.isGreaterThan(num + 1, num), msg="it should return False if num2 is less than num1")
+
+    def test4(self):
+        #it should return False if the numbers are equal
+        for num in range(10):
+                with self.subTest(num=num):
+                    self.assertFalse(main.isGreaterThan(num, num), msg="it should return False if the numbers are equal")
 ```
 
 ### !end-tests
@@ -128,8 +142,8 @@ describe("isGreaterThan", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 9d6af24e-85e1-441c-a10c-d629d6381469
 * title: isEqualTo
 
@@ -139,42 +153,49 @@ Write a function called "isEqualTo".
 Given 2 numbers, "isEqualTo" returns whether num2 is equal to num1.
 
 ```
-var output = isEqualTo(11, 10);
-console.log(output); // --> false
+output = isEqualTo(11, 10)
+print(output) # --> False
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isEqualTo(num1, num2) {
-  // your code here
+```python
+def isEqualTo(num1, num2):
+    # your code here
+    pass
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("isEqualTo", function() {
-  it("should return a boolean", function() {
-    expect(typeof isEqualTo(40, 30)).to.deep.eq("boolean");
-  });
-  it("should return false if num2 is greater than num1", function() {
-    expect(isEqualTo(20, 200)).to.deep.eq(false);
-  });
-  it("should return false if num2 is less than num1", function() {
-    expect(isEqualTo(20, 2)).to.deep.eq(false);
-  });
-  it("should return true if the numbers are equal", function() {
-    expect(isEqualTo(20, 20)).to.deep.eq(true);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should return a book
+        self.assertIs(type(main.isEqualTo(3,4)), bool, msg="it should return a bool")
 
+    def test2(self):
+        #it should return True if the numbers are equal
+        for num in range(10):
+                with self.subTest(num=num):
+                    self.assertTrue(main.isEqualTo(num, num),
+                    msg="it should return True if the numbers are equal")
+
+    def test3(self):
+        #it should return False if the numbers are not equal
+        for num1 in range(1,20,2): #odd
+            for num2 in range(0,20,2): #even
+                with self.subTest(num1=num1, num2=num2):
+                    self.assertFalse(main.isEqualTo(num1, num2),
+                    msg="it should return False if the numbers are not equal")
 ```
 
 ### !end-tests
@@ -187,8 +208,8 @@ describe("isEqualTo", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 32135330-a5c2-49cd-b9a4-cffe41db64b3
 * title: isEven
 
@@ -198,38 +219,49 @@ Write a function called "isEven".
 Given a number, "isEven" returns whether it is even.
 
 ```
-var output = isEven(11);
-console.log(output); // --> false
+output = isEven(11)
+print(output) # --> False
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isEven(num) {
-  // your code here
+```python
+def isEven(num):
+    # your code here
+    pass
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("isEven", function() {
-  it("should return a boolean", function() {
-    expect(typeof isEven(40)).to.deep.eq("boolean");
-  });
-  it("should return if the number is even", function() {
-    expect(isEven(8)).to.deep.eq(true);
-  });
-  it("should return true if the number is 0", function() {
-    expect(isEven(0)).to.deep.eq(true);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should
+        self.assertIs(type(main.isEven(8)), bool,
+        msg="it should return a bool")
+
+    def test2(self):
+        #it should return True if number is even
+        for num in range(10):
+                with self.subTest(num=num):
+                    self.assertTrue(main.isEven(num),
+                    msg="it should return True if the number is even")
+
+    def test3(self):
+        ##it should return False if number is not even
+        for num in range(1,11,2):
+                with self.subTest(num=num):
+                    self.assertFalse(main.isEven(num),
+                    msg="it should return False if the number is not even")
 
 ```
 
