@@ -251,22 +251,9 @@ class TestScript(unittest.TestCase):
     def test4(self):
         #it should return True for the number 10
         self.assertTrue(main.equalsTen(10), "it should return True for the number 10")
+
 ```
 
-
-<!-- ```js
-
-describe("equalsTen", function():it("should return a boolean", function():expect(typeof equalsTen(10)).to.deep.eq("boolean")
-  )
-  it("should return True for the number 10", function():expect(equalsTen(10)).to.deep.eq(True)
-  )
-  it("should return False for a number greater than 10", function():expect(equalsTen(400)).to.deep.eq(False)
-  )
-  it("should return False for the number 10", function():expect(equalsTen(3)).to.deep.eq(False)
-  )
-)
-
-``` -->
 
 ### !end-tests
 
