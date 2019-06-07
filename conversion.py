@@ -1,7 +1,7 @@
 import os
 import re
 
-source_file_name = "conditionals5.md"
+source_file_name = "math1.md"
 source_path = os.path.join("challenges-JS",source_file_name)
 target_path = os.path.join("challenges",source_file_name)
 
@@ -13,22 +13,22 @@ import unittest
 class TestScript(unittest.TestCase):
     def test1(self):
         # it should
-        self.assertIs(type(main.myfunc()), bool, msg="")
+        self.assertIs( type( main.myfunc() ), bool, msg = "" )
 
     def test2(self):
         #it should
-        self.assertTrue(main.myfunc(), msg="")
+        self.assertTrue(main.myfunc(), msg = "" )
 
     def test3(self):
         #it should
-        self.assertFalse(main.myfunc(), msg="")
+        self.assertFalse(main.myfunc(), msg = "" )
 
     def test4(self):
         #it should return False if the numbers are equal
         for num in range(10):
-                with self.subTest(num=num):
+                with self.subTest(num = num):
                     self.assertFalse(main.isLessThan(num, num),
-                    msg="it should return False if the numbers are equal")
+                    msg = "it should return False if the numbers are equal" )
 ```
 '''
 
@@ -39,13 +39,13 @@ with open(source_path, "rt") as f:
     data = re.sub(r'false', 'False', data)
     data = re.sub(r'javascript', r'python3.6', data)
     data = re.sub(r'var\s+', '', data)
-    data = re.sub(r';', '', data)
+    data = re.sub(r';', '', data) #everyone hates semicolons, amirite?
     data = re.sub(r'{\s*', ':', data)
     data = re.sub(r'}', '', data)
     data = re.sub(r'\s{0,2}//\s+your code here', '\n    # your code here\n    pass', data)
     data = re.sub(r'//', r'#', data) #pythonic comments
     data = re.sub(r'console.log', r'print', data) #python print statement
-    data = re.sub(r'function\s(?!called)', r'def ', data) #function -> def 
+    data = re.sub(r'function\s(?!called)', r'def ', data) #function -> def
     data = re.sub(r'`js', r'`python', data)
     data = re.sub(r'!tests', "!tests\n"+test_class_string, data)
     data = re.sub(r'\)\s+:', r'):', data)
