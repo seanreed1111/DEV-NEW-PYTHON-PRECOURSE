@@ -251,7 +251,7 @@ class TestScript(unittest.TestCase):
 
     def test2(self):
         #it should return True if number is even
-        for num in range(10):
+        for num in range(0,10,2):
                 with self.subTest(num=num):
                     self.assertTrue(main.isEven(num),
                     msg="it should return True if the number is even")
