@@ -97,10 +97,10 @@ class TestScript(unittest.TestCase):
     def test1(self):
         #it should return the area of a triangle
         for num in range(1,10):
-                with self.subTest(num1 = num, num2 = num + 4):
-                    self.assertEqual(main.computeAreaOfATriangle(num1, num2),
-                    num1 * num2 / 2,
-                    msg = f"it should return the return the area of a triangle {num1 * num2 / 2}" )
+                with self.subTest(num):
+                    self.assertEqual(main.computeAreaOfATriangle(num, num + 4),
+                    num * (num + 4) / 2,
+                    msg = f"it should return the return the area of a triangle {num * (num + 4) / 2}" )
 ```
 
 
