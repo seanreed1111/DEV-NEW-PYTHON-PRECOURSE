@@ -42,9 +42,9 @@ class TestScript(unittest.TestCase):
     def test1(self):
         #it should return the average of two numbers
         for num in range(10):
-                with self.subTest(num1 = num, num2 = 3 * num):
-                    self.assertEqual(main.average(num1, num2), (num1+num2)/2,
-                    msg = "it should return the average of two numbers" )
+                with self.subTest(num = num):
+                    self.assertEqual(main.average(num, num*3), 2 * num,
+                    msg = f"it should return the average of two numbers {2*num}" )
 
 ```
 
