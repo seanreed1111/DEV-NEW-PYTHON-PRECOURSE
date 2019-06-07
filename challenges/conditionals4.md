@@ -26,7 +26,6 @@ def isOdd(num):
     # your code here
     pass
 
-
 ```
 
 ### !end-placeholder
@@ -38,25 +37,24 @@ import main
 import unittest
 
 class TestScript(unittest.TestCase):
-    class TestScript(unittest.TestCase):
-        def test1(self):
-            # "it should return a bool"
-            self.assertIs(type(main.isOdd(8)), bool,
-            msg="it should return a bool")
+    def test1(self):
+        # "it should return a bool"
+        self.assertIs(type(main.isOdd(8)), bool,
+        msg="it should return a bool")
 
-        def test2(self):
-            #it should return True if number is odd
-            for num in range(1,11,2):
-                    with self.subTest(num=num):
-                        self.assertTrue(main.isOdd(num),
-                        msg="it should return True if the number is odd")
+    def test2(self):
+        #it should return True if number is odd
+        for num in range(1,11,2):
+                with self.subTest(num=num):
+                    self.assertTrue(main.isOdd(num),
+                    msg="it should return True if the number is odd")
 
-        def test3(self):
-            ##it should return False if number is not odd
-            for num in range(0,10,2):
-                    with self.subTest(num=num):
-                        self.assertFalse(main.isOdd(num),
-                        msg="it should return False if the number is not odd")
+    def test3(self):
+        ##it should return False if number is not odd
+        for num in range(0,10,2):
+                with self.subTest(num=num):
+                    self.assertFalse(main.isOdd(num),
+                    msg="it should return False if the number is not odd")
 ```
 
 ### !end-tests
@@ -173,7 +171,7 @@ class TestScript(unittest.TestCase):
 
     def test2(self):
         #it "should return True if both numbers are odd"
-        self.assertTrue(main.areBothOdd(7, 9), msg = "should return True if both numbers are odd")
+        self.assertTrue(main.areBothOdd(7, 99), msg = "should return True if both numbers are odd")
 
     def test3(self):
         #it "should return False if the first number is even"
