@@ -44,7 +44,7 @@ class TestScript(unittest.TestCase):
         for num in range(10):
                 with self.subTest(num = num):
                     self.assertEqual(main.average(num, num*3), 2 * num,
-                    msg = f"it should return the average of two numbers {2*num}" )
+                    msg = "it should return the average of two numbers" )
 
 ```
 
@@ -100,7 +100,7 @@ class TestScript(unittest.TestCase):
                 with self.subTest(num):
                     self.assertEqual(main.computeAreaOfATriangle(num, num + 4),
                     num * (num + 4) / 2,
-                    msg = f"it should return the return the area of a triangle {num * (num + 4) / 2}" )
+                    msg = "it should return the return the area of a triangle" )
 ```
 
 
@@ -157,7 +157,7 @@ class TestScript(unittest.TestCase):
                 with self.subTest(num):
                     self.assertEqual(main.cube(num),
                     num * num * num,
-                    msg = f"it should_cube_a_positive_number {num * num * num}")
+                    msg = "it should cube zero, negative numbers, and positive numbers")
 ```
 
 ### !end-tests
@@ -213,7 +213,7 @@ class TestScript(unittest.TestCase):
                 with self.subTest(num):
                     self.assertEqual(main.square(num),
                     num * num,
-                    msg = f"it should square negative numbers, positive numbers, and zero {num * num}")
+                    msg = "it should square negative numbers, positive numbers, and zero")
 ```
 
 
