@@ -41,25 +41,25 @@ import unittest
 class TestScript(unittest.TestCase):
     def test1(self):
         # it should return a boolean
-        self.assertIs(type(main.isLessThan(0,10)), msg="it should return a boolean")
+        self.assertIs(type(main.isLessThan(0,10)), bool, msg="it should return a boolean")
 
     def test2(self):
         #it should return True when num2 is less than num1
         for num in range(10):
-                with self.subTest(num1=num, num2=num-1):
-                    self.assertTrue(main.isLessThan(num1,num2), msg="it should return True if num2 is less than num1")
+                with self.subTest(num=num):
+                    self.assertTrue(main.isLessThan(num, num - 1), msg="it should return True if num2 is less than num1")
 
     def test3(self):
         #it should return False when num2 is greater than than num1
         for num in range(10):
-                with self.subTest(num1=num, num2=num+1):
-                    self.assertFalse(main.isLessThan(num1,num2), msg="it should return False if num2 is greater than num1")
+                with self.subTest(num=num):
+                    self.assertFalse(main.isLessThan(num, num + 1), msg="it should return False if num2 is greater than num1")
 
     def test4(self):
         #it should return False if the numbers are equal
         for num in range(10):
                 with self.subTest(num=num):
-                    self.assertFalse(main.isLessThan(num,num), msg="it should return False if the numbers are equal")
+                    self.assertFalse(main.isLessThan(num, num), msg="it should return False if the numbers are equal")
 
 ```
 
