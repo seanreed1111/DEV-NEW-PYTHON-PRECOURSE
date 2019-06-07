@@ -58,19 +58,6 @@ class TestScript(unittest.TestCase):
 
 ```
 
-<!--
-```js
-
-describe("isLessThan", function():it("should return a boolean", function():expect(typeof isLessThan(40, 30)).to.deep.eq("boolean")
-  )
-  it("should return whether num2 is less than num1", function():expect(isLessThan(20, 200)).to.deep.eq(False)
-  )
-  it("should return False if the numbers are equal", function():expect(isLessThan(20, 20)).to.deep.eq(False)
-  )
-)
-
-``` -->
-
 ### !end-tests
 
 ### !explanation
