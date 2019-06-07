@@ -13,7 +13,7 @@ import unittest
 class TestScript(unittest.TestCase):
     def test1(self):
         # it should
-        self.assertTrue(main.myfunc(), msg="")
+        self.assertIs(type(main.myfunc()), msg="")
 
     def test2(self):
         #it should
