@@ -43,7 +43,8 @@ import unittest
 class TestScript(unittest.TestCase):
     def test1(self):
         # it should return a string
-        self.assertIs(type(main.getFullName(firstName, lastName)), str, msg = "it should return a string" )
+        self.assertIs(type(main.getFullName("Harry", "Potter")), str,
+        msg = "it should return a string" )
 
     def test2(self):
         #it should return a full name using firstName and lastName
