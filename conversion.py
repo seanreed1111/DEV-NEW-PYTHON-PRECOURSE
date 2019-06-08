@@ -1,11 +1,11 @@
 import os
 import re
 
-source_file_name = "math1.md"
-source_path = os.path.join("challenges-JS",source_file_name)
-target_path = os.path.join("challenges",source_file_name)
+source_file_name = "stringmethods1.md"
+source_path = os.path.join("challenges-JS", source_file_name)
+target_path = os.path.join("challenges", source_file_name)
 
-test_class_string ='''
+test_class_string = '''
 ```python
 import main
 import unittest
@@ -13,22 +13,26 @@ import unittest
 class TestScript(unittest.TestCase):
     def test1(self):
         # it should
-        self.assertIs( type( main.myfunc() ), bool, msg = "" )
+        self.assertIs(type(main.myfunc()), bool, msg = "it " )
 
     def test2(self):
         #it should
-        self.assertTrue(main.myfunc(), msg = "" )
+        self.assertEqual(main.myfunc(), correct_answer , msg = "it " )
 
     def test3(self):
         #it should
-        self.assertFalse(main.myfunc(), msg = "" )
+        self.assertTrue(main.myfunc(), msg = "it " )
 
     def test4(self):
+        #it should
+        self.assertFalse(main.myfunc(), msg = "it " )
+
+    def test5(self):
         #it should return False if the numbers are equal
         for num in range(10):
                 with self.subTest(num = num):
                     self.assertFalse(main.isLessThan(num, num),
-                    msg = "it should return False if the numbers are equal" )
+                    msg = "it " )
 ```
 '''
 

@@ -100,7 +100,7 @@ class TestScript(unittest.TestCase):
                 with self.subTest(num):
                     self.assertEqual(main.computeAreaOfATriangle(num, num + 4),
                     num * (num + 4) / 2,
-                    msg = "it should return the return the area of a triangle" )
+                    msg = "it should return the return the area of a triangle")
 ```
 
 
@@ -155,8 +155,7 @@ class TestScript(unittest.TestCase):
         #it should cube negative, positive, and zero
         for num in range(-5,5):
                 with self.subTest(num):
-                    self.assertEqual(main.cube(num),
-                    num * num * num,
+                    self.assertEqual(main.cube(num), num * num * num,
                     msg = "it should cube zero, negative numbers, and positive numbers")
 ```
 
@@ -211,8 +210,7 @@ class TestScript(unittest.TestCase):
         #it should square negative numbers, positive numbers, and zero
         for num in range(-5,5):
                 with self.subTest(num):
-                    self.assertEqual(main.square(num),
-                    num * num,
+                    self.assertEqual(main.square(num), num * num,
                     msg = "it should square negative numbers, positive numbers, and zero")
 ```
 

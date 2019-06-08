@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 9a909a65-ed43-4747-ac79-18fb4a9eacc5
 * title: getFullName
 
@@ -13,38 +13,41 @@ Write a function called "getFullName".
 Given a first and a last name, "getFullName" returns a single string with the given first and last names separated by a single space.
 
 ```
-var output = getFullName('Joe', 'Smith');
-console.log(output); // --> 'Joe Smith'
+output = getFullName('Joe', 'Smith')
+print(output) # --> 'Joe Smith'
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
+```python
 
-function getFullName(firstName, lastName) {
-  // your code here
-   
+def getFullName(firstName, lastName):
+    # your code here
+    pass
 
-   
-}
+
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getFullName", function() {
-  it("should return a string", function() {
-    expect(typeof(getFullName("Rebecca", "Solnit"))).to.deep.eq("string");
-  });
-  it("should return a full name using firstName and lastName", function() {
-    expect(getFullName("Rebecca", "Solnit")).to.deep.eq("Rebecca Solnit");
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should return a string
+        self.assertIs(type(main.getFullName(firstName, lastName)), str, msg = "it should return a string" )
+
+    def test2(self):
+        #it should return a full name using firstName and lastName
+        self.assertEqual(main.getFullName("Albus", "Dumbledore"), "Albus Dumbledore" msg = "it should return a full name using firstName and lastName" )
 
 ```
 
@@ -58,8 +61,8 @@ describe("getFullName", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: bba621c8-20e7-49e3-a5d3-30dd3fc58057
 * title: getLengthOfWord
 
@@ -69,40 +72,45 @@ Write a function called "getLengthOfWord".
 Given a word, "getLengthOfWord" returns the length of the given word.
 
 ```
-var output = getLengthOfWord('some');
-console.log(output); // --> 4
+output = getLengthOfWord('some')
+print(output) # --> 4
+
+output = getLengthOfWord('')
+print(output) # --> 0
+
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getLengthOfWord(word) {
-  // your code here
-   
+```python
+def getLengthOfWord(word):
+    # your code here
+    pass
 
-   
-}
+
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getLengthOfWord", function() {
-  it("should return a number", function() {
-    expect(typeof getLengthOfWord("something")).to.deep.eq("number");
-  });
-  it("should return the length of the passed in word", function() {
-    expect(getLengthOfWord("random")).to.deep.eq(6)
-  });
-  it("should return the length of an empty word", function() {
-    expect(getLengthOfWord("")).to.deep.eq(0)
-  });
-});
+class TestScript(unittest.TestCase):
+
+    def test1(self):
+        #it should return the length of the passed in word
+        self.assertEqual(main.getLengthOfWord("random"), 6, msg = "it should return the length of the passed in word" )
+
+    def test2(self):
+        #it should return the length of the passed in word
+        self.assertEqual(main.getLengthOfWord(""), 0, msg = "it should return the length of an empty word" )
 
 ```
 
@@ -116,8 +124,8 @@ describe("getLengthOfWord", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 37a022e4-9104-4ac9-b68b-b63377dd3cb8
 * title: getLengthOfTwoWords
 
@@ -127,39 +135,43 @@ Write a function called "getLengthOfTwoWords".
 Given 2 words, "getLengthOfTwoWords" returns the sum of their lengths.
 
 ```
-var output = getLengthOfTwoWords('some', 'words');
-console.log(output); // --> 9
+output = getLengthOfTwoWords('some', 'words')
+print(output) # --> 9
+
+
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getLengthOfTwoWords(word1, word2) {
-  // your code here
-   
+```python
+def getLengthOfTwoWords(word1, word2):
+    # your code here
+    pass
 
-   
-}
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getLengthOfTwoWords", function() {
-  it("should return a number", function() {
-    expect(typeof getLengthOfTwoWords("two", "words")).to.deep.eq("number");
-  });
-  it("should return the sum length of two words", function() {
-    expect(getLengthOfTwoWords("one", "two")).to.deep.eq(6)
-  });
-});
+class TestScript(unittest.TestCase):
+
+    def test1(self):
+        #it should return the sum length of two words
+        self.assertEqual(getLengthOfTwoWords('some', 'words'), 9, msg = "it should return the sum length of two words" )
+
+    def test2(self):
+        #it should return the sum length of two words if one is an empty string
+        self.assertEqual(getLengthOfTwoWords('', 'words'), msg = "it should return the sum length of two words if one is an empty string" )
 
 ```
+
 
 ### !end-tests
 

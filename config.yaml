@@ -20,6 +20,12 @@ Standards:
   #       UID: 98853a0b-db1c-4548-a408-46124d2363b6
   #       Path: /reading/intro_checkpoint.md
   #       Autoscore: true
+
+  #
+  # RENAME objects to dictionaries to use with Python
+  #
+  #
+  
   -
     Title: Part 1
     UID: 47567dbe-9f6a-451b-b52c-803b1ea45025
