@@ -47,7 +47,7 @@ class TestScript(unittest.TestCase):
 
     def test2(self):
         #it should return a full name using firstName and lastName
-        self.assertEqual(main.getFullName("Albus", "Dumbledore"), "Albus Dumbledore" msg = "it should return a full name using firstName and lastName" )
+        self.assertEqual(main.getFullName("Albus", "Dumbledore"), "Albus Dumbledore", msg = "it should return a full name using firstName and lastName" )
 
 ```
 
