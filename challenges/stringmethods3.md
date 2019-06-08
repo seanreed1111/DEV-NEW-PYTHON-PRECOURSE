@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: ebb36275-fc12-4110-8f39-9ef16ac2aeae
 * title: getLengthOfThreeWords
 
@@ -14,37 +14,34 @@ Write a function called "getLengthOfThreeWords".
 Given 3 words, "getLengthOfThreeWords" returns the sum of their lengths.
 
 ```
-var output = getLengthOfThreeWords('some', 'other', 'words');
-console.log(output); // --> 14
+output = getLengthOfThreeWords('some', 'other', 'words')
+print(output) # --> 14
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getLengthOfThreeWords(word1, word2, word3) {
-  // your code here
-   
+```python
+def getLengthOfThreeWords(word1, word2, word3):
+    # your code here
+    pass
 
-   
-}
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getLengthOfThreeWords", function() {
-  it("should return a number", function() {
-    expect(typeof getLengthOfThreeWords("three", "random", "words")).to.deep.eq("number");
-  });
-  it("should return the sum length of three words", function() {
-    expect(getLengthOfThreeWords("some", "other", "words")).to.deep.eq(14)
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        #it should return the sum of lengths of three words
+        self.assertEqual(getLengthOfThreeWords("three", "random", "words"), 16,
+        msg = "it should return the sum of lengths of three words" )
 
 ```
 

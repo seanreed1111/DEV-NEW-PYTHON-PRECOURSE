@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: e094a4bd-4b1a-4a9d-847b-634336385767
 * title: computeAverageLengthOfWords
 
@@ -14,37 +14,38 @@ Write a function called "computeAverageLengthOfWords".
 Given two words, "computeAverageLengthOfWords" returns the average of their lengths.
 
 ```
-var output = computeAverageLengthOfWords('code', 'programs');
-console.log(output); // --> 6
+output = computeAverageLengthOfWords('code', 'programs')
+print(output) # --> 6
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function computeAverageLengthOfWords(word1, word2) {
-  // your code here
-   
+```python
+def computeAverageLengthOfWords(word1, word2):
+    # your code here
+    pass
 
-   
-}
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("computeAverageLengthOfWords", function() {
-  it("should return a number", function() {
-    expect(typeof computeAverageLengthOfWords("these", "words")).to.deep.eq("number");
-  });
-  it("should return the average length of the two words", function() {
-    expect(computeAverageLengthOfWords("is", "this")).to.deep.eq(3);
-  });
-});
+class TestScript(unittest.TestCase):
+
+    def test1(self):
+        #it should return the average length of the two words
+        self.assertEqual(computeAverageLengthOfWords('code', 'programs'), 6,
+        msg = "it should return the average length of the two words" )
+
 
 ```
 
