@@ -165,11 +165,13 @@ class TestScript(unittest.TestCase):
 
     def test1(self):
         #it should return the sum length of two words
-        self.assertEqual(main.getLengthOfTwoWords('some', 'words'), 9, msg = "it should return the sum length of two words" )
+        self.assertEqual(main.getLengthOfTwoWords('some', 'words'), 9,
+        msg = "it should return the sum length of two words" )
 
     def test2(self):
         #it should return the sum length of two words if one is an empty string
-        self.assertEqual(main.getLengthOfTwoWords('', 'words'), msg = "it should return the sum length of two words if one is an empty string" )
+        self.assertEqual(main.getLengthOfTwoWords('', 'words'), 5, 
+        msg = "it should return the sum length of two words if one is an empty string" )
 
 ```
 

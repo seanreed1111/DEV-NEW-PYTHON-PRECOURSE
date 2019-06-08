@@ -12,27 +12,25 @@ import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
-        # it should
-        self.assertIs(type(main.myfunc()), bool, msg = "it " )
+        # it
+        self.assertIs(type(main.myfunc()), bool,
+        msg = "it " )
 
     def test2(self):
-        #it should
-        self.assertEqual(main.myfunc(), correct_answer , msg = "it " )
+        #it
+        self.assertEqual(main.myfunc(), correct_answer ,
+        msg = "it " )
 
     def test3(self):
-        #it should
-        self.assertTrue(main.myfunc(), msg = "it " )
+        #it
+        self.assertTrue(main.myfunc(),
+        msg = "it " )
 
     def test4(self):
-        #it should
-        self.assertFalse(main.myfunc(), msg = "it " )
+        #it
+        self.assertFalse(main.myfunc(),
+        msg = "it " )
 
-    def test5(self):
-        #it should return False if the numbers are equal
-        for num in range(10):
-                with self.subTest(num = num):
-                    self.assertFalse(main.isLessThan(num, num),
-                    msg = "it " )
 ```
 '''
 
