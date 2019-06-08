@@ -43,7 +43,7 @@ class TestScript(unittest.TestCase):
 
     def test1(self):
         #it should return the average length of the two words
-        self.assertEqual(computeAverageLengthOfWords('code', 'programs'), 6,
+        self.assertEqual(main.computeAverageLengthOfWords('code', 'programs'), 6,
         msg = "it should return the average length of the two words" )
 
 
