@@ -40,7 +40,7 @@ import unittest
 class TestScript(unittest.TestCase):
     def test1(self):
         #it should return the sum of lengths of three words
-        self.assertEqual(getLengthOfThreeWords("three", "random", "words"), 16,
+        self.assertEqual(main.getLengthOfThreeWords("three", "random", "words"), 16,
         msg = "it should return the sum of lengths of three words" )
 
 ```
