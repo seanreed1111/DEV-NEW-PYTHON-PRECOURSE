@@ -101,7 +101,7 @@ class TestScript(unittest.TestCase):
         #it should add a property to the passed in dictionary at the passed in key that is equal to True
         dictionary = {}
         main.addProperty(dictionary, 'my_key')
-        self.assertTrue(dictionary['my_key']),
+        self.assertTrue(dictionary['my_key'],
         msg = "it should add a property to the passed in dictionary at the passed in key that is equal to True" )
 
 ```
