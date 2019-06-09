@@ -15,8 +15,8 @@ Given an dictionary that has a "firstName" key and a "lastName" key, "addFullNam
 
 ```
 person = {'firstName': 'Jaden', 'lastName': 'Smith'}
-
 addFullName(person)
+
 print(person['fullName']) # --> 'Jaden Smith'
 ```
 
@@ -48,7 +48,7 @@ class TestScript(unittest.TestCase):
         #it should create a fullName key in the dictionary with the firstName and lastName separated by a space
         person = {'firstName': 'Jaden', 'lastName': 'Smith'}
         main.addFullName(person)
-        
+
         self.assertEqual(person['fullName'],
         'Jaden Smith',
         msg = "it should create a fullName key in the dictionary with value of a string with the firstName and lastName separated by a space")
@@ -129,7 +129,7 @@ class TestScript(unittest.TestCase):
         # "it should return None"
         dict1 = {'song': 'Psycho Killer'}
         dict2 = {'name': 'Talking Heads'}
-        self.assertIs(type(main.addDictionary(dict1, 'artist', dict2)), None,
+        self.assertIs(main.addDictionary(dict1, 'artist', dict2), None,
         msg = "it should return None" )
 
     def test2(self):
