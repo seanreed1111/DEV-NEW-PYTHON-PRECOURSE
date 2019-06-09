@@ -49,8 +49,7 @@ class TestScript(unittest.TestCase):
         person = {'firstName': 'Jaden', 'lastName': 'Smith'}
         main.addFullName(person)
         self.assertEqual(
-            person['fullName']),'Jaden Smith',
-            msg = "it should create a fullName key in the dictionary with value of a string with the firstName and lastName separated by a space" )
+            person['fullName']),'Jaden Smith', msg = "it should create a fullName key in the dictionary with value of a string with the firstName and lastName separated by a space" )
 
     def test2(self):
         #it should preserve the original keys of the dictionary
