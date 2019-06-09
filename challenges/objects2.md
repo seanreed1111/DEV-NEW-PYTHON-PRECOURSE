@@ -2,58 +2,72 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 56940947-7f0a-444b-bb8a-635464d92f45
-* title: addFullNameProperty
+* title: addFullName
 
 ### !question
 
-Write a function called "addFullNameProperty".
+Write a function called "addFullName".
 
-Given an object that has a "firstName" property and a "lastName" property, "addFullNameProperty" returns a "fullName" property whose value is a string with the first name and last name separated by a space.
+Given an dictionary that has a "firstName" key and a "lastName" key, "addFullName" adds a "fullName" key whose value is a string with the first name and last name separated by a space.
 
 ```
-var person = {
-  firstName: 'Jade',
-  lastName: 'Smith'
-};
-addFullNameProperty(person);
-console.log(person.fullName); // --> 'Jade Smith'
+person = {'firstName': 'Jaden', 'lastName': 'Smith'}
+
+addFullName(person)
+print(person['fullName']) # --> 'Jaden Smith'
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function addFullNameProperty(obj) {
-  // your code here
-   
+```python
+def addFullName(dictionary):
+    # your code here
+    pass
 
-   
-}
+
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
+class TestScript(unittest.TestCase):
 
-describe("addFullNameProperty", function() {
-  it("should create a fullName property with the firstName and lastName separated by a space", function() {
-    var tim = {
-      firstName: "Tim",
-      lastName: "Goldfish"
-    };
-    addFullNameProperty(tim);
-    expect(tim.fullName).to.deep.eq("Tim Goldfish");
-  });
-});
+    def test1(self):
+        #it should create a fullName key in the dictionary with the firstName and lastName separated by a space
+        person = {'firstName': 'Jaden', 'lastName': 'Smith'}
+        main.addFullName(person)
+        self.assertEqual(
+            person['fullName']),
+            'Jaden Smith',
+            msg = "it should create a fullName key in the dictionary with value of a string with the firstName and lastName separated by a space" )
+
+    def test2(self):
+        #it should preserve the original keys of the dictionary
+        person = {'firstName': 'James', 'lastName': 'Bond'}
+        main.addFullName(person)
+        self.assertEqual(
+            person['firstName'],
+            'James',
+            msg = "it should preserve the original keys of the dictionary" )
+        self.assertEqual(
+            person['lastName'],
+            'Bond',
+            msg = "it should preserve the original keys of the dictionary")        
 
 ```
+
 
 ### !end-tests
 
@@ -65,63 +79,70 @@ describe("addFullNameProperty", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: c3b7ef25-71fe-47ff-9a75-2f9965695f31
-* title: addObjectProperty
+* title: addDictionary
 
 ### !question
 
-Write a function called "addObjectProperty".
+Write a function called "addDictionary".
 
-Given two objects and a key, "addObjectProperty" sets a new property on the 1st object at the given key. The value of that new property is the entire 2nd object.
+Given two dictionaries and a key, "addDictionary" sets a new value on the 1st dictionary at the given key. The value of that new key is the entire 2nd dictionary.
 
-```
-var person1 = {
-  name: 'Joe Blow',
-  role: 'schlub'
-};
-var person2 = {
-  name: 'Mr. Burns',
-  role: 'supervisor'
-};
-addObjectProperty(person1, 'manager', person2);
-console.log(person1.manager); // --> { name: 'Mr. Burns', role: 'supervisor' }
+```python
+person1 = {'name': 'Homer Simpson', 'role': 'schlub'}
+person2 = {'name': 'Mr. Burns', 'role': 'supervisor'}
+
+result = addDictionary(person1, 'manager', person2)
+
+type(result) # --> None
+print(person1)
+#--> {'name': 'Homer Simpson', 'role': 'schlub',
+#     'manager': {'name': 'Mr. Burns', role: 'supervisor'}
+#    }
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function addObjectProperty(obj1, key, obj2) {
-  // your code here
-   
+```python
+def addDictionary(dict1, key, dict2):
+    # your code here
+    pass
 
-   
-}
+
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("addObjectProperty", function() {
-  var obj1;
-  var obj2;
-  beforeEach(function() {
-    obj1 = {};
-    obj2 = {
-      name: "Dude"
-    };
-  });
-  it('should set the value at the passed in key on the passed in object to be the second passed in object', function() {
-    addObjectProperty(obj1, 'testKey', obj2);
-    expect(obj1.testKey).to.deep.eq(obj2);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # "it should return None"
+        dict1 = {'song': 'Psycho Killer'}
+        dict2 = {'name': 'Talking Heads'}
+        self.assertIs(type(main.addDictionary(dict1, 'artist', dict2)), None,
+        msg = "it should return None" )
+
+    def test2(self):
+        #it should set a new value on the 1st dictionary at the given key. The value of that new key is the entire 2nd dictionary.
+        dict1 = {'song': 'Psycho Killer'}
+        dict2 = {'name': 'Talking Heads'}
+        main.addDictionary(dict1, 'artist', dict2)
+        self.assertEqual(
+            dict1['artist'],
+            dict2,
+            msg = "it should set a new value on the 1st dictionary at the given key. The value of that new key is the entire 2nd dictionary." )
+
 
 ```
 
@@ -135,8 +156,8 @@ describe("addObjectProperty", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 67b64495-b5b3-4d3a-b3a2-7a471de45c03
 * title: isPersonOldEnoughToDrinkAndDrive
 
@@ -144,7 +165,7 @@ describe("addObjectProperty", function() {
 
 Write a function called "isPersonOldEnoughToDrinkAndDrive".
 
-Given a "person" object, that contains an "age" property, "isPersonOldEnoughToDrinkAndDrive" returns whether the given person is old enough to legally drink and drive in the United States.
+Given a "person" dict, that contains the key "age", "isPersonOldEnoughToDrinkAndDrive" returns whether the given person is old enough to legally drink and drive in the United States.
 
 Notes:
 * The legal drinking age in the United States is 21.
@@ -152,24 +173,24 @@ Notes:
 * It is ALWAYS illegal to drink and drive in the United States.
 
 ```
-var obj = {
-  age: 45
-};
-var output = isPersonOldEnoughToDrinkAndDrive(obj);
-console.log(output); // --> false
+person = {'age': 45}
+
+output = isPersonOldEnoughToDrinkAndDrive(person)
+print(output) # --> False
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isPersonOldEnoughToDrinkAndDrive(person) {
-  // your code here
-   
+```python
+def isPersonOldEnoughToDrinkAndDrive(person):
+    # your code here
+    pass
 
-   
-}
+
+
+
 
 ```
 
@@ -177,21 +198,24 @@ function isPersonOldEnoughToDrinkAndDrive(person) {
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("isPersonOldEnoughToDrinkAndDrive", function() {
-  it("should return a boolean", function() {
-    var person = {
-      age: 55
-    };
-    expect(typeof isPersonOldEnoughToDrinkAndDrive(person)).to.deep.eq("boolean");
-  });
-  it("should return false", function() {
-    expect(isPersonOldEnoughToDrinkAndDrive()).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it
+        self.assertIs(type(isPersonOldEnoughToDrinkAndDrive({'age': 99})),
+        bool,
+        msg = "it should return a bool" )
+
+    def test2(self):
+        #it should always return false
+        self.assertFalse(isPersonOldEnoughToDrinkAndDrive({'age': 99}),
+        msg = "it should always return False" )
 
 ```
+
 
 ### !end-tests
 
