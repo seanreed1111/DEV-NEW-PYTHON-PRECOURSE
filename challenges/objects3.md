@@ -126,7 +126,7 @@ import unittest
 class TestScript(unittest.TestCase):
     def test1(self):
         # it
-        self.assertIs(type(main.isPersonOldEnoughToVote(person)), bool,
+        self.assertIs(type(main.isPersonOldEnoughToVote({'age': 18})), bool,
         msg = "it should return a bool" )
 
     def test3(self):
