@@ -54,17 +54,17 @@ class TestScript(unittest.TestCase):
 
     def test2(self):
         #it should return True if a person has an age of over 16
-        self.assertTrue(main.myisPersonOldEnoughToDrive({'age': 17}),
+        self.assertTrue(main.isPersonOldEnoughToDrive({'age': 17}),
         msg = "it should return True if a person has an age of over 16")
 
     def test3(self):
         #it should return True if a person has an age of over 16
-        self.assertTrue(main.myisPersonOldEnoughToDrive({'age': 16}),
+        self.assertTrue(main.isPersonOldEnoughToDrive({'age': 16}),
         msg = "it should return True if a person has an age of 16")
 
     def test4(self):
         #it should return True if a person has an age of over 16
-        self.assertFalse(main.myisPersonOldEnoughToDrive({'age': 9}),
+        self.assertFalse(main.isPersonOldEnoughToDrive({'age': 9}),
         msg = "it should return False if a person has an age of under 16")
 
 ```
