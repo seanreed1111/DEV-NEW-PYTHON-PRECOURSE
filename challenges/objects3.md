@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: eea9cf06-5305-4626-8955-00e5d02563fb
 * title: isPersonOldEnoughToDrive
 
@@ -11,64 +11,61 @@
 
 Write a function called "isPersonOldEnoughToDrive".
 
-Given a "person" object, that contains an "age" property, "isPersonOldEnoughToDrive" returns whether the given person is old enough to drive.
+Given a "person" dict, that contains an "age" key, "isPersonOldEnoughToDrive" returns whether the given person is old enough to drive.
 
 Notes:
 * The legal driving age in the United States is 16.
 
 ```
-var obj = {
-  age: 16
-};
-var output = isPersonOldEnoughToDrive(obj);
-console.log(output); // --> true
+person = {'age': 16}
+
+output = isPersonOldEnoughToDrive(person)
+print(output) # --> True
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isPersonOldEnoughToDrive(person) {
-  // your code here
-   
+```python
+def isPersonOldEnoughToDrive(person):
+    # your code here
+    pass
 
-   
-}
+
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("isPersonOldEnoughToDrive", function() {
-  it("should return a boolean", function() {
-    var person = {
-      age: 55
-    };
-    expect(typeof isPersonOldEnoughToDrive(person)).to.deep.eq("boolean");
-  });
-  it("should return true if a person has an age of over 16", function() {
-    var person = {
-      age: 55
-    };
-    expect(isPersonOldEnoughToDrive(person)).to.deep.eq(true);
-  });
-  it("should return true if a person has an age of 16", function() {
-    var person = {
-      age: 16
-    };
-    expect(isPersonOldEnoughToDrive(person)).to.deep.eq(true);
-  });
-  it("should return false if a person has an age under 16", function() {
-    var person = {
-      age: 15
-    };
-    expect(isPersonOldEnoughToDrive(person)).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should return a bool
+        self.assertIs(type(main.isPersonOldEnoughToDrive({'age': 99})), bool,
+        msg = "it should return a bool" )
+
+
+    def test2(self):
+        #it should return True if a person has an age of over 16
+        self.assertTrue(main.myisPersonOldEnoughToDrive({'age': 17}),
+        msg = "it should return True if a person has an age of over 16")
+
+    def test3(self):
+        #it should return True if a person has an age of over 16
+        self.assertTrue(main.myisPersonOldEnoughToDrive({'age': 16}),
+        msg = "it should return True if a person has an age of 16")
+
+    def test4(self):
+        #it should return True if a person has an age of over 16
+        self.assertFalse(main.myisPersonOldEnoughToDrive({'age': 9}),
+        msg = "it should return False if a person has an age of under 16")
 
 ```
 
@@ -82,8 +79,8 @@ describe("isPersonOldEnoughToDrive", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 6b52bff0-742b-4c12-b361-03d5e7457084
 * title: isPersonOldEnoughToVote
 
@@ -91,30 +88,30 @@ describe("isPersonOldEnoughToDrive", function() {
 
 Write a function called "isPersonOldEnoughToVote".
 
-Given a "person" object, that contains an "age" property, "isPersonOldEnoughToVote" returns whether the given person is old enough to vote.
+Given a "person" dictionary, that contains a key called "age", "isPersonOldEnoughToVote" returns whether the given person is old enough to vote.
 
 Notes:
 * The legal voting age in the United States is 18.
 
 ```
-var obj = {
-  age: 19
-};
-var output = isPersonOldEnoughToVote(obj);
-console.log(output); // --> true
+dictionary = {'age' 19}
+
+output = isPersonOldEnoughToVote(dictionary)
+print(output) # --> True
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isPersonOldEnoughToVote(person) {
-  // your code here
-   
+```python
+def isPersonOldEnoughToVote(person):
+    # your code here
+    pass
 
-   
-}
+
+
+
 
 ```
 
@@ -122,34 +119,30 @@ function isPersonOldEnoughToVote(person) {
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("isPersonOldEnoughToVote", function() {
-  it("should return a boolean", function() {
-    var person = {
-      age: 55
-    };
-    expect(typeof isPersonOldEnoughToVote(person)).to.deep.eq("boolean");
-  });
-  it("should return true if a person has an age of over 18", function() {
-    var person = {
-      age: 55
-    };
-    expect(isPersonOldEnoughToVote(person)).to.deep.eq(true);
-  });
-  it("should return true if a person has an age of 18", function() {
-    var person = {
-      age: 18
-    };
-    expect(isPersonOldEnoughToVote(person)).to.deep.eq(true);
-  });
-  it("should return false if a person has an age under 18", function() {
-    var person = {
-      age: 15
-    };
-    expect(isPersonOldEnoughToVote(person)).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it
+        self.assertIs(type(main.isPersonOldEnoughToVote(person)), bool,
+        msg = "it should return a bool" )
+
+    def test3(self):
+        #"should return True if a person has an age of over 18"
+        self.assertTrue(main.isPersonOldEnoughToVote({'age': 99}),
+        msg = "it should return True if a person has an age of over 18" )
+
+    def test3(self):
+        #"it should return True if a person has an age of 18"
+        self.assertTrue(main.isPersonOldEnoughToVote({'age': 18}),
+        msg = "it should return True if a person has an age of 18" )
+
+    def test3(self):
+        #"it should return False if a person has an age of under 18"
+        self.assertFalse(main.isPersonOldEnoughToVote({'age': 8}),
+        msg = "it should return False if a person has an age of under 18" )
 
 ```
 
@@ -163,55 +156,70 @@ describe("isPersonOldEnoughToVote", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 53bb0534-cafa-44a2-85ce-1d450e1f79ef
-* title: addArrayProperty
+* title: addArrayToDict
 
 ### !question
 
-Write a function called "addArrayProperty".
+Write a function called "addArrayToDict".
 
-Given an object, a key, and an array, "addArrayProperty" sets a new property on the object at the given key, with its value set to the given array.
+Given an dict, a key, and an array, "addArrayToDict" sets a new value on the dictionary at the given key, with the value set to the given array.
 
 ```
-var myObj = {};
-var myArray = [1, 3];
-addArrayProperty(myObj, 'myProperty', myArray);
-console.log(myObj.myProperty); // --> [1, 3]
+myDict = {}
+myArray = [1, 3]
+addArrayToDict(myDict, 'myKey', myArray)
+print(myObj['myKey']) # --> [1, 3]
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function addArrayProperty(obj, key, arr) {
-  // your code here
-   
+```python
+def addArrayToDict(dictionary, key, arr):
+    # your code here
+    pass
 
-   
-}
+
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("addArrayProperty", function() {
-  var testObj;
-  var testArray;
-  beforeEach(function() {
-    testObj = {};
-    testArray = [1, 4];
-  });
-  it("should set the value at the passed in key on the passed in object to be the passed in array", function() {
-    addArrayProperty(testObj, "testKey", testArray);
-    expect(testObj.testKey).to.deep.eq(testArray);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should return None
+        self.assertIs(main.addArrayToDict({}, "testKey", [1,3,5])), None,
+        msg = "it should return None" )
+
+    def test2(self):
+        #it should set the value at the passed in key on the passed in dict to be the passed in array"
+        dictionary = {}
+        main.addArrayToDict(dictionary, "testKey", [1,3,5])
+
+        self.assertEqual(dictionary["testKey"],[1,3,5],
+        msg = "it should set the value at the passed in key on the passed in dict to be the passed in array")
+
+    def test3(self):
+        #it should set the value at the passed in key on the passed in dict to be the passed in array and keep the other keys unchanged"
+        dictionary = {'key1': 'key1', 'key2': 'key2'}
+        main.addArrayToDict(dictionary, "testKey", [1,3,5])
+
+        self.assertEqual(dictionary['key1'],'key1',
+        msg = "it should set the value at the passed in key on the passed in dict to be the passed in array and keep the other keys unchanged")
+
+        self.assertEqual(dictionary['key2'],'key2',
+        msg = "it should set the value at the passed in key on the passed in dict to be the passed in array and keep the other keys unchanged")
 
 ```
 
