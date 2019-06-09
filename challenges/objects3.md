@@ -168,10 +168,13 @@ Write a function called "addArrayToDict".
 Given an dict, a key, and an array, "addArrayToDict" sets a new value on the dictionary at the given key, with the value set to the given array.
 
 ```
-myDict = {}
+myDict = {'name': 'Smiley'}
 myArray = [1, 3]
-addArrayToDict(myDict, 'myKey', myArray)
-print(myObj['myKey']) # --> [1, 3]
+
+result = addArrayToDict(myDict, 'key', myArray)
+type(result) #-> NoneType
+print(myDict['key']) # --> [1, 3]
+print(myDict['name']) # --> 'Smiley'
 ```
 
 ### !end-question
@@ -199,8 +202,8 @@ import unittest
 class TestScript(unittest.TestCase):
     def test1(self):
         # it should return None
-        self.assertIs(main.addArrayToDict({}, "testKey", [1,3,5])), None,
-        msg = "it should return None" )
+        self.assertIs(main.addArrayToDict({}, "testKey", [1,3,5]), None,
+        msg = "it should return None")
 
     def test2(self):
         #it should set the value at the passed in key on the passed in dict to be the passed in array"
