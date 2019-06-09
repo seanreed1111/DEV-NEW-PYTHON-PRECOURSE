@@ -1,7 +1,7 @@
 import os
 import re
 
-source_file_name = "objects3.md"
+source_file_name = "arraymethods1.md"
 source_path = os.path.join("challenges-JS", source_file_name)
 target_path = os.path.join("challenges", source_file_name)
 
