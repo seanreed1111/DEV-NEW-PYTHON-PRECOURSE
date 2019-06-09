@@ -50,7 +50,7 @@ class TestScript(unittest.TestCase):
         msg = "it should return None if the array is Empty" )
 
     def test2(self):
-        #it
+        #it should return the nth element of an array
         self.assertEqual(main.getNthElement([10,12,14,16], 3), 16,
         msg = "it should return the nth element of an array" )
 
@@ -112,7 +112,7 @@ class TestScript(unittest.TestCase):
         msg = "it should return None if the array is Empty" )
 
     def test2(self):
-        #it
+        #it should return the first element of an array
         self.assertEqual(main.getFirstElement([-99, 99, 0]), -99,
         msg = "it should return the first element of an array" )
 
@@ -175,7 +175,7 @@ class TestScript(unittest.TestCase):
         msg = "it should return None if the array is Empty" )
 
     def test2(self):
-        #it
+        #it should return the last element of an array
         self.assertEqual(main.getLastElement([-99, 99, 10]), 10,
         msg = "it should return the last element of an array" )
 

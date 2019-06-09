@@ -17,13 +17,13 @@ class TestScript(unittest.TestCase):
         msg = "it " )
 
     def test2(self):
-        #it
+        # it
         self.assertEqual(main.myfunc(),
         correct_answer,
         msg = "it " )
 
     def test3(self):
-        #it
+        # it
         self.assertTrue(main.myfunc(),
         msg = "it " )
 
