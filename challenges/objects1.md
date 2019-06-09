@@ -42,9 +42,9 @@ class TestScript(unittest.TestCase):
 
     def test1(self):
         #"it should return the value of the property located in the dict at the passed in key"
-        dictionary = {}
-        self.assertEqual(main.getProperty(dictionary, 'key'),
-        dictionary['key'],
+        dictionary = {'David': 'Bowie'}
+        self.assertEqual(main.getProperty(dictionary, 'David'),
+        dictionary['David'],
         msg = "it should return the value of the property located in the dict at the passed in key")
 
 ```
