@@ -204,13 +204,13 @@ import unittest
 class TestScript(unittest.TestCase):
     def test1(self):
         # it
-        self.assertIs(type(isPersonOldEnoughToDrinkAndDrive({'age': 99})),
+        self.assertIs(type(main.isPersonOldEnoughToDrinkAndDrive({'age': 99})),
         bool,
         msg = "it should return a bool" )
 
     def test2(self):
         #it should always return false
-        self.assertFalse(isPersonOldEnoughToDrinkAndDrive({'age': 99}),
+        self.assertFalse(main.isPersonOldEnoughToDrinkAndDrive({'age': 99}),
         msg = "it should always return False" )
 
 ```
