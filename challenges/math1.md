@@ -27,6 +27,7 @@ def average(num1, num2):
     # your code here
     pass
 
+
 ```
 
 ### !end-placeholder
@@ -38,13 +39,10 @@ import main
 import unittest
 
 class TestScript(unittest.TestCase):
-
     def test1(self):
-        #it should return the average of two numbers
-        for num in range(10):
-                with self.subTest(num = num):
-                    self.assertEqual(main.average(num, num*3), 2 * num,
-                    msg = "it should return the average of two numbers" )
+        # "it should return the average of two numbers"
+        self.assertEqual(main.average(100,200), 150,
+        msg = "it should return the average of two numbers" )
 
 ```
 
@@ -83,6 +81,7 @@ def computeAreaOfATriangle(base, height):
     # your code here
     pass
 
+
 ```
 
 ### !end-placeholder
@@ -94,15 +93,13 @@ import main
 import unittest
 
 class TestScript(unittest.TestCase):
-    def test1(self):
-        #it should return the area of a triangle
-        for num in range(1,10):
-                with self.subTest(num):
-                    self.assertEqual(main.computeAreaOfATriangle(num, num + 4),
-                    num * (num + 4) / 2,
-                    msg = "it should return the return the area of a triangle")
-```
+    def test2(self):
+        # "it should return the area of a triangle"
+        self.assertEqual(main.computeAreaOfATriangle(4, 6), 12,
+        msg = "it should return the area of a triangle" )
 
+
+```
 
 ### !end-tests
 
@@ -152,12 +149,22 @@ import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
-        #it should cube negative, positive, and zero
-        for num in range(-5,5):
-                with self.subTest(num):
-                    self.assertEqual(main.cube(num), num * num * num,
-                    msg = "it should cube zero, negative numbers, and positive numbers")
+        # it should_cube_a_positive_number
+        self.assertEqual(main.cube(2), 8,
+        msg = "it should cube a positive number")
+
+    def test2(self):
+        # it should_cube_a_positive_number
+        self.assertEqual(main.cube(0), 0,
+        msg = "it should cube zero")
+
+    def test3(self):
+        # it should_cube_a_positive_number
+        self.assertEqual(main.cube(-2), -8,
+        msg = "it should cube a negative number")
+
 ```
+
 
 ### !end-tests
 
@@ -207,11 +214,20 @@ import unittest
 
 class TestScript(unittest.TestCase):
     def test1(self):
-        #it should square negative numbers, positive numbers, and zero
-        for num in range(-5,5):
-                with self.subTest(num):
-                    self.assertEqual(main.square(num), num * num,
-                    msg = "it should square negative numbers, positive numbers, and zero")
+        # it should square a positive number
+        self.assertEqual(main.square(12), 144,
+        msg = "it should square a positive number")
+
+    def test2(self):
+        # it should square zero
+        self.assertEqual(main.square(0), 0,
+        msg = "it should square a zero")
+
+    def test3(self):
+        # it should square a negative number
+        self.assertEqual(main.square(-12), 144,
+        msg = "it should square a negative number")
+
 ```
 
 
