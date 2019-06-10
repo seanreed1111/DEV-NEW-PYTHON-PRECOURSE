@@ -1,7 +1,7 @@
 import os
 import re
 
-source_file_name = "stringmethods3.md"
+source_file_name = "arraymethods3.md"
 source_path = os.path.join("challenges-JS", source_file_name)
 target_path = os.path.join("challenges", source_file_name)
 
@@ -14,17 +14,17 @@ class TestScript(unittest.TestCase):
     def test1(self):
         # it
         self.assertIs(type(main.myfunc()), bool,
-        msg = "it " )
+        msg =  )
 
     def test2(self):
         # it
         self.assertEqual(main.myfunc(), correct_answer,
-        msg = "it " )
+        msg = )
 
     def test3(self):
         # it
         self.assertTrue(main.myfunc(),
-        msg = "it " )
+        msg = )
 
 ```
 '''
