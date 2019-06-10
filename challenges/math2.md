@@ -27,8 +27,6 @@ def computeAreaOfARectangle(length, width):
     # your code here
     pass
 
-
-
 ```
 
 ### !end-placeholder
@@ -98,17 +96,6 @@ class TestScript(unittest.TestCase):
         # it should return the perimeter of a rectangle
         self.assertEqual(main.computePerimeterOfARectangle(5, 6), 22,
         msg = "it should return the perimeter of a rectangle" )
-
-```
-
-
-```python
-
-describe("computePerimeterOfARectangle", function():it("should return a number", function():expect(typeof computePerimeterOfARectangle(5, 2)).to.deep.eq("number")
-  )
-  it("should return the perimeter of a rectangle", function():expect(computePerimeterOfARectangle(5, 2)).to.deep.eq(14)
-  )
-)
 
 ```
 
