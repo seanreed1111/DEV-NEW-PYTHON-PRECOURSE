@@ -177,8 +177,24 @@ Notes:
 * In order to do this you should be familiar with slicing lists in Python.
 
 ```
+Specifications:
+
 output = getElementsUpTo(['a', 'b', 'c', 'd', 'e'], 3)
 print(output) # --> ['a', 'b', 'c']
+
+output = getElementsUpTo(['a'], 0)
+print(output) # --> []
+
+output = getElementsUpTo(['a'], 3)
+print(output) # --> ['a']
+
+output = getElementsUpTo(['a','b'], 3)
+print(output) # --> ['a','b']
+
+output = getElementsUpTo([], 3)
+print(output) # --> []
+
+
 ```
 
 ### !end-question
