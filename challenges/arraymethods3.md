@@ -139,14 +139,14 @@ class TestScript(unittest.TestCase):
     def test4(self):
         # it should return an empty array when passed in a single element array
         for n in range(5):
-            with subTest(n=n):
+            with self.subTest(n=n):
                 self.assertEqual(main.getElementsAfter([4], n), [],
                 msg = " it should return an empty list when passed in a single element list" )
 
     def test5(self):
         # it "should return an empty array when passed in an empty array"
         for n in range(5):
-            with subTest(n=n):
+            with self.subTest(n=n):
                 self.assertEqual(main.getElementsAfter([], n), [],
                     msg = "should return an empty list when passed in an empty list" )
 
@@ -239,7 +239,7 @@ class TestScript(unittest.TestCase):
     def test5(self):
         # "should return an empty array when passed in an empty array"
         for n in range(5):
-            with subTest(n=n):
+            with self.subTest(n=n):
                 self.assertEqual(main.getElementsUpTo([], n)), [],
                 msg = "it should return an empty list when passed in an empty list" )
 ```
