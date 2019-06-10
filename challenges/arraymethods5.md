@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 241a37de-4069-418a-8f8d-64a40cc74f49
 * title: removeFromBackOfNew
 
@@ -11,54 +11,59 @@
 
 Write a function called "removeFromBackOfNew".
 
-Given an array, "removeFromBackOfNew" returns a new array containing all but the last element of the given array.
+Given a list, "removeFromBackOfNew" returns a new list containing all but the last element of the given list. The original list should be unchanged.
 
-Notes:
-* You should be familiar with the 'slice' method.
 
 ```
-var arr = [1, 2, 3];
-var output = removeFromBackOfNew(arr);
-console.log(output); // --> [1, 2]
-console.log(arr); // --> [1, 2, 3]
+input = [1, 2, 3]
+output = removeFromBackOfNew(input)
+print(output) # --> [1, 2]
+print(input) # --> [1, 2, 3]
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function removeFromBackOfNew(arr) {
-  // your code here
-  
-}
+```python
+#fill in the function definition below
+# be sure to name the function according to the instructions
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("removeFromBackOfNew", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(removeFromBackOfNew([1, 2], 3))).to.deep.eq(true);
-  });
-  it("should return an array with the last element of the passed in array removed", function() {
-    expect(removeFromBackOfNew([1, 2])).to.deep.eq([1]);
-  });
-  it("should handle an empty array", function() {
-    expect(removeFromBackOfNew([])).to.deep.eq([]);
-  });
-  it("should leave arr unmodified", function() {
-    var originalArray = [1, 2];
-    var newArray = removeFromBackOfNew(originalArray);
-    expect(originalArray).to.deep.eq([1, 2]);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it "should return an array"
+        self.assertIs(type(main.removeFromBackOfNew([1,2,3])), list,
+        msg = "it should return an array"  )
 
+    def test2(self):
+        # it "should return an array with the last element of the passed in array removed"
+        self.assertEqual(main.removeFromBackOfNew([1, 2]), [1],
+        msg = "should return an array with the last element of the passed in array removed")
+
+    def test3(self):
+        # it "should handle an empty array"
+        self.assertEqual(main.removeFromBackOfNew([]), [],
+        msg = "it should handle an empty array")
+
+    def test4(self):
+        # "it should leave the original list unmodified"
+        input = [5,6,7]
+        main.removeFromBackOfNew(input)
+        self.assertEqual(input, [5,6,7],
+        msg = "it should leave the original list unmodified")
 
 ```
+
 
 ### !end-tests
 
@@ -70,8 +75,8 @@ describe("removeFromBackOfNew", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 8a97c37b-54f3-4db0-845f-d2e7901e4244
 * title: removeFromFrontOfNew
 
@@ -79,52 +84,58 @@ describe("removeFromBackOfNew", function() {
 
 Write a function called "removeFromFrontOfNew".
 
-Given an array, "removeFromFrontOfNew" returns a new array containing all but the first element of the given array.
+Given a list, "removeFromFrontOfNew" returns a new list containing all but the first element of the given list.
 
-Notes:
-* You should be familiar with the 'slice' method.
+
 
 ```
-var arr = [1, 2, 3];
-var output = removeFromFrontOfNew(arr);
-console.log(output); // --> [2, 3]
-console.log(arr); // --> [1, 2, 3]
+input = [1, 2, 3]
+output = removeFromFrontOfNew(input)
+
+print(output) # --> [2, 3]
+print(input) # --> [1, 2, 3]
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function removeFromFrontOfNew(arr) {
-  // your code here
-  
-}
+```python
+#fill in the function definition below
+# be sure to name the function according to the instructions
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("removeFromFrontOfNew", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(removeFromFrontOfNew([1, 2]))).to.deep.eq(true);
-  });
-  it("should remove an element from the front of an array", function() {
-    expect(removeFromFrontOfNew([1, 2])).to.deep.eq([2]);
-  });
-  it("should handle an empty array", function() {
-    expect(removeFromFrontOfNew([])).to.deep.eq([]);
-  });
-  it("should leave arr unmodified", function() {
-    var originalArray = [1, 2];
-    var newArray = removeFromFrontOfNew(originalArray);
-    expect(originalArray).to.deep.eq([1, 2]);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it "should return an list"
+        self.assertIs(type(main.removeFromFrontOfNew([1,2,3])), list,
+        msg = "it should return an array" )
 
+    def test2(self):
+        # it
+        self.assertEqual(main.removeFromFrontOfNew([1,2,3,4,5]), [2,3,4,5],
+        msg = "it should remove an element from the front of an array")
+
+    def test3(self):
+        # it "should handle an empty array"
+        self.assertEqual(main.removeFromFrontOfNew([]), [],
+        msg = "it should handle an empty array")
+
+    def test4(self):
+        # it "should leave input unmodified"
+        input = [12,13,14,15]
+        main.removeFromFrontOfNew(input)
+        self.assertEqual(input, [12,13,14,15],
+        msg = "should leave its input unmodified")
 ```
 
 ### !end-tests
@@ -137,8 +148,8 @@ describe("removeFromFrontOfNew", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: a3d52d99-9784-457b-8201-1210a097d449
 * title: countCharacter
 
@@ -146,46 +157,52 @@ describe("removeFromFrontOfNew", function() {
 
 Write a function called "countCharacter".
 
-Given a string input and a character, "countCharacter" returns the number of occurences of a given character in the given string.
+Given a string input and a second string of a single character, "countCharacter" returns the number of occurrences of the given character in the given string.
 
 ```
-var output = countCharacter('I am a hacker', 'a');
-console.log(output); // --> 3
+input = 'I am a hacker'
+output = countCharacter(input, 'a')
+print(output) # --> 3
+
+input = 'I am a hacker !! '
+output = countCharacter(input, ' ')
+print(output) # --> 5
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function countCharacter(str, char) {
-  // your code here
-  
-}
+```python
+#fill in the function definition below
+# be sure to name the function according to the instructions
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("countCharacter", function() {
-  it("should return a number", function() {
-    expect(typeof countCharacter("say what!?", "a")).to.deep.eq("number");
-  });
-  it("should return the number of occurences of a character in a string when the character exists", function() {
-    expect(countCharacter("say what!?", "a")).to.deep.eq(2);
-  });
-  it("should return the number of occurences of a character in a string when the character does not exist", function() {
-    expect(countCharacter("say what!?", "x")).to.deep.eq(0);
-  });
-  it("should return the number of occurences of a non-alphanumeric character in a string when the character exists", function() {
-    expect(countCharacter("say what!?", " ")).to.deep.eq(1);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it "should return the number of occurrences of a character in a string when the character exists"
+        self.assertEqual(main.countCharacter("say what!?", "a"), 2,
+        msg = "should return the number of occurrences of a character in a string when the character exists")
 
+    def test3(self):
+        # it "should return the number of occurrences of a character in a string when the character does not exist"
+        self.assertEqual(main.countCharacter("say what!?", "e"), 0,
+        msg = "it should return the number of occurrences of a character in a string when the character does not exist")
 
+    def test4(self):
+        # it "should return the number of occurrences of a non-alphanumeric character in a string when the character exists"
+        self.assertEqual(main.countCharacter('I am a hacker!!!?! yes!', ' '), 4,
+        msg = "it should return the number of occurrences of a non-alphanumeric character in a string when the character exists")
 ```
 
 ### !end-tests
