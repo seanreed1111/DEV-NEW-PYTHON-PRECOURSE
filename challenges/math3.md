@@ -79,7 +79,7 @@ print(output) # --> 25.132741228718345
 ```
 
 Reference:
-https:#docs.python.org/3/library/math.html#math.pi
+[docs.python.org/3/library/math.html#math.pi](https://docs.python.org/3/library/math.html#math.pi)
 
 ### !end-question
 
@@ -147,7 +147,7 @@ print(output) # --> 50.26548245743669
 
 
 Reference:
-https#docs.python.org/3/library/math.html#math.pi
+[docs.python.org/3/library/math.html#math.pi](https://docs.python.org/3/library/math.html#math.pi)
 
 ### !end-question
 
