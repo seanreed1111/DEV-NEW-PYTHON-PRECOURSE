@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 81d6b24b-5a97-408c-9681-c698da6881f6
 * title: addToFront
 
@@ -11,52 +11,57 @@
 
 Write a function called "addToFront".
 
-Given an array and an element, "addToFront" adds the given element to the front of the given array, and returns the given array.
+Given an list and an element, "addToFront" adds the given element to the front of the given list, and returns the given list.
 
 Notes:
-* It should be the SAME array, not a new array.
+* It should be the SAME list, not a new list.
 
 ```
-var output = addToFront([1, 2], 3);
-console.log(output); // -> [3, 1, 2]
+output = addToFront([1, 2], 3)
+print(output) # -> [3, 1, 2]
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function addToFront(arr, element) {
-  // your code here
-  
-}
+```python
+def addToFront(input_list, element):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("addToFront", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(addToFront([1, 2], 3))).to.deep.eq(true);
-  });
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # "it should return a list"
+        self.assertIs(type(main.addToFront([1, 2], 13)), list,
+        msg = "it should return a list" )
 
-  it("addToFront should add an element to the beginning of an array", function() {
-    expect(addToFront([1, 2], 3)).to.deep.eq([3, 1, 2]);
-  });
+    def test2(self):
+        # "it should add an element to the beginning of an list"
+        self.assertEqual(main.addToFront([1, 2], 13), [13,1,2],
+        msg = "it should add an element to the beginning of an list" )
 
-  it("should add an element to the beginning of an empty array", function() {
-    expect(addToFront([], 3)).to.deep.eq([3]);
-  });
+    def test3(self):
+        # "it should add an element to the beginning of an empty list"
+        self.assertEqual(main.addToFront([], 13), [13],
+        msg = "it should add an element to the beginning of an empty list" )
 
-  it("should be the same array instance that was passed in", function() {
-    var input = [1, 2, 3];
-    expect(addToFront(input, 4)).to.deep.eq(input);
-  });
-});
-
+    def test4(self):
+        # "it should add an element to the beginning of an empty list"
+        list1 = [1,2,3]
+        self.assertIs(main.addToFront(list1, -13), list1,
+        msg = "it should be the same list object that was passed in" )
 ```
 
 ### !end-tests
@@ -69,8 +74,8 @@ describe("addToFront", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: e2ea174d-35c8-441d-9d82-7f2690a30278
 * title: addToBack
 
@@ -78,51 +83,56 @@ describe("addToFront", function() {
 
 Write a function called "addToBack".
 
-Given an array and an element, "addToBack" returns the given array with the given element added to the end.
+Given an list and an element, "addToBack" returns the given list with the given element added to the end.
 
 Note: It should be the SAME array, not a new array.
 
 ```
-var output = addToBack([1, 2], 3);
-console.log(output); // -> [1, 2, 3]
+output = addToBack([1, 2], 3)
+print(output) # -> [1, 2, 3]
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function addToBack(arr, element) {
-  // your code here
-  
-}
+```python
+def addToBack(input_list, element):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("addToBack", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(addToBack([1, 2], 3))).to.deep.eq(true);
-  });
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # "it should return a list"
+        self.assertIs(type(main.addToBack([1, 2], 13)), list,
+        msg = "it should return a list" )
 
-  it("should add an element to the end of an array", function() {
-    expect(addToBack([1, 2], 3)).to.deep.eq([1, 2, 3]);
-  });
+    def test2(self):
+        # "it should add an element to the beginning of an list"
+        self.assertEqual(main.addToBack([1, 2], 13), [1, 2, 13],
+        msg = "it should add an element to the back of a list" )
 
-  it("should add an element to the end of an empty array", function() {
-    expect(addToBack([], 3)).to.deep.eq([3]);
-  });
+    def test3(self):
+        # "it should add an element to the beginning of an empty list"
+        self.assertEqual(main.addToBack([], 13), [13],
+        msg = "it should add an element to the back of an empty list" )
 
-  it("should be the same array instance that was passed in", function() {
-    var input = [1, 2, 3];
-    expect(addToBack(input, 4)).to.deep.eq(input);
-  });
-});
-
+    def test4(self):
+        # "it should add an element to the beginning of an empty list"
+        list1 = [1,2,3]
+        self.assertIs(main.addToBack(list1, 13), list1,
+        msg = "it should be the same list object that was passed in" )
 ```
 
 ### !end-tests
