@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 879c0dc1-12a5-4dad-876a-5f698f0dbe05
 * title: getAllElementsButFirst
 
@@ -11,46 +11,58 @@
 
 Write a function called "getAllElementsButFirst".
 
-Given an array, "getAllElementsButFirst" returns an array with all the elements but the first.
+Given a list, "getAllElementsButFirst" returns a list with all the elements but the first.
 
 ```
-var input = [1, 2, 3, 4];
-var output = getAllElementsButFirst(input);
-console.log(output); // --> [2, 3, 4]
+input = [1, 2, 3, 4]
+output = getAllElementsButFirst(input)
+print(output) # --> [2, 3, 4]
+
+output = getAllElementsButFirst([])
+print(output) # --> []
+
+output = getAllElementsButFirst([14])
+print(output) # --> []
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getAllElementsButFirst(array) {
-  // your code here
-  
-}
+```python
+#fill in the function definition below
+# be sure to name the function according to the instructions
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getAllElementsButFirst", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(getAllElementsButFirst([4, 5, 6]))).to.deep.eq(true);
-  });
-  it("should return an array with all the elements of the passed in array, except for the first", function() {
-    expect(getAllElementsButFirst([4, 5, 6])).to.deep.eq([5, 6]);
-  });
-  it("should return an empty array when passed in a single element array", function() {
-    expect(getAllElementsButFirst([4])).to.deep.eq([]);
-  });
-  it("should return an empty array when passed in an empty array", function() {
-    expect(getAllElementsButFirst([])).to.deep.eq([]);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it "should return an list"
+        self.assertIs(type(main.getAllElementsButFirst([1,2,3,4])), list,
+        msg =  "it should return an list")
 
+    def test2(self):
+        # "should return an array with all the elements of the passed in array, except for the first"
+        self.assertEqual(main.getAllElementsButFirst([4, 5, 6]), [5,6],
+        msg = "it should return an array with all the elements of the passed in array, except for the first")
+
+    def test3(self):
+        # it "should return an empty array when passed in a single element array"
+        self.assertEqual(main.getAllElementsButFirst([4]), [],
+        msg = "it should return an empty array when passed in a single element array")
+
+    def test4(self):
+        # it "should return an empty array when passed in an empty array"
+        self.assertEqual(main.getAllElementsButFirst([]), [],
+        msg = "it should return an empty array when passed in an empty array")
 
 ```
 
@@ -64,8 +76,8 @@ describe("getAllElementsButFirst", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 1662f5c1-43d4-4cbe-8a0e-2c6866408de5
 * title: getAllElementsButLast
 
@@ -73,46 +85,60 @@ describe("getAllElementsButFirst", function() {
 
 Write a function called "getAllElementsButLast".
 
-Given an array, "getAllElementsButLast" returns an array with all the elements but the last.
+Given an list, "getAllElementsButLast" returns an list with all the elements but the last.
 
 ```
-var input = [1, 2, 3, 4];
-var output = getAllElementsButLast(input);
-console.log(output); // --> [1, 2 , 3]
+input = [1, 2, 3, 4]
+output = getAllElementsButLast(input)
+print(output) # --> [1, 2, 3]
+
+output = getAllElementsButLast([])
+print(output) # --> []
+
+output = getAllElementsButLast([14])
+print(output) # --> []
+
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getAllElementsButLast(array) {
-  // your code here
-  
-}
+```python
+#fill in the function definition below
+# be sure to name the function according to the instructions
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getAllElementsButLast", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(getAllElementsButLast([4, 5, 6]))).to.deep.eq(true);
-  });
-  it("should return an array with all the elements of the passed in array, except for the last", function() {
-    expect(getAllElementsButLast([4, 5, 6])).to.deep.eq([4, 5]);
-  });
-  it("should return an empty array when passed in a single element array", function() {
-    expect(getAllElementsButLast([4])).to.deep.eq([]);
-  });
-  it("should return an empty array when passed in an empty array", function() {
-    expect(getAllElementsButLast([])).to.deep.eq([]);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it "should return an list"
+        self.assertIs(type(main.getAllElementsButLast([1,2,3,4])), list,
+        msg =  "it should return an list")
 
+    def test2(self):
+        # it "should return an array with all the elements of the passed in array, except for the last"
+        self.assertEqual(main.getAllElementsButLast([1,2,3,4]), [1,2,3],
+        msg = "should return an array with all the elements of the passed in array, except for the last")
+
+    def test3(self):
+        # it "should return an empty array when passed in a single element array"
+        self.assertEqual(main.getAllElementsButLast([1]), [],
+        msg = "should return an empty array when passed in a single element array")
+
+    def test4(self):
+        # it
+        self.assertEqual(main.getAllElementsButLast([]), [],
+        msg = "it should return an empty array when passed in an empty array")
 
 ```
 
@@ -126,8 +152,8 @@ describe("getAllElementsButLast", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 94f66a0e-795b-439b-bb69-c12c78b475b0
 * title: removeFromFront
 
@@ -135,47 +161,53 @@ describe("getAllElementsButLast", function() {
 
 Write a function called "removeFromFront".
 
-Given an array, "removeFromFront" returns the given array with its first element removed.
+Given an list, "removeFromFront" returns the given list with its first element removed.
 
-Notes:
-* You should be familiar with the method 'shift'.
 
 ```
-var output = removeFromFront([1, 2, 3]);
-console.log(output); // --> [2, 3]
+output = removeFromFront([1, 2, 3])
+print(output) # --> [2, 3]
+
+output = removeFromFront([])
+print(output) # --> []
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function removeFromFront(arr) {
-  // your code here
-  
-}
+```python
+#fill in the function definition below
+# be sure to name the function according to the instructions
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("removeFromFront", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(removeFromFront([1, 2, 3]))).to.deep.eq(true);
-  });
-  it("should return the array with the first element removed", function() {
-    expect(removeFromFront([1, 2])).to.deep.eq([2]);
-  });
-  it("should handle an empty array", function() {
-    expect(removeFromFront([])).to.deep.eq([]);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it "should return an array"
+        self.assertIs(type(main.removeFromFront([1, 2, 3])), list,
+        msg = "it should return a list" )
 
+    def test2(self):
+        # it "should return the array with the first element removed"
+        self.assertEqual(main.removeFromFront([1, 2]),[2],
+        msg = "should return the list with the first element removed")
+
+    def test3(self):
+        # it "should handle an empty array"
+        self.assertEqual(main.removeFromFront([]), [],
+        msg = "it should handle an empty list" )
 
 ```
+
 
 ### !end-tests
 
