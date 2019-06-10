@@ -23,9 +23,9 @@ print(output) # --> 14
 ### !placeholder
 
 ```python
-def getLengthOfThreeWords(word1, word2, word3):
-    # your code here
-    pass
+#fill in the function definition below
+# be sure to name the function according to the instructions
+
 
 ```
 
@@ -38,10 +38,10 @@ import main
 import unittest
 
 class TestScript(unittest.TestCase):
-    def test1(self):
-        #it should return the sum of lengths of three words
-        self.assertEqual(main.getLengthOfThreeWords("three", "random", "words"), 16,
-        msg = "it should return the sum of lengths of three words" )
+    def test2(self):
+        # it should return the sum length of three words
+        self.assertEqual(main.getLengthOfThreeWords("coffee","plus","data"), 14,
+        msg = "it should return the sum length of three words " )
 
 ```
 
