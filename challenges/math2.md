@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 9ac26815-96c8-44bd-baac-960b874e4b32
 * title: computeAreaOfARectangle
 
@@ -14,19 +14,20 @@ Write a function called "computeAreaOfARectangle".
 Given the length and width of a rectangle, "computeAreaOfARectangle" returns its area.
 
 ```
-var output = computeAreaOfARectangle(4, 8);
-console.log(output); // --> 32
+output = computeAreaOfARectangle(4, 8)
+print(output) # --> 32
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function computeAreaOfARectangle(length, width) {
-  // your code here
-  
-}
+```python
+def computeAreaOfARectangle(length, width):
+    # your code here
+    pass
+
+
 
 ```
 
@@ -34,16 +35,15 @@ function computeAreaOfARectangle(length, width) {
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("computeAreaOfARectangle", function() {
-  it("should return a number", function() {
-    expect(typeof computeAreaOfARectangle(7, 6)).to.deep.eq("number");
-  });
-  it("should return the area of a rectangle", function() {
-    expect(computeAreaOfARectangle(7, 6)).to.deep.eq(42);
-  });
-})
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should return the area of a rectangle
+        self.assertEqual(main.computeAreaOfARectangle(6, 7), 42,
+        msg = "it should return the area of a rectangle" )
 
 ```
 
@@ -57,8 +57,8 @@ describe("computeAreaOfARectangle", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 2fd97e96-08e0-4a67-a662-949acbf0e43c
 * title: computePerimeterOfARectangle
 
@@ -69,35 +69,46 @@ Write a function called "computePerimeterOfARectangle".
 Given a length and a width describing a rectangle, "computePerimeterOfARectangle" returns its perimter.
 
 ```
-var output = computePerimeterOfARectangle(5, 2);
-console.log(output); // --> 14
+output = computePerimeterOfARectangle(5, 2)
+print(output) # --> 14
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function computePerimeterOfARectangle(length, width) {
-  // your code here
-  
-}
+```python
+def computePerimeterOfARectangle(length, width):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("computePerimeterOfARectangle", function() {
-  it("should return a number", function() {
-    expect(typeof computePerimeterOfARectangle(5, 2)).to.deep.eq("number");
-  });
-  it("should return the perimeter of a rectangle", function() {
-    expect(computePerimeterOfARectangle(5, 2)).to.deep.eq(14);
-  });
-})
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should return the perimeter of a rectangle
+        self.assertEqual(main.computePerimeterOfARectangle(5, 6), 22,
+        msg = "it should return the perimeter of a rectangle" )
+
+```
+
+
+```python
+
+describe("computePerimeterOfARectangle", function():it("should return a number", function():expect(typeof computePerimeterOfARectangle(5, 2)).to.deep.eq("number")
+  )
+  it("should return the perimeter of a rectangle", function():expect(computePerimeterOfARectangle(5, 2)).to.deep.eq(14)
+  )
+)
 
 ```
 
@@ -111,8 +122,8 @@ describe("computePerimeterOfARectangle", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 349703e4-eba7-4566-9a0f-c81569733b84
 * title: computePerimeterOfATriangle
 
@@ -123,19 +134,20 @@ Write a function called "computePerimeterOfATriangle".
 Given 3 sides describing a triangle, "computePerimeterOfATriangle" returns its perimter.
 
 ```
-var output = computePerimeterOfATriangle(6, 7, 10);
-console.log(output); // --> 23
+output = computePerimeterOfATriangle(6, 7, 10)
+print(output) # --> 23
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function computePerimeterOfATriangle(side1, side2, side3) {
-  // your code here
-  
-}
+```python
+def computePerimeterOfATriangle(side1, side2, side3):
+    # your code here
+    pass
+
+
 
 ```
 
@@ -143,19 +155,17 @@ function computePerimeterOfATriangle(side1, side2, side3) {
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-
-describe("computePerimeterOfATriangle", function() {
-  it("should return a number", function() {
-    expect(typeof computePerimeterOfATriangle(6, 7, 10)).to.deep.eq("number");
-  });
-  it("should return the perimeter of a triangle", function() {
-    expect(computePerimeterOfATriangle(6, 7, 10)).to.deep.eq(23);
-  });
-});
-
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it should return the perimeter of a triangle
+        self.assertEqual(main.computePerimeterOfATriangle(6, 8, 10), 24,
+        msg = "it should return the perimeter of a triangle" )
 ```
+
 
 ### !end-tests
 
