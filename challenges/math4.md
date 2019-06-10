@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: bf41eed3-a9de-4e31-9750-a645da0ab576
 * title: computePower
 
@@ -14,41 +14,45 @@ Write a function called "computePower".
 Given a number and an exponent, "computePower" returns the given number, raised to the given exponent.
 
 ```
-var output = computePower(2, 3);
-console.log(output); // --> 8
+output = computePower(2, 3)
+print(output) # --> 8
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function computePower(num, exponent) {
-  // your code here
-  
-}
+```python
+def computePower(num, exponent):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("computePower", function() {
-  it("should return a number", function() {
-    expect(typeof computePower(2, 4)).to.deep.eq("number");
-  });
-  it("should return a number raised to a given exponent", function() {
-    expect(computePower(2, 4)).to.deep.eq(16);
-  });
-  it("should return a negative number raised to a given exponent", function() {
-    expect(computePower(-2, 4)).to.deep.eq(16);
-  });
-  it("should return a number raised to 0", function() {
-    expect(computePower(-2, 0)).to.deep.eq(1);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # "it should return a positive number raised to a given exponent"
+        self.assertEqual(main.computePower(2, 4), 16,
+        msg = "it should return a positive number raised to a given exponent" )
+
+    def test2(self):
+        # "it should return a negative number raised to a given exponent"
+        self.assertEqual(main.computePower(-2, 4), 16,
+        msg = "it should return a negative number raised to a given exponent" )
+
+    def test3(self):
+        # "it should return a number raised to a zero exponent"
+        self.assertEqual(main.computePower(2, 0), 1,
+        msg = "it should return a number raised to a zero exponent" )
 
 ```
 
@@ -62,8 +66,8 @@ describe("computePower", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: d6959c6e-7921-4f3d-9b44-947c99fab887
 * title: computeSquareRoot
 
@@ -73,36 +77,37 @@ Write a function called "computeSquareRoot".
 Given a number, "computeSquareRoot" returns its square root.
 
 ```
-var output = computeSquareRoot(9);
-console.log(output); // --> 3
+output = computeSquareRoot(9)
+print(output) # --> 3
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function computeSquareRoot(num) {
-  // your code here
-  
-}
+```python
+import math
+
+def computeSquareRoot(num):
+    # your code here
+    pass
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
+import math
 
-describe("computeSquareRoot", function() {
-  it("should return a number", function() {
-    expect(typeof computeSquareRoot(4)).to.deep.eq("number");
-  });
-  it("should return the square root of a number", function() {
-    expect(computeSquareRoot(4)).to.deep.eq(2);
-  });
-});
-
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # "it should return the square root of a number"
+        self.assertEqual(main.computeSquareRoot(16), 4,
+        msg = "it should return the square root of a number" )
 
 ```
 
@@ -116,8 +121,8 @@ describe("computeSquareRoot", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: e5a953a0-42f3-414c-bd77-c4247d272f7a
 * title: doubleSquareRootOf
 
@@ -127,37 +132,41 @@ Write a function called "doubleSquareRootOf".
 Given a number, "doubleSquareRootOf" returns double its square root.
 
 ```
-var output = doubleSquareRootOf(121);
-console.log(output); // --> 22
+output = doubleSquareRootOf(121)
+print(output) # --> 22
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function doubleSquareRootOf(num) {
-  // your code here
-  
-}
+```python
+import math
+def doubleSquareRootOf(num):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
+import math
 
-describe("doubleSquareRootOf", function() {
-  it("should return a number", function() {
-    expect(typeof doubleSquareRootOf(9)).to.deep.eq("number");
-  });
-  it("should return the doubled square root of the passed in number", function() {
-    expect(doubleSquareRootOf(9)).to.deep.eq(6);
-  });
-})
+class TestScript(unittest.TestCase):
+    def test1(self):
+        # it
+        self.assertEqual(main.doubleSquareRootOf(121), 22,
+        msg = "it should return the doubled square root of the passed in number" )
+
 
 ```
+
 
 ### !end-tests
 
