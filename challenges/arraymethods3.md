@@ -83,6 +83,9 @@ Write a function called "getElementsAfter".
 
 Given an list and an index, "getElementsAfter" returns a new list with all the elements after (but not including) the given index.
 
+Note:
+* In order to do this you should be familiar with slicing lists in Python.
+
 ```
 Specifications:
 
@@ -218,7 +221,7 @@ import unittest
 class TestScript(unittest.TestCase):
     def test1(self):
         # it should return a list
-        self.assertIs(type(main.getElementsUpTo(['a', 'b', 'c', 'd', 'e'], 3), list, msg = "it should return a list" )
+        self.assertIs(type(main.getElementsUpTo(['a', 'b', 'c', 'd', 'e'], 3)), list, msg = "it should return a list" )
 
     def test2(self):
         # it "should return an array with all the elements of the passed in array up to but not including the nth"
@@ -227,12 +230,12 @@ class TestScript(unittest.TestCase):
 
     def test3(self):
         # "it should return an empty array when passed in a single element array"
-        self.assertEqual(main.getElementsUpTo([4], 0)), [],
+        self.assertEqual(main.getElementsUpTo([4], 0), [],
         msg = "it should return an empty list when passed in a single element array" )
 
     def test4(self):
         # it "should return a mirror of the original array when passed an n out of range"
-        self.assertEqual(main.getElementsUpTo([4], 10)), [4],
+        self.assertEqual(main.getElementsUpTo([4], 10), [4],
         msg = "it should return a mirror of the original list when passed an n out of range" )
 
 
@@ -240,7 +243,7 @@ class TestScript(unittest.TestCase):
         # "should return an empty array when passed in an empty array"
         for n in range(5):
             with self.subTest(n=n):
-                self.assertEqual(main.getElementsUpTo([], n)), [],
+                self.assertEqual(main.getElementsUpTo([], n), [],
                 msg = "it should return an empty list when passed in an empty list" )
 ```
 
