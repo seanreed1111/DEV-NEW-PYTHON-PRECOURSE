@@ -15,10 +15,10 @@ Given a list, "removeFromBackOfNew" returns a new list containing all but the la
 
 
 ```
-input = [1, 2, 3]
-output = removeFromBackOfNew(input)
+list1 = [1, 2, 3]
+output = removeFromBackOfNew(list1)
 print(output) # --> [1, 2]
-print(input) # --> [1, 2, 3]
+print(list1) # --> [1, 2, 3]
 ```
 
 ### !end-question
@@ -89,11 +89,11 @@ Given a list, "removeFromFrontOfNew" returns a new list containing all but the f
 
 
 ```
-input = [1, 2, 3]
-output = removeFromFrontOfNew(input)
+list1 = [1, 2, 3]
+output = removeFromFrontOfNew(list1)
 
 print(output) # --> [2, 3]
-print(input) # --> [1, 2, 3]
+print(list1) # --> [1, 2, 3]
 ```
 
 ### !end-question
@@ -160,12 +160,12 @@ Write a function called "countCharacter".
 Given a string input and a second string of a single character, "countCharacter" returns the number of occurrences of the given character in the given string.
 
 ```
-input = 'I am a hacker'
-output = countCharacter(input, 'a')
+string1 = 'I am a hacker'
+output = countCharacter(string1, 'a')
 print(output) # --> 3
 
-input = 'I am a hacker !! '
-output = countCharacter(input, ' ')
+string1 = 'I am a hacker !! '
+output = countCharacter(string1, ' ')
 print(output) # --> 5
 ```
 
