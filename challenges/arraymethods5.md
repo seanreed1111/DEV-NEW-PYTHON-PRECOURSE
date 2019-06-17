@@ -43,17 +43,17 @@ class TestScript(unittest.TestCase):
     def test1(self):
         # it "should return an array"
         self.assertIs(type(main.removeFromBackOfNew([1,2,3])), list,
-        msg = "it should return an array"  )
+        msg = "it should return a list"  )
 
     def test2(self):
         # it "should return an array with the last element of the passed in array removed"
         self.assertEqual(main.removeFromBackOfNew([1, 2]), [1],
-        msg = "should return an array with the last element of the passed in array removed")
+        msg = "should return a list with the last element of the passed in array removed")
 
     def test3(self):
         # it "should handle an empty array"
         self.assertEqual(main.removeFromBackOfNew([]), [],
-        msg = "it should handle an empty array")
+        msg = "it should handle an empty list")
 
     def test4(self):
         # "it should leave the original list unmodified"
@@ -118,17 +118,17 @@ class TestScript(unittest.TestCase):
     def test1(self):
         # it "should return an list"
         self.assertIs(type(main.removeFromFrontOfNew([1,2,3])), list,
-        msg = "it should return an array" )
+        msg = "it should return a list" )
 
     def test2(self):
         # it
         self.assertEqual(main.removeFromFrontOfNew([1,2,3,4,5]), [2,3,4,5],
-        msg = "it should remove an element from the front of an array")
+        msg = "it should remove an element from the front of a list")
 
     def test3(self):
         # it "should handle an empty array"
         self.assertEqual(main.removeFromFrontOfNew([]), [],
-        msg = "it should handle an empty array")
+        msg = "it should handle an empty list")
 
     def test4(self):
         # it "should leave input unmodified"

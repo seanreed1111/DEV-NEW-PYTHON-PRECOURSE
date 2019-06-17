@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 8e828b4d-ff6f-4fed-9bab-7d7a1b4b0c1e
 * title: removeFromBack
 
@@ -17,45 +17,55 @@ Notes:
 * You should be familiar with the method 'pop'.
 
 ```
-var output = removeFromBack([1, 2, 3]);
-console.log(output); // --> [1, 2]
+output = removeFromBack([1, 2, 3])
+print(output) # --> [1, 2]
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function removeFromBack(arr) {
-  // your code here
-  
-}
+```python
+def removeFromBack(arr):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("removeFromBack", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(removeFromBack([1, 2, 3]))).to.deep.eq(true);
-  });
-  it("should remove the last element from a 3-element array", function() {
-    expect(removeFromBack([1, 2, 3])).to.deep.eq([1, 2]);
-  });
-  it("should remove the last element from a 2-element array", function() {
-    expect(removeFromBack([1, 2])).to.deep.eq([1]);
-  });
-  it("should handle an empty array", function() {
-    expect(removeFromBack([])).to.deep.eq([]);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test_0(self):
+        # it should return an list
+        self.assertEqual(main.removeFromBack([1, 2, 3]), list,
+        msg = 'should return a list')
 
+
+    def test_1(self):
+        # it should remove the last element from a 3-element list
+        self.assertEqual(main.removeFromBack([1, 2, 3]), [1, 2],
+        msg = 'should remove the last element from a 3-element list')
+
+
+    def test_2(self):
+        # it should remove the last element from a 2-element array
+        self.assertEqual(main.removeFromBack([1, 2]), [1],
+        msg = 'should remove the last element from a 2-element list')
+
+
+    def test_3(self):
+        # it should handle an empty array
+        self.assertEqual(main.removeFromBack([]), [],
+        msg = 'should handle an empty list')
 
 ```
-
 ### !end-tests
 
 ### !explanation

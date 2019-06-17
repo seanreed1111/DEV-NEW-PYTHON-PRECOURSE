@@ -1,25 +1,25 @@
 ---
 Standards:
-  # -
-  #
-  #   This Standard had one file, moved to the start of the next unit.
-  #
-  #   Title: Introduction
-  #   UID: e4af066c-c195-484e-81af-ee21e50f9a5a
-  #   Description: Context and reading for Module 1.
-  #   SuccessCriteria:
-  #     - Understand purpose of Module 1.
-  #     # - (optional) Another success criteria, uncomment to use
-  #   ContentFiles:
-  #     -
-  #       Type: Lesson
-  #       UID: f528826d-7341-494e-b280-aba53f11f4f0
-  #       Path: /reading/synopsis.md
-  #     -
-  #       Type: Checkpoint
-  #       UID: 98853a0b-db1c-4548-a408-46124d2363b6
-  #       Path: /reading/intro_checkpoint.md
-  #       Autoscore: true
+  -
+
+    This Standard had one file, moved to the start of the next unit.
+
+    Title: Introduction
+    UID: dd74222d-c31d-4870-9310-4532dda4e634
+    Description: Context and reading for Module 1.
+    SuccessCriteria:
+      - Understand purpose of Module 1.
+      # - (optional) Another success criteria, uncomment to use
+    ContentFiles:
+      -
+        Type: Lesson
+        UID: c0cb9b1d-c8af-49c9-a91a-54e2b1c4bd24
+        Path: /reading/syllabus.md
+      -
+        Type: Checkpoint
+        UID: de3b19e1-a850-429d-b4a7-d17116987631
+        Path: /reading/intro_checkpoint.md
+        Autoscore: true
 
   #
   #
@@ -33,7 +33,7 @@ Standards:
       - Solve Python code challenges
       # - [(optional) Another success criteria, uncomment to use]
     ContentFiles:
-      # -
+      # - 
       #   Type: Lesson
       #   UID: 9c7f3591-9dc7-4847-a833-9c6140e598ae
       #   Path: /reading/synopsis.md
