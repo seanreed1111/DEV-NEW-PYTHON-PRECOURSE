@@ -1,8 +1,8 @@
 ---
 Standards:
-  -
-
-    This Standard had one file, moved to the start of the next unit.
+    #-
+    #
+    #  This Standard had one file, moved to the start of the next unit.
 
     # Title: Introduction
     # UID: dd74222d-c31d-4870-9310-4532dda4e634
@@ -21,9 +21,9 @@ Standards:
     #     Path: /reading/intro_checkpoint.md
     #     Autoscore: true
 
-  #
-  #
-  #
+    #
+    #
+    #
 
   -
     Title: Part 1
