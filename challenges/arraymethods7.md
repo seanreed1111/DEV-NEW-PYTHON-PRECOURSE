@@ -308,13 +308,13 @@ class TestScript(unittest.TestCase):
         def test_3(self):
             # it should return a mirror of the original array when passed an n out of range
             self.assertEqual(main.getAllElementsButNth([4], 10), [4],
-            msg = 'should return a mirror of the original array when passed an n out of range')
+            msg = 'should return a mirror of the original list when passed an n out of range')
 
 
         def test_4(self):
             # it should return an empty array when passed in an empty array
-            self.assertEqual(main.getAllElementsButNth([]), [],
-            msg = 'should return an empty array when passed in an empty array')
+            self.assertEqual(main.getAllElementsButNth([],0), [],
+            msg = 'should return an empty list when passed in an empty list')
 
 ```
 
