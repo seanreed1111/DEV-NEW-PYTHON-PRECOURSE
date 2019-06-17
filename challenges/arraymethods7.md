@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: d5349d84-2036-435e-a352-d996dffc92e3
 * title: joinThreeArrays
 
@@ -14,50 +14,67 @@ Write a function called "joinThreeArrays".
 Given three arrays, "joinThreeArrays" returns an array with the elements of "arr1" in order followed by the elements in "arr2" in order followed by the elements of "arr3" in order.
 
 ```
-var output = joinThreeArrays([1, 2], [3, 4], [5, 6]);
-console.log(output); // --> [1, 2, 3, 4, 5, 6]
+output = joinThreeArrays([1, 2], [3, 4], [5, 6])
+print(output) # --> [1, 2, 3, 4, 5, 6]
 ```
-
-You should be familiar with the "concat" method for this problem.
 
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function joinThreeArrays(arr1, arr2, arr3) {
-  // your code here
-  
-}
+```python
+def joinThreeArrays(arr1, arr2, arr3):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("joinThreeArrays", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(joinThreeArrays(['a', 'b'], [1, 3], [true, false]))).to.deep.eq(true);
-  });
-  it("should return an array with the elements from the first and then the second array", function() {
-    expect(joinThreeArrays(['a', 'b'], [1, 3], [true, false])).to.deep.eq(['a', 'b', 1, 3, true, false]);
-  });
-  it("should handle empty arrays in the first position", function() {
-    expect(joinThreeArrays([], [1, 3], [true, false])).to.deep.eq([1, 3, true, false]);
-  });
-  it("should handle empty arrays in the second position", function() {
-    expect(joinThreeArrays(['a', 'b'], [], [true, false])).to.deep.eq(['a', 'b', true, false]);
-  });
-  it("should handle empty arrays in the third position", function() {
-    expect(joinThreeArrays(['a', 'b'], [1, 3], [])).to.deep.eq(['a', 'b', 1, 3]);
-  });
-  it("should handle empty arrays in all positions", function() {
-    expect(joinThreeArrays([], [], [])).to.deep.eq([]);
-  });
-});
+class TestScript(unittest.TestCase):
+
+    def test_0(self):
+        # it should return an array
+        self.assertIs(main.joinThreeArrays(['a', 'b'], [1, 3], [True, False]), list,
+        msg = 'should return a list')
+
+
+    def test_1(self):
+        # it should return an list with the elements from the first and then the second list
+        self.assertEqual(main.joinThreeArrays(['a', 'b'], [1, 3], [True, False]), ['a', 'b', 1, 3, True, False],
+        msg = 'should return a list with the elements from the first and then the second list')
+
+
+    def test_2(self):
+        # it should handle empty arrays in the first position
+        self.assertEqual(main.joinThreeArrays([], [1, 3], [True, False]), [1, 3, True, False],
+        msg = 'should handle empty list in the first position')
+
+
+    def test_3(self):
+        # it should handle empty arrays in the second position
+        self.assertEqual(main.joinThreeArrays(['a', 'b'], [], [True, False]), ['a', 'b', True, False],
+        msg = 'should handle empty list in the second position')
+
+
+    def test_4(self):
+        # it should handle empty arrays in the third position
+        self.assertEqual(main.joinThreeArrays(['a', 'b'], [1, 3], []), ['a', 'b', 1, 3],
+        msg = 'should handle empty list in the third position')
+
+
+    def test_5(self):
+        # it should handle empty arrays in all positions
+        self.assertEqual(main.joinThreeArrays([], [], []), [],
+        msg = 'should handle empty lists in all positions')
 
 
 ```
@@ -72,8 +89,8 @@ describe("joinThreeArrays", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: a5d9e27b-ea2f-4134-ad30-ef9366b3c761
 * title: addToFrontOfNew
 
@@ -81,51 +98,63 @@ describe("joinThreeArrays", function() {
 
 Write a function called "addToFrontOfNew".
 
-Given an array and an element, "addToFrontOfNew" returns a new array containing all the elements of the given array, with the given element added to the front.
+Given a list and an element, "addToFrontOfNew" returns a new list containing all the elements of the given list, with the given element added to the front.
 
-Important: It should be a NEW array instance, not the original array instance.
+Important: It should be a NEW list instance, not the original list instance.
 
 ```
-var input = [1, 2];
-var output = addToFrontOfNew(input, 3);
-console.log(output); // --> [3, 1, 2];
-console.log(input); --> [1, 2]
+input = [1, 2]
+output = addToFrontOfNew(input, 3)
+print(output) # --> [3, 1, 2]
+print(input) --> [1, 2]
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function addToFrontOfNew(arr, element) {
-  // your code here
-  
-}
+```python
+def addToFrontOfNew(arr, element):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("addToFrontOfNew", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(addToFrontOfNew([1, 2], 3))).to.deep.eq(true);
-  });
-  it("should add an element to the end of an array", function() {
-    expect(addToFrontOfNew([1, 2], 3)).to.deep.eq([3, 1, 2]);
-  });
-  it("should add an element to the end of an empty array", function() {
-    expect(addToFrontOfNew([], 3)).to.deep.eq([3]);
-  });
-  it("should leave arr unmodified", function() {
-    var originalArray = [1, 2];
-    var newArray = addToFrontOfNew(originalArray, 3);
-    expect(originalArray).to.deep.eq([1, 2]);
-  });
-});
+class TestScript(unittest.TestCase):
 
+    def test_0(self):
+        # it should return an list
+        self.assertEqual(main.addToFrontOfNew([1, 2], 3), True,
+        msg = 'should return an array')
+
+
+    def test_1(self):
+        # it should add an element to the end of an list
+        self.assertEqual(main.addToFrontOfNew([1, 2], 3), [3, 1, 2],
+        msg = 'should add an element to the end of an list')
+
+
+    def test_2(self):
+        # it should add an element to the end of an empty list
+        self.assertEqual(main.addToFrontOfNew([], 3), [3],
+        msg = 'should add an element to the end of an empty list')
+
+
+    def test_3(self):
+        # it should leave list unmodified
+        originalList = [1,2]
+        main.addToFrontOfNew(originalList, 3)
+        self.assertEqual(originalList, [1, 2],
+        msg = 'should leave the original list unmodified')
 ```
 
 ### !end-tests
@@ -138,8 +167,8 @@ describe("addToFrontOfNew", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 52e8002f-f926-4b68-b70b-c41fe566ba8c
 * title: addToBackOfNew
 
@@ -152,46 +181,58 @@ Given an array and an element, "addToBackNew" returns a clone of the given array
 Important: It should be a NEW array instance, not the original array instance.
 
 ```
-var input = [1, 2];
-var output = addToBackOfNew(input, 3);
-console.log(input); // --> [1, 2]
-console.log(output); // --> [1, 2, 3]
+input = [1, 2]
+output = addToBackOfNew(input, 3)
+print(input) # --> [1, 2]
+print(output) # --> [1, 2, 3]
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function addToBackOfNew(arr, element) {
-  // your code here
+```python
+def addToBackOfNew(arr, element):
+    # your code here
+    pass
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("addToBackOfNew", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(addToBackOfNew([1, 2], 3))).to.deep.eq(true);
-  });
-  it("should add an element to the end of an array", function() {
-    expect(addToBackOfNew([1, 2], 3)).to.deep.eq([1, 2, 3]);
-  });
-  it("should add an element to the end of an empty array", function() {
-    expect(addToBackOfNew([], 3)).to.deep.eq([3]);
-  });
-  it("should leave arr unmodified", function() {
-    var originalArray = [1, 2];
-    var newArray = addToBackOfNew(originalArray, 3);
-    expect(originalArray).to.deep.eq([1, 2]);
-  });
-});
+class TestScript(unittest.TestCase):
 
+    def test_0(self):
+        # it should return an array
+        self.assertIs(main.addToBackOfNew([1, 2], 3), list,
+        msg = 'should return a list')
+
+
+    def test_1(self):
+        # it should add an element to the end of an array
+        self.assertEqual(main.addToBackOfNew([1, 2], 3), [1, 2, 3],
+        msg = 'should add an element to the end of an array')
+
+
+    def test_2(self):
+        # it should add an element to the end of an empty array
+        self.assertEqual(main.addToBackOfNew([], 3), [3],
+        msg = 'should add an element to the end of an empty array')
+
+
+    def test_3(self):
+        # it should leave arr unmodified
+        originalList = [1,2]
+        main.addToBackOfNew(originalList, 3)
+        self.assertEqual(originalList, [1, 2],
+        msg = 'should leave original list unmodified')
 
 ```
 
@@ -205,8 +246,8 @@ describe("addToBackOfNew", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: dac91596-8674-4ea2-a348-db7120c0fe36
 * title: getAllElementsButNth
 
@@ -217,44 +258,63 @@ Write a function called "getAllElementsButNth".
 Given an array and an index, "getAllElementsButNth" returns an array with all the elements but the nth.
 
 ```
-var output = getAllElementsButNth(['a', 'b', 'c'], 1);
-console.log(output); // --> ['a', 'c']
+output = getAllElementsButNth(['a', 'b', 'c'], 1)
+print(output) # --> ['a', 'c']
+
+output = getAllElementsButNth(['a', 'b', 'c'], 8)
+print(output) # --> ['a', 'b', 'c']
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getAllElementsButNth(array, n) {
-  // your code here
-  
-}
+```python
+def getAllElementsButNth(array, n):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getAllElementsButNth", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(getAllElementsButNth([4, 5, 6], 2))).to.deep.eq(true);
-  });
-  it("should return an array with all the elements of the passed in array, except for the nth", function() {
-    expect(getAllElementsButNth([4, 5, 6], 0)).to.deep.eq([5, 6]);
-  });
-  it("should return an empty array when passed in a single element array", function() {
-    expect(getAllElementsButNth([4], 0)).to.deep.eq([]);
-  });
-  it("should return a mirror of the original array when passed an n out of range", function() {
-    expect(getAllElementsButNth([4], 10)).to.deep.eq([4]);
-  });
-  it("should return an empty array when passed in an empty array", function() {
-    expect(getAllElementsButNth([])).to.deep.eq([]);
-  });
-});
+class TestScript(unittest.TestCase):
+
+        def test_0(self):
+            # it should return a list
+            self.assertIs(main.getAllElementsButNth([4, 5, 6], 2), list,
+            msg = 'should return a list')
+
+
+        def test_1(self):
+            # it should return an list with all the elements of the passed in list, except for the nth
+            self.assertEqual(main.getAllElementsButNth([4, 5, 6], 0), [5, 6],
+            msg = 'should return an list with all the elements of the passed in list, except for the nth')
+
+
+        def test_2(self):
+            # it should return an empty list when passed in a single element list
+            self.assertEqual(main.getAllElementsButNth([4], 0), [],
+            msg = 'should return an empty array when passed in a single element array')
+
+
+        def test_3(self):
+            # it should return a mirror of the original array when passed an n out of range
+            self.assertEqual(main.getAllElementsButNth([4], 10), [4],
+            msg = 'should return a mirror of the original array when passed an n out of range')
+
+
+        def test_4(self):
+            # it should return an empty array when passed in an empty array
+            self.assertEqual(main.getAllElementsButNth([]), [],
+            msg = 'should return an empty array when passed in an empty array')
 
 ```
 
