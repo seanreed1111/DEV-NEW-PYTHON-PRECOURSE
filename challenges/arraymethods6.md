@@ -44,7 +44,7 @@ import unittest
 class TestScript(unittest.TestCase):
     def test_0(self):
         # it should return an list
-        self.assertIs(main.removeFromBack([1, 2, 3]), list,
+        self.assertIsInstance(main.removeFromBack([1, 2, 3]), list,
         msg = 'should return a list')
 
 

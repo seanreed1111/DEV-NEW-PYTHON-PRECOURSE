@@ -43,7 +43,7 @@ class TestScript(unittest.TestCase):
 
     def test_0(self):
         # it should return an array
-        self.assertIs(main.joinThreeArrays(['a', 'b'], [1, 3], [True, False]), list,
+        self.assertIsInstance(main.joinThreeArrays(['a', 'b'], [1, 3], [True, False]), list,
         msg = 'should return a list')
 
 
@@ -133,7 +133,7 @@ class TestScript(unittest.TestCase):
 
     def test_0(self):
         # it should return an list
-        self.assertIs(main.addToFrontOfNew([1, 2], 3), list,
+        self.assertIsInstance(main.addToFrontOfNew([1, 2], 3), list,
         msg = 'should return a list')
 
 
@@ -211,7 +211,7 @@ class TestScript(unittest.TestCase):
 
     def test_0(self):
         # it should return an array
-        self.assertIs(main.addToBackOfNew([1, 2], 3), list,
+        self.assertIsInstance(main.addToBackOfNew([1, 2], 3), list,
         msg = 'should return a list')
 
 
@@ -289,7 +289,7 @@ class TestScript(unittest.TestCase):
 
         def test_0(self):
             # it should return a list
-            self.assertIs(main.getAllElementsButNth([4, 5, 6], 2), list,
+            self.assertIsInstance(main.getAllElementsButNth([4, 5, 6], 2), list,
             msg = 'should return a list')
 
 
