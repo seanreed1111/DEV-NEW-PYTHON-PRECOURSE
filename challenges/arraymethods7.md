@@ -133,8 +133,8 @@ class TestScript(unittest.TestCase):
 
     def test_0(self):
         # it should return an list
-        self.assertEqual(main.addToFrontOfNew([1, 2], 3), True,
-        msg = 'should return an array')
+        self.assertIs(main.addToFrontOfNew([1, 2], 3), list,
+        msg = 'should return a list')
 
 
     def test_1(self):
