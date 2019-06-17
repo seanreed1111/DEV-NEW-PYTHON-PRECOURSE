@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 7efe888f-b6e0-4255-933e-0f6f12bfe7f2
 * title: getAllLetters
 
@@ -17,38 +17,48 @@ Notes:
 * If given an empty string, it should return an empty array.
 
 ```
-var output = getAllLetters('Radagast');
-console.log(output); // --> ['R', 'a', 'd', 'a', 'g', 'a', 's', 't']
+output = getAllLetters('Radagast')
+print(output) # --> ['R', 'a', 'd', 'a', 'g', 'a', 's', 't']
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getAllLetters(str) {
-  // your code here
-  
-}
+```python
+def getAllLetters(string):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getAllLetters", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(getAllLetters("something like this here"))).to.deep.eq(true);
-  });
-  it("should return an array containing all the letters in the word", function() {
-    expect(getAllLetters("Eowin")).to.deep.eq(["E", "o", "w", "i", "n"]);
-  });
-  it("should return an empty array when given an empty string", function() {
-    expect(getAllLetters("")).to.deep.eq([]);
-  });
-});
+class TestScript(unittest.TestCase):
+
+    def test_0(self):
+        # it should return an array
+        self.assertIsInstance(main.getAllLetters("something like this here"), list,
+        msg = 'should return an array')
+
+
+    def test_1(self):
+        # it should return an array containing all the letters in the word
+        self.assertEqual(main.getAllLetters("Eowin"), ["E", "o", "w", "i", "n"],
+        msg = 'should return a list containing all the letters in the word')
+
+
+    def test_2(self):
+        # it should return an empty array when given an empty string
+        self.assertEqual(main.getAllLetters(""), [],
+        msg = 'should return an empty array when given an empty string')
 
 
 ```
@@ -63,8 +73,8 @@ describe("getAllLetters", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: afe8bb31-31d2-4ef6-b344-e7cbcfe01d1f
 * title: getAllWords
 
@@ -78,39 +88,48 @@ Notes:
 * If given an empty string, it should return an empty array.
 
 ```
-var output = getAllWords('Radagast the Brown');
-console.log(output); // --> ['Radagast', 'the', 'Brown']
+output = getAllWords('Radagast the Brown')
+print(output) # --> ['Radagast', 'the', 'Brown']
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getAllWords(str) {
-  // your code here
-  
-}
+```python
+def getAllWords(string):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
+
+class TestScript(unittest.TestCase):
+
+        def test_0(self):
+            # it should return an array
+            self.assertIsInstance(main.getAllWords("something like this here"), list,
+            msg = 'should return a list')
 
 
-describe("getAllWords", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(getAllWords("something like this here"))).to.deep.eq(true);
-  });
-  it("should return an array containing all the words in the sentence", function() {
-    expect(getAllWords("Something like this here")).to.deep.eq(["Something", "like", "this", "here"]);
-  });
-  it("should return an empty array when given an empty string", function() {
-    expect(getAllWords("")).to.deep.eq([]);
-  });
-});
+        def test_1(self):
+            # it should return an array containing all the words in the sentence
+            self.assertEqual(main.getAllWords("Something like this here"), ["Something", "like", "this", "here"],
+            msg = 'should return a list containing all the words in the sentence')
+
+
+        def test_2(self):
+            # it should return an empty array when given an empty string
+            self.assertEqual(main.getAllWords(""), [],
+            msg = 'should return an empty list when given an empty string')
 
 
 ```

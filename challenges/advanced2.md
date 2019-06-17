@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 036e5563-3791-46d3-8d67-780c769396fb
 * title: extend
 
@@ -11,80 +11,61 @@
 
 Write a function called "extend".
 
-Given two objects, "extend" adds properties from the 2nd object to the 1st object.
+Given two dictionaries, "extend" adds properties from the second dictionary to the first.
 
 Notes:
-* Add any keys that are not in the 1st object.
-* If the 1st object already has a given key, ignore it (do not overwrite the property value).
-* Do not modify the 2nd object at all.
+* Add any keys from the 2nd dictionary that are not in the first.
+* If the 1st dictionary already has a given key, ignore it (do not overwrite the first dictionary if it already has the given key).
+* Do not modify the 2nd dictionary at all.
 
 ```
-var obj1 = {
-  a: 1,
-  b: 2
-};
-var obj2 = {
-  b: 4,
-  c: 3
-};
+obj1 = {'a': 1, 'b': 2}
 
-extend(obj1, obj2);
+obj2 = {'b': 4,'c': 3}
 
-console.log(obj1); // --> {a: 1, b: 2, c: 3}
-console.log(obj2); // --> {b: 4, c: 3}
+
+extend(obj1, obj2)
+
+print(obj1) # --> {'a': 1, 'b': 2, 'c': 3}
+print(obj2) # --> {'b': 4, 'c': 3}
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function extend(obj1, obj2) {
-  // your code here
-  
-}
+```python
+# your code here
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("extend", function() {
-  it("should extend the first object with unrepresented properties from the second object", function() {
-    var obj1 = {
-      a: 1,
-      b: 2
-    };
-    var obj2 = {
-      b: 4,
-      c: 3
-    };
-    var result = {
-      a: 1,
-      b: 2,
-      c: 3
-    };
+class TestScript(unittest.TestCase):
+    def test_0(self):
+        # it 'should return a dict'
+        self.assertIsInstance(main.extend({'a': 1, 'b': 2}, {'a':1,'b': 4, 'c': 3, 'd':17}), dict,
+        msg = 'should return a dict')
+        
+    def test_1(self):
+        # it should extend the first dict with unrepresented properties from the second object
+        self.assertEqual(main.extend({'a':1, 'b':2}, {'b': 4, 'c': 3, 'key':'value'}),
+        {'a':1, 'b':2, 'c':3, 'key':'value'},
+        msg = 'should extend the first dict with unrepresented properties from the second dict')
 
-    extend(obj1, obj2);
-    expect(obj1).to.deep.eq(result);
-  });
-  it("should extend the first object with unrepresented properties from the second object", function() {
-    var obj1 = {
-      a: 1,
-      b: 2
-    };
-    var obj2 = {
-      b: 4,
-      c: 3
-    };
 
-    extend(obj1, obj2);
-    expect(obj2).to.deep.eq({b: 4, c: 3});
-  });
-});
-
+    def test_2(self):
+        # it 'should leave the second dictionary unchanged'
+        obj2 = {'a':1, 'b': 4, 'c': 3, 'd':17}
+        main.extend({'a':1, 'b':2}, obj2)
+        self.assertEqual(obj2, {'a':1,'b': 4, 'c': 3, 'd':17})
+        msg = 'should leave the second dictionary unchanged')
 
 ```
 

@@ -2,7 +2,7 @@ import os
 import re
 import unicodedata
 
-source_file_name = "arraymethods7.md"
+source_file_name = "conditionals6.md"
 source_path = os.path.join("challenges-JS", source_file_name)
 target_path = os.path.join("challenges", source_file_name)
 
@@ -94,7 +94,7 @@ data = re.sub(r'!tests', "!tests\n"+test_class_string+"\n".join(output_strings),
 data = re.sub(r'\)\s+:', r'):', data)
 data = re.sub(r'true', 'True', data)
 data = re.sub(r'false', 'False', data)
-data = re.sub(r'a(n\b)*array\b',r'list',data)
+data = re.sub(r'(an )*array\b',r'list',data)
 
 with open(target_path, "wt") as f:
     f.write(data)
