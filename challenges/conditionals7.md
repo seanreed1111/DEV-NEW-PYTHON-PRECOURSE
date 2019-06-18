@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: b99bc1a5-bc3a-42c5-9372-745bcbea92a7
 * title: areValidCredentials
 
@@ -11,45 +11,54 @@
 
 Write a function called "areValidCredentials".
 
-Given a name and a password, "areValidCredentials", returns true if the name is longer than 3 characters, AND, the password is at least 8 characters long. Otherwise it returns false.
+Given a name and a password, "areValidCredentials", returns True if the name is longer than 3 characters AND the password is at least 8 characters long. Otherwise it returns False.
 
 ```
-var output = areValidCredentials('Ritu', 'mylongpassword')
-console.log(output); // --> true
+output = areValidCredentials('Ritu', 'mylongpassword')
+print(output) # --> True
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function areValidCredentials(name, password) {
-  // your code here
-  
-}
+```python
+# your code here
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("areValidCredentials", function() {
-  it("should return a boolean", function() {
-    expect(typeof areValidCredentials("Ritu", "mylongpassword")).to.deep.eq("boolean");
-  });
-  it("should return true if the name is longer than 3 characters and the password is at least 8 characters", function() {
-    expect(areValidCredentials("Ritu", "mylongpassword")).to.deep.eq(true);
-  });
-  it("should return false if the name is less than 3 characters", function() {
-    expect(areValidCredentials("me", "mylongpassword")).to.deep.eq(false);
-  });
-  it("should return false if the password is not at least 8 characters", function() {
-    expect(areValidCredentials("Someone", "1234567")).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test_0(self):
+        # it should return a boolean
+        self.assertEqual(type(main.areValidCredentials("Ritu", "mylongpassword")), bool,
+        msg = 'should return a bool')
 
+
+    def test_1(self):
+        # it should return True if the name is longer than 3 characters and the password is at least 8 characters
+        self.assertTrue(main.areValidCredentials("Ritu", "mylongpassword"),
+        msg = 'should return True if the name is longer than 3 characters and the password is at least 8 characters')
+
+
+    def test_2(self):
+        # it should return False if the name is less than 3 characters
+        self.assertFalse(main.areValidCredentials("me", "mylongpassword"),
+        msg = 'should return False if the name is less than 3 characters')
+
+
+    def test_3(self):
+        # it should return False if the password is not at least 8 characters
+        self.assertFalse(main.areValidCredentials("Someone", "1234567"),
+        msg = 'should return False if the password is not at least 8 characters')
 
 ```
 
@@ -63,8 +72,8 @@ describe("areValidCredentials", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 705f1f9a-9afa-4ae7-be40-ddebbb95204b
 * title: findMinLengthOfThreeWords
 
@@ -75,39 +84,41 @@ Write a function called "findMinLengthOfThreeWords".
 Given 3 words, "findMinLengthOfThreeWords" returns the length of the shortest word.
 
 ```
-var output = findMinLengthOfThreeWords('a', 'be', 'see');
-console.log(output); // --> 1
+output = findMinLengthOfThreeWords('a', 'be', 'see')
+print(output) # --> 1
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function findMinLengthOfThreeWords(word1, word2, word3) {
-  // your code here
-  
-}
+```python
+def findMinLengthOfThreeWords(word1, word2, word3):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("findMinLengthOfThreeWords", function() {
-  it("should return a number", function() {
-    expect(typeof findMinLengthOfThreeWords("a", "be", "see")).to.deep.eq("number");
-  });
-  it("should return the minimimum length of three words", function() {
-    expect(findMinLengthOfThreeWords("a", "be", "see")).to.deep.eq(1);
-  });
-  it("should return the minimimum length of three words when there is a tie", function() {
-    expect(findMinLengthOfThreeWords("these", "three", "words")).to.deep.eq(5);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test_1(self):
+        # it should return the minimum length of three words
+        self.assertEqual(main.findMinLengthOfThreeWords("a", "be", "see"), 1,
+        msg = 'should return the minimum length of three words')
 
+
+    def test_2(self):
+        # it should return the minimum length of three words when there is a tie
+        self.assertEqual(main.findMinLengthOfThreeWords("these", "three", "words"), 5,
+        msg = 'should return the minimum length of three words when there is a tie')
 
 ```
 
@@ -121,8 +132,8 @@ describe("findMinLengthOfThreeWords", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: c3fcc0c8-628e-40aa-992a-a85008a3d60d
 * title: findMaxLengthOfThreeWords
 
@@ -133,40 +144,43 @@ Write a function called "findMaxLengthOfThreeWords".
 Given 3 words, "findMaxLengthOfThreeWords" returns the length of the longest word.
 
 ```
-var output = findMaxLengthOfThreeWords('a', 'be', 'see');
-console.log(output); // --> 3
+output = findMaxLengthOfThreeWords('a', 'be', 'see')
+print(output) # --> 3
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function findMaxLengthOfThreeWords(word1, word2, word3) {
-  // your code here
-  
-}
+```python
+def findMaxLengthOfThreeWords(word1, word2, word3):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("findMaxLengthOfThreeWords", function() {
-  it("should return a number", function() {
-    expect(typeof findMaxLengthOfThreeWords("a", "be", "see")).to.deep.eq("number");
-  });
-  it("should return the maximimum length of three words", function() {
-    expect(findMaxLengthOfThreeWords("a", "be", "see")).to.deep.eq(3);
-  });
-  it("should return the maximimum length of three words when there is a tie", function() {
-    expect(findMaxLengthOfThreeWords("these", "three", "words")).to.deep.eq(5);
-  });
-});
+class TestScript(unittest.TestCase):
+
+        def test_1(self):
+            # it should return the maximum length of three words
+            self.assertEqual(main.findMaxLengthOfThreeWords("a", "be", "see"), 3,
+            msg = 'should return the maximum length of three words')
 
 
+        def test_2(self):
+            # it should return the maximum length of three words when there is a tie
+            self.assertEqual(main.findMaxLengthOfThreeWords("these", "three", "words"), 5,
+            msg = 'should return the maximum length of three words when there is a tie')
+            
 ```
 
 ### !end-tests

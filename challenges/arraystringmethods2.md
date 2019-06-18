@@ -30,10 +30,7 @@ Notes:
 ### !placeholder
 
 ```python
-def convertDoubleSpaceToSingle(string):
-    # your code here
-    pass
-
+# your code here
 
 ```
 
