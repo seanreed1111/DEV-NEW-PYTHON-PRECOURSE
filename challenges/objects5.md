@@ -18,10 +18,10 @@ Do this in place and return the original object, do not construct a cloned objec
 Example:
 
 ```
-input = {'a': 2, 'b': 3, 'c': 4}
+input = {'a': 2, 'b': 3, 'c': 4, 'd':'Texas'}
 
-removeEvenValues(input)
-print(input) # --> {'b': 3}
+output = removeEvenValues(input)
+print(output) # --> {'b': 3, 'd':'Texas'}
 ```
 
 ### !end-question
@@ -139,8 +139,8 @@ Given an object, "removeOddValues" removes any keys whose values are odd numbers
 ```
 input = {'a': 1, 'b': 2, 'c': 3, 'd':'montana'}
 
-removeOddValues(input)
-print(input) # --> {'b': 2, 'd':'montana'}
+output = removeOddValues(input)
+print(output) # --> {'b': 2, 'd':'montana'}
 ```
 
 ### !end-question
