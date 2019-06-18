@@ -44,7 +44,7 @@ class TestScript(unittest.TestCase):
 
     def test_0(self):
         # it should not use the logical OR operator
-        source = inspect.getsource(main.OR)
+        source = inspect.getsource(main.special_or)
         self.assertNotRegex(source, '\bor\b',
         msg = 'function should not contain the word "or" the logical "or" operator')
 
