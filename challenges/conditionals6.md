@@ -47,7 +47,7 @@ class TestScript(unittest.TestCase):
         # it should not use the logical OR operator
         source = inspect.getsource(main.special_or)
         self.assertIsNone(re.search(r'\bor\b', source),
-        msg = 'function should not contain the word "or" the logical "or" operator')
+        msg = 'should not contain the word "or" anywhere in function body ')
 
 
     def test_1(self):
@@ -152,13 +152,13 @@ class TestScript(unittest.TestCase):
 
     def test_4(self):
         # it "should return True if the both numbers are even"
-        self.assertTrue(main.isEitherEvenOrAreBoth7(1000, 50)),
-        msg = "should return True if the both numbers are even")
+        self.assertTrue(main.isEitherEvenOrAreBoth7(1000, 50),
+        msg = "should return True if both numbers are even")
 
     def test_5(self):
         # it "should return True if the both numbers are 7"
         self.assertTrue(main.isEitherEvenOrAreBoth7(7, 7),
-        msg = "should return True if the both numbers are 7")
+        msg = "should return True if both numbers are 7")
 
     def test_6(self):
         # it "should return False if the both numbers are odd and not both 7"
