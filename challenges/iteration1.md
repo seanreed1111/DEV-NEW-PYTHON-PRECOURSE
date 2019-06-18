@@ -63,13 +63,13 @@ class TestScript(unittest.TestCase):
 
     def test_2(self):
         # it should return the index of the first occurrence of a string
-        self.assertEqual(main.getIndexOf("a", "I am a hacker"), "number",
+        self.assertEqual(main.getIndexOf("l", "all the weary horses"), 1,
         msg = 'should return the index of the first occurrence of a string')
 
 
     def test_3(self):
         # it should return -1 when the character does not occur in the string
-        self.assertEqual(main.getIndexOf("x", "I am a hacker"), 2,
+        self.assertEqual(main.getIndexOf("x", "I am a hacker"), -1,
         msg = 'should return -1 when the character does not occur in the string')
 
 ```
