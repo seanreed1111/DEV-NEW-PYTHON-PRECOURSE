@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 5c68f405-579c-4427-8f13-9df8539009c7
 * title: removeEvenValues
 
@@ -18,51 +18,37 @@ Do this in place and return the original object, do not construct a cloned objec
 Example:
 
 ```
-var obj = {
-  a: 2,
-  b: 3,
-  c: 4
-};
-removeEvenValues(obj);
-console.log(obj); // --> { b: 3 }
+input = {'a': 2, 'b': 3, 'c': 4}
+
+removeEvenValues(input)
+print(input) # --> {'b': 3}
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function removeEvenValues(obj) {
-  // your code here
-   
+```python
 
-   
-}
+    # your code here
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("removeEvenValues", function() {
-  it("should remove any properties with values that are even numbers", function() {
-    var obj = {
-      a: 1,
-      b: 2,
-      c: 3,
-      d: 4
-    };
-    var result = {
-      a: 1,
-      c: 3
-    };
-    removeEvenValues(obj);
-    expect(obj).to.deep.eq(result);
-  });
-});
-
+class TestScript(unittest.TestCase):
+    def test_0(self):
+        # it should remove any keys with values that are even numbers
+        input = {'a':1, 'b':2, 'c': 'montana', 'd':8}
+        result = {'a':1, 'c': 'montana'}
+        self.assertEqual(main.removeEvenValues(input), result,
+        msg = 'should remove any keys with values that are even numbers')
 
 ```
 
@@ -76,8 +62,8 @@ describe("removeEvenValues", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 74b7a416-a4bc-4854-b870-0f92c6d57335
 * title: countNumberOfKeys
 
@@ -88,52 +74,43 @@ Write a function called "countNumberOfKeys".
 Given an object, "countNumberOfKeys" returns how many properties the given object has.
 
 ```
-var obj = {
-  a: 1,
-  b: 2,
-  c: 3
-};
-var output = countNumberOfKeys(obj);
-console.log(output); // --> 3
+input = {'a': 1, 'b': 2, 'c': 3}
+
+output = countNumberOfKeys(input)
+print(output) # --> 3
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function countNumberOfKeys(obj) {
-  // your code here
-   
+```python
 
-   
-}
+# your code here
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("countNumberOfKeys", function() {
-  it("should return a number", function() {
-    var obj = {};
-    expect(typeof(countNumberOfKeys(obj))).to.deep.eq("number");
-  });
-  it("should return the number of keys for an object", function() {
-    var obj = {
-      a: 1,
-      b: 2,
-      c: 3
-    };
-    expect(countNumberOfKeys(obj)).to.deep.eq(3);
-  });
-  it("should return 0 for an object with no keys", function() {
-    var obj = {};
-    expect(countNumberOfKeys(obj)).to.deep.eq(0);
-  });
-});
+class TestScript(unittest.TestCase):
+
+    def test_1(self):
+        # it should return the number of keys for an object
+        self.assertEqual(main.countNumberOfKeys({'a': 1, 'b': 2, 'c': 3}), 3,
+        msg = 'should return the number of keys for a dict')
+
+
+    def test_2(self):
+        # it should return 0 for an object with no keys
+        self.assertEqual(main.countNumberOfKeys({}), 0,
+        msg = 'should return 0 for a dict with no keys')
 
 
 ```
@@ -148,8 +125,8 @@ describe("countNumberOfKeys", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: e01182d1-9906-49b8-830d-bae725ad5b4b
 * title: removeOddValues
 
@@ -157,54 +134,38 @@ describe("countNumberOfKeys", function() {
 
 Write a function called "removeOddValues".
 
-Given an object, "removeOddValues" removes any properties whose values are odd numbers.
+Given an object, "removeOddValues" removes any keys whose values are odd numbers.
 
 ```
-var obj = {
-  a: 2,
-  b: 3,
-  c: 4
-};
-removeOddValues(obj);
-console.log(obj); // --> { a: 2, c: 4 }
+input = {'a': 1, 'b': 2, 'c': 3, 'd':'montana'}
+
+removeOddValues(input)
+print(input) # --> {'b': 2, 'd':'montana'}
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function removeOddValues(obj) {
-  // your code here
-   
+```python
+# your code here
 
-   
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("removeOddValues", function() {
-  it("should remove any properties with values that are odd numbers", function() {
-    var obj = {
-      a: 1,
-      b: 2,
-      c: 3,
-      d: 4
-    };
-    var result = {
-      b: 2,
-      d: 4
-    };
-    removeOddValues(obj);
-    expect(obj).to.deep.eq(result);
-  });
-});
-
+class TestScript(unittest.TestCase):
+    def test_0(self):
+        # it should remove any properties with values that are odd numbers
+        self.assertEqual(main.removeOddValues({'a': 1, 'b': 2, 'c': 3, 'd':'Montana'}), {'b': 2, 'd':'Montana'},
+        msg = 'should remove any key with values that are odd numbers')
 
 ```
 
