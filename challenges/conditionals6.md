@@ -51,30 +51,30 @@ class TestScript(unittest.TestCase):
 
     def test_1(self):
         # it should return a boolean
-        self.assertIsInstance(main.OR(True, False), bool,
+        self.assertIsInstance(main.special_or(True, False), bool,
         msg = 'should return a bool')
 
 
     def test_2(self):
         # it should return True if the first value is True
-        self.assertTrue(main.OR(True, False),
+        self.assertTrue(main.special_or(True, False),
         msg = 'should return True if the first value is True')
 
 
     def test_3(self):
         # it should return True if the second value is True
-        self.assertTrue(main.OR(False, True),
+        self.assertTrue(main.special_or(False, True),
         msg = 'should return True if the second value is True')
 
 
     def test_4(self):
         # it 'should return False if both values are False'
-        self.assertFalse(main.OR(False, False),
+        self.assertFalse(main.special_or(False, False),
         msg = 'should return False if both values are False')
 
     def test_5(self):
         # it should return True if both values are True
-        self.assertTrue(main.OR(True, True),
+        self.assertTrue(main.special_or(True, True),
         msg = 'should return True if both values are True')
 
 ```
