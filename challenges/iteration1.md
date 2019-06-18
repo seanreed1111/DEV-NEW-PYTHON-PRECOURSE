@@ -72,23 +72,6 @@ class TestScript(unittest.TestCase):
         self.assertEqual(main.getIndexOf("x", "I am a hacker"), 2,
         msg = 'should return -1 when the character does not occur in the string')
 
-
-
-```python
-
-describe("getIndexOf", function():it("should not use indexOf", function():body = getIndexOf.toString()
-    expect(/indexOf/.test(body)).to.deep.eq(False)
-    expect(getIndexOf("a", "I am a hacker")).to.deep.eq(2)
-  )
-  it("should return a number", function():expect(typeof getIndexOf("a", "I am a hacker")).to.deep.eq("number")
-  )
-  it("should return the index of the first occurrence of a string", function():expect(getIndexOf("a", "I am a hacker")).to.deep.eq(2)
-  )
-  it("should return -1 when the character does not occur in the string", function():expect(getIndexOf("x", "I am a hacker")).to.deep.eq(-1)
-  )
-)
-
-
 ```
 
 ### !end-tests
