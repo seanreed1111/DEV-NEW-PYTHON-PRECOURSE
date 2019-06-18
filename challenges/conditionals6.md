@@ -9,15 +9,15 @@
 
 ### !question
 
-Write a function called "OR".
+Write a function called "special_or".
 
-Given 2 boolean expressions, "OR" returns True or False, corresponding to the 'or' operator.
+Given 2 boolean expressions, "special_or" returns True or False, corresponding to the 'or' operator.
 Notes:
 * Do not use the or operator.
 * Use 'not' and 'and' operators instead.
 
 ```
-output = OR(True, False)
+output = special_or(True, False)
 print(output) # --> True
 ```
 
@@ -26,7 +26,7 @@ print(output) # --> True
 ### !placeholder
 
 ```python
-def OR(expression1, expression2):
+def special_or(expression1, expression2):
     # your code here
     pass
 ```
@@ -51,7 +51,7 @@ class TestScript(unittest.TestCase):
 
     def test_1(self):
         # it should return a boolean
-        self.assertisInstance(main.OR(True, False), bool,
+        self.assertIsInstance(main.OR(True, False), bool,
         msg = 'should return a bool')
 
 
@@ -133,7 +133,7 @@ class TestScript(unittest.TestCase):
 
     def test_1(self):
         # it should return a boolean
-        self.assertisInstance(main.isEitherEvenOrAreBoth7(7, 7), bool,
+        self.assertIsInstance(main.isEitherEvenOrAreBoth7(7, 7), bool,
         msg = 'should return a bool')
 
 
@@ -218,7 +218,7 @@ class TestScript(unittest.TestCase):
 
     def test_1(self):
         # it should return a boolean
-        self.assertisInstance(main.isEitherEvenAndLessThan9(6, 99), bool,
+        self.assertIsInstance(main.isEitherEvenAndLessThan9(6, 99), bool,
         msg = 'should return a boolean')
 
 
