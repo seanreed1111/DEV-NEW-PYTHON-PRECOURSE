@@ -11,7 +11,7 @@
 
 Write a function called "removeListValues".
 
-Given an dict, "removeListValues" removes any properties whose values are lists.
+Given an dict, "removeListValues" removes any keys whose values are lists.
 
 ```
 input = {'a': [1, 3, 4], 'b': 2, 'c': ['hi', 'there']}
@@ -44,7 +44,7 @@ class TestScript(unittest.TestCase):
         input = {'a': [1, 3, 4], 'b': 2, 'c': ['hi', 'there'], 'd':'hi'}
         output = {'b': 2, 'd':'hi'}
         self.assertEqual(main.removeListValues(input), output,
-        msg = 'should remove any properties with values that are arrays')
+        msg = 'should remove any keys with values that are lists')
 
 
 ```
@@ -100,7 +100,7 @@ class TestScript(unittest.TestCase):
 
     def test_0(self):
         # it should remove any properties with values that are numbers
-        self.assertEqual(main.removeNumberValues({'b': 2, 'c': ['hi', 'there'], 'd':4}), {'c': ['hi', 'there']},
+        self.assertEqual(main.removeNumberValues({'b': 2.9, 'c': ['hi', 'there'], 'd':4}), {'c': ['hi', 'there']},
         msg = 'should remove any keys with values that are numbers')
 
 ```
@@ -124,7 +124,7 @@ class TestScript(unittest.TestCase):
 
 Write a function called "removeStringValues".
 
-Given an object, "removeStringValues" removes any properties on the given object whose values are strings.
+Given an dictionary, "removeStringValues" removes any keys on the given dictionary whose values are strings.
 
 ```
 input = {'name': 'Sam', 'age': 20}
@@ -155,8 +155,8 @@ class TestScript(unittest.TestCase):
 
 
     def test_0(self):
-        # it should remove any properties with values that are strings
-        self.assertEqual(main.removeStringValues({'b': 2, 'c': ['hi', 'there'], 'd':'4'})), {'b': 2, 'c': ['hi', 'there']},
+        # it should remove any keys with values that are strings
+        self.assertEqual(main.removeStringValues({'b': 2, 'c': ['hi', 'there'], 'd':'4'}), {'b': 2, 'c': ['hi', 'there']},
         msg = 'should remove any keys with values that are strings')
 
 ```
