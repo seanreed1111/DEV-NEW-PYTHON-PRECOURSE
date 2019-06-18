@@ -39,13 +39,14 @@ def special_or(expression1, expression2):
 import main
 import unittest
 import inspect
+import re
 
 class TestScript(unittest.TestCase):
 
     def test_0(self):
         # it should not use the logical OR operator
         source = inspect.getsource(main.special_or)
-        self.assertNotRegex(source, r'\bor\b',
+        self.assertIsNone(re.search(r'\bor\b', source),
         msg = 'function should not contain the word "or" the logical "or" operator')
 
 
