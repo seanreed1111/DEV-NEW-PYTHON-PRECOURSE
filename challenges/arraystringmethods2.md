@@ -49,7 +49,7 @@ class TestScript(unittest.TestCase):
 
     def test_0(self):
         # it should return a string
-        self.assertEqual(main.convertDoubleSpaceToSingle(type("This  here sentence")), str,
+        self.assertEqual(type(main.convertDoubleSpaceToSingle("This  here sentence")), str,
         msg = 'should return a string')
 
     def test_1(self):
