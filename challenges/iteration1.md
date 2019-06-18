@@ -17,7 +17,7 @@ Notes:
 * Strings are zero indexed, meaning the first character in a string is at position 0.
 * When a string contains more than one occurrence of a character, it should return the index of its first occurrence.
 * If the character does not exist in the string, it should return -1.
-* Do not use the native indexOf def in your implementation.
+* Do not use any of Python's native methods, i.e., don't use "str.find", "str.index", "str.rfind", "str.rindex",  or similar methods in your implementation. Write the method from scratch.
 
 ```
 output = getIndexOf('a', 'I am a hacker')
@@ -29,7 +29,7 @@ print(output) # --> 2
 ### !placeholder
 
 ```python
-def getIndexOf(char, str):
+def getIndexOf(char, string):
     # your code here
     pass
 
@@ -43,14 +43,16 @@ def getIndexOf(char, str):
 ```python
 import main
 import unittest
+import re
+import inspect
 
 class TestScript(unittest.TestCase):
-```
-
     def test_0(self):
-        # it should not use indexOf
-        self.assertEqual(main.getIndexOf("a", "I am a hacker"), False,
-        msg = 'should not use indexOf')
+        # it should not use find or index
+        pattern = re.compile(r'\.r?(index|find|search)')
+        source = inspect.getsource(main.getIndexOf)
+        self.assertIsNone(pattern.search(source),
+        msg = 'should not have any of the words "find", "index", or "search" in the function')
 
 
     def test_1(self):
