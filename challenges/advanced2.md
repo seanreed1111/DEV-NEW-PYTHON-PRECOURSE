@@ -19,12 +19,12 @@ Notes:
 * Do not modify the 2nd dictionary at all.
 
 ```
-obj1 = {'a': 1, 'b': 2}
+dict1 = {'a': 1, 'b': 2}
 
-obj2 = {'b': 4,'c': 3}
+dict2 = {'b': 4, 'c': 3}
 
 
-extend(obj1, obj2)
+extend(dict1, dict2)
 
 print(obj1) # --> {'a': 1, 'b': 2, 'c': 3}
 print(obj2) # --> {'b': 4, 'c': 3}
@@ -52,7 +52,7 @@ class TestScript(unittest.TestCase):
         # it 'should return a dict'
         self.assertIsInstance(main.extend({'a': 1, 'b': 2}, {'a':1,'b': 4, 'c': 3, 'd':17}), dict,
         msg = 'should return a dict')
-        
+
     def test_1(self):
         # it should extend the first dict with unrepresented properties from the second object
         self.assertEqual(main.extend({'a':1, 'b':2}, {'b': 4, 'c': 3, 'key':'value'}),
@@ -64,7 +64,7 @@ class TestScript(unittest.TestCase):
         # it 'should leave the second dictionary unchanged'
         obj2 = {'a':1, 'b': 4, 'c': 3, 'd':17}
         main.extend({'a':1, 'b':2}, obj2)
-        self.assertEqual(obj2, {'a':1,'b': 4, 'c': 3, 'd':17})
+        self.assertEqual(obj2, {'a':1,'b': 4, 'c': 3, 'd':17},
         msg = 'should leave the second dictionary unchanged')
 
 ```
