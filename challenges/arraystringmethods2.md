@@ -22,7 +22,7 @@ print(output) # --> ""
 ````
 
 Notes:
-* In order to do this problem, you should be familiar with "string.split", and the "join" method.
+* In order to do this problem, you should be familiar with "str.split", and the "join" methods.
 
 
 ### !end-question
@@ -49,7 +49,7 @@ class TestScript(unittest.TestCase):
 
     def test_0(self):
         # it should return a string
-        self.assertEqual(main.convertDoubleSpaceToSingle("This  here sentence"), str,
+        self.assertEqual(main.convertDoubleSpaceToSingle(type("This  here sentence")), str,
         msg = 'should return a string')
 
     def test_1(self):
