@@ -16,7 +16,13 @@ Given a string, "convertDoubleSpaceToSingle" returns the passed in string, with 
 ```
 output = convertDoubleSpaceToSingle("string  with  double  spaces")
 print(output) # --> "string with double spaces"
+
+output = convertDoubleSpaceToSingle("")
+print(output) # --> ""
 ````
+
+Notes:
+* In order to do this problem, you should be familiar with "string.split", and the "join" method.
 
 
 ### !end-question
@@ -24,7 +30,10 @@ print(output) # --> "string with double spaces"
 ### !placeholder
 
 ```python
-# write your function here
+def convertDoubleSpaceToSingle(string):
+    # your code here
+    pass
+
 
 ```
 
@@ -40,9 +49,8 @@ class TestScript(unittest.TestCase):
 
     def test_0(self):
         # it should return a string
-        self.assertIsInstance(main.convertDoubleSpaceToSingle("This  here sentence"), str,
+        self.assertEqual(main.convertDoubleSpaceToSingle("This  here sentence"), str,
         msg = 'should return a string')
-
 
     def test_1(self):
         # it should return the passed in string, with any double spaces converted to single spaces
@@ -55,12 +63,10 @@ class TestScript(unittest.TestCase):
         self.assertEqual(main.convertDoubleSpaceToSingle("this here string"), "this here string",
         msg = 'should return the passed in string when there are no double spaces')
 
-
     def test_3(self):
         # it should return an empty string when passed an empty string
         self.assertEqual(main.convertDoubleSpaceToSingle(""), "",
         msg = 'should return an empty string when passed an empty string')
-
 
 ```
 
