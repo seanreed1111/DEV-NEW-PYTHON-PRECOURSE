@@ -2,7 +2,7 @@ import os
 import re
 import unicodedata
 
-source_file_name = "conditionals6.md"
+source_file_name = "objects4.md"
 source_path = os.path.join("challenges-JS", source_file_name)
 target_path = os.path.join("challenges", source_file_name)
 
@@ -82,19 +82,21 @@ for key in test_object:
 data = re.sub(r'var\s+', '', data)
 data = re.sub(r'local-snippet', 'code-snippet', data)
 data = re.sub(r'javascript', r'python3.6', data)
-data = re.sub(r';', '', data) #  everyone hates semicolons, amirite?
+data = re.sub(r';', '', data)  # everyone hates semicolons, amirite?
 data = re.sub(r'{\s*', ':', data)
 data = re.sub(r'}', '', data)
-data = re.sub(r'\s{0,2}//\s+your code here', '\n    # your code here\n    pass', data)
-data = re.sub(r'//', r'#', data)  #  pythonic comments
-data = re.sub(r'console.log', r'print', data)  #  python print statement
-data = re.sub(r'function\s(?!called)', r'def ', data)  #  function -> def
+data = re.sub(r'\s{0,2}//\s+your code here', '\n    # your code here\n    pass',
+              data)
+data = re.sub(r'//', r'#', data)  # pythonic comments
+data = re.sub(r'console.log', r'print', data)  # python print statement
+data = re.sub(r'function\s(?!called)', r'def ', data)  # function -> def
 data = re.sub(r'`js', r'`python', data)
-data = re.sub(r'!tests', "!tests\n"+test_class_string+"\n".join(output_strings), data)
+data = re.sub(r'!tests', "!tests\n"+test_class_string+"\n".join(output_strings),
+              data)
 data = re.sub(r'\)\s+:', r'):', data)
 data = re.sub(r'true', 'True', data)
 data = re.sub(r'false', 'False', data)
-data = re.sub(r'(an )*array\b',r'list',data)
+data = re.sub(r'(an )*array\b', r'list', data)
 
 with open(target_path, "wt") as f:
     f.write(data)

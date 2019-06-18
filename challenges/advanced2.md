@@ -24,10 +24,11 @@ dict1 = {'a': 1, 'b': 2}
 dict2 = {'b': 4, 'c': 3}
 
 
-extend(dict1, dict2)
+result = extend(dict1, dict2)
 
-print(obj1) # --> {'a': 1, 'b': 2, 'c': 3}
-print(obj2) # --> {'b': 4, 'c': 3}
+print(result) # --> {'a': 1, 'b': 2, 'c': 3}
+print(dict1)  # --> {'a': 1, 'b': 2, 'c': 3}
+print(dict2) # --> {'b': 4, 'c': 3}
 ```
 
 ### !end-question
