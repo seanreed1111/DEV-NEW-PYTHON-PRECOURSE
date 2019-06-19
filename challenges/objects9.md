@@ -244,7 +244,7 @@ class TestScript(unittest.TestCase):
     def test_1(self):
         # it should return an empty list if the list has only odd length elements
         obj = {'key': ['has','odd','words']}
-        self.assertEqual(main.getEvenLengthWordsAtProperty(obj, 'key')), [],
+        self.assertEqual(main.getEvenLengthWordsAtProperty(obj, 'key'), [],
         msg = 'should return an empty list if the list has only odd length elements')
 
 
