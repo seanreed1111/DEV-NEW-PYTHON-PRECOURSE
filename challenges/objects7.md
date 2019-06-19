@@ -152,26 +152,26 @@ class TestScript(unittest.TestCase):
     def test_1(self):
         # it should return None if the list is empty
         obj = {'key': []}
-        self.assertEqual(main.getElementsLessThan100AtProperty(obj, 'key'),[]
+        self.assertEqual(main.getElementsLessThan100AtProperty(obj, 'key'),[],
         msg = 'should return an empty list if the list is empty')
 
 
     def test_2(self):
         # it should return None if the property is not a list
         obj = {'key': 'Nope, nobody here but us chickens'}
-        self.assertEqual(main.getElementsLessThan100AtProperty(obj, 'key'),[]
+        self.assertEqual(main.getElementsLessThan100AtProperty(obj, 'key'),[],
         msg = 'should return an empty list if the key does not point to a list')
 
     def test_2_5(self):
         # it should return an empty list if the list is empty
         obj = {'key': []}
-        self.assertEqual(main.getElementsLessThan100AtProperty(obj, 'key'),[]
-        msg = 'it should return an empty list if the list is empty')
+        self.assertEqual(main.getElementsLessThan100AtProperty(obj, 'key'),[],
+        msg = 'it should return an empty list if the list is emptyy')
 
     def test_3(self):
         # it should return an empty list if the key does not exist
         obj = {'key2_not_key': [1, 2, 4]}
-        self.assertEqual(main.getElementsLessThan100AtProperty(obj, 'key'),[]
+        self.assertEqual(main.getElementsLessThan100AtProperty(obj, 'key'),[],
         msg = 'should return an empty list if the key does not exist')
 
 ```
