@@ -126,7 +126,7 @@ Notes:
 * If there is no property at the key, it should return an empty list.
 
 ```
-obj = :key: [1000, 20, 50, 500]
+obj = {'key': [1000, 20, 50, 500, 100]}
 
 output = getElementsLessThan100AtProperty(obj, 'key')
 print(output) # --> [20, 50]
@@ -142,8 +142,6 @@ def getElementsLessThan100AtProperty(obj, key):
     pass
 
 
-
-
 ```
 
 ### !end-placeholder
@@ -155,34 +153,37 @@ import main
 import unittest
 
 class TestScript(unittest.TestCase):
-```
+    def test_0(self):
+        # it "should return a list containing all the elements less than 100 in the list located at key"
+        obj = {'key': [1, 2, 100, 400]}
+        self.assertEqual(main.getElementsLessThan100AtProperty(obj, 'key'), [1, 2],
+        msg = "should return a list containing all the elements less than 100 in the list located at key")
 
 
+    def test_1(self):
+        # it should return None if the list is empty
+        obj = {'key': []}
+        self.assertEqual(main.getElementsLessThan100AtProperty(obj, 'key'),[]
+        msg = 'should return an empty list if the list is empty')
 
-```python
 
-describe("getElementsLessThan100AtProperty", function():it("should return a list containing all the elements less than 100 in the list located at key", function():obj = :list: [100, 20, 40]
+    def test_2(self):
+        # it should return None if the property is not a list
+        obj = {'key': 'Nope, nobody here but us chickens'}
+        self.assertEqual(main.getElementsLessThan100AtProperty(obj, 'key'),[]
+        msg = 'should return an empty list if the key does not point to a list')
 
-    expect(getElementsLessThan100AtProperty(obj, "list")).to.deep.eq([20, 40])
-  )
-  it("should return an empty list if the list has no elements less than 100", function():obj = :list: [1000, 3000]
+    def test_2_5(self):
+        # it should return an empty list if the list is empty
+        obj = {'key': []}
+        self.assertEqual(main.getElementsLessThan100AtProperty(obj, 'key'),[]
+        msg = 'it should return an empty list if the list is empty')
 
-    expect(getElementsLessThan100AtProperty(obj, "list")).to.deep.eq([])
-  )
-  it("should return an empty list if the list is empty", function():obj = :list: []
-
-    expect(getElementsLessThan100AtProperty(obj, "list")).to.deep.eq([])
-  )
-  it("should return an empty list if the property is not a list", function():obj = :list: "sike"
-
-    expect(getElementsLessThan100AtProperty(obj, "list")).to.deep.eq([])
-  )
-  it("should return an empty list if the property does not exist", function():obj = :what: "sike"
-
-    expect(getElementsLessThan100AtProperty(obj, "list")).to.deep.eq([])
-  )
-)
-
+    def test_3(self):
+        # it should return an empty list if the key does not exist
+        obj = {'key2_not_key': [1, 2, 4]}
+        self.assertEqual(main.getElementsLessThan100AtProperty(obj, 'key'),[]
+        msg = 'should return an empty list if the key does not exist')
 
 ```
 

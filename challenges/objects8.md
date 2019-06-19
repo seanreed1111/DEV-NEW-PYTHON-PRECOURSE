@@ -340,7 +340,7 @@ class TestScript(unittest.TestCase):
         # it should return None if the key does not exist
         obj = {'key2_not_key': [1, 2, 4]}
         self.assertIsNone(main.getLastElementOfProperty(obj, 'key'),
-        msg = 'should return None if the property does not exist')
+        msg = 'should return None if the key does not exist')
 
 ```
 
