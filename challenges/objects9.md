@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: badca645-bd7e-42db-9a63-1b14d1bf99ec
 * title: getOddLengthWordsAtProperty
 
@@ -11,33 +11,27 @@
 
 Write a function called "getOddLengthWordsAtProperty".
 
-Given an object and a key, "getOddLengthWordsAtProperty" returns an array containing all the odd length word elements of the array located at the given key.
+Given a dictionary and a key, "getOddLengthWordsAtProperty" returns a list containing all the odd length word elements of the list located at the given key.
 
 Notes:
-* If the array is empty, it should return an empty array.
-* If it contains no odd length elements, it should return an empty array.
-* If the property at the given key is not an array, it should return an empty array.
-* If there is no property at the given key, it should return an empty array.
+* If the list is empty, it should return an empty list.
+* If it contains no odd length elements, it should return an empty list.
+* If the property at the given key is not a list, it should return an empty list.
+* If there is no property at the given key, it should return an empty list.
 
 ```
-var obj = {
-  key: ['It', 'has', 'some', 'words']
-};
-var output = getOddLengthWordsAtProperty(obj, 'key');
-console.log(output); // --> ['has', 'words']
+obj = {'key': ['It', 'has', 'some', 'words']}
+
+output = getOddLengthWordsAtProperty(obj, 'key')
+print(output) # --> ['has', 'words']
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getOddLengthWordsAtProperty(obj, key) {
-  // your code here
-   
-
-   
-}
+```python
+# your code here
 
 ```
 
@@ -45,41 +39,49 @@ function getOddLengthWordsAtProperty(obj, key) {
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getOddLengthWordsAtProperty", function() {
-  it("should return an array containing all the odd length elements of the array located at key", function() {
-    var obj = {
-      array: ["a", "long", "night"]
-    };
-    expect(getOddLengthWordsAtProperty(obj, "array")).to.deep.eq(["a", "night"]);
-  });
-  it("should return an empty array if the array has only no odd length elements", function() {
-    var obj = {
-      array: ["It", "is", "gone"]
-    };
-    expect(getOddLengthWordsAtProperty(obj, "array")).to.deep.eq([]);
-  });
-  it("should return an empty array if the array is empty", function() {
-    var obj = {
-      array: []
-    };
-    expect(getOddLengthWordsAtProperty(obj, "array")).to.deep.eq([]);
-  });
-  it("should return an empty array if the property is not an array", function() {
-    var obj = {
-      array: "sike"
-    };
-    expect(getOddLengthWordsAtProperty(obj, "array")).to.deep.eq([]);
-  });
-  it("should return an empty array if the property does not exist", function() {
-    var obj = {
-      what: "sike"
-    };
-    expect(getOddLengthWordsAtProperty(obj, "array")).to.deep.eq([]);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test_00(self):
+        # it should return a list
+        obj = {'key': ['It', 'has', 'some', 'words']}
+        self.assertIsInstance(main.getOddLengthWordsAtProperty(obj, 'key'), list,
+        msg = 'should return a list')
 
+    def test_0(self):
+        # it should return a list containing all the odd length elements of the list located at key
+        self.assertEqual(main.getOddLengthWordsAtProperty(obj, 'key'), ["a", "night"],
+        msg = 'should return a list containing all the odd length elements of the list located at key')
+
+
+    def test_1(self):
+        # it should return an empty list if the list has only even length elements
+        obj = {'key': ['some', 'even', 'list']}
+        self.assertEqual(main.getOddLengthWordsAtProperty(obj, 'key'), [],
+        msg = 'it should return an empty list if the list has only even length elements')
+
+
+    def test_2(self):
+        # it should return an empty list if the list is empty
+        obj = {'key': []}
+        self.assertEqual(main.getOddLengthWordsAtProperty(obj, 'key'), [],
+        msg = 'should return an empty list if the list is empty')
+
+
+    def test_3(self):
+        # it should return an empty list if the property is not a list
+        obj = {'key':'nope'}
+        self.assertEqual(main.getOddLengthWordsAtProperty(obj, 'key'), [],
+        msg = 'should return an empty list if the value at key is not a list')
+
+
+    def test_4(self):
+        # it should return an empty list if the property does not exist
+        obj = {'nope':'nope'}
+        self.assertEqual(main.getOddLengthWordsAtProperty(obj, 'key'), [],
+        msg = 'should return an empty list if the key does not exist')
 
 ```
 
@@ -93,8 +95,8 @@ describe("getOddLengthWordsAtProperty", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: eae34f47-83d0-42c2-8ebc-9b72ae0482c3
 * title: getAverageOfElementsAtProperty
 
@@ -102,66 +104,73 @@ describe("getOddLengthWordsAtProperty", function() {
 
 Write a function called "getAverageOfElementsAtProperty".
 
-Given an object and a key, "getAverageOfElementsAtProperty" returns the average of all the elements in the array located at the given key.
+Given a dictionary and a key, "getAverageOfElementsAtProperty" returns the average of all the elements in the list located at the given key.
 
 Notes:
-* If the array at the given key is empty, it should return 0.
-* If the property at the given key is not an array, it should return 0.
+* If the list at the given key is empty, it should return 0.
+* If the property at the given key is not a list, it should return 0.
 * If there is no property at the given key, it should return 0.
 
 ```
-var obj = {
-  key: [1, 2, 3]
-};
-var output = getAverageOfElementsAtProperty(obj, 'key');
-console.log(output); // --> 2
+obj = {'key': [1, 2, 3]}
+
+output = getAverageOfElementsAtProperty(obj, 'key')
+print(output) # --> 2
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getAverageOfElementsAtProperty(obj, key) {
-  // your code here
-   
+```python
+# your code here
 
-   
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getAverageOfElementsAtProperty", function() {
-  it("should return the average of all the elements of the array located at key", function() {
-    var obj = {
-      array: [1, 3, 5]
-    };
-    expect(getAverageOfElementsAtProperty(obj, "array")).to.deep.eq(3);
-  });
-  it("should return 0 if the array is empty", function() {
-    var obj = {
-      array: []
-    };
-    expect(getAverageOfElementsAtProperty(obj, "array")).to.deep.eq(0);
-  });
-  it("should return 0 if the property is not an array", function() {
-    var obj = {
-      array: "sike"
-    };
-    expect(getAverageOfElementsAtProperty(obj, "array")).to.deep.eq(0);
-  });
-  it("should return 0 if the property does not exist", function() {
-    var obj = {
-      what: "sike"
-    };
-    expect(getAverageOfElementsAtProperty(obj, "array")).to.deep.eq(0);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test_00(self):
+        # it should return an int or a float
+        obj = {'key': [1, 2, 3]}
+        self.assertIsInstance(main.getAverageOfElementsAtProperty(obj, 'key'),
+        (int,float),
+        msg = 'should return an int or a float')    
+
+    def test_0(self):
+        # it should return the average of all the elements of the list located at key
+        obj = {'key': [0, 0, 30]}
+        self.assertEqual(main.getAverageOfElementsAtProperty(obj, 'key'), 10,
+        msg = 'should return the average of all the elements of the list located at key')
+
+
+    def test_1(self):
+        # it should return 0 if the list is empty
+        obj = {'key': []}
+        self.assertEqual(main.getAverageOfElementsAtProperty(obj, 'key'), 0,
+        msg = 'should return 0 if the list is empty')
+
+
+    def test_2(self):
+        # it should return 0 if the property is not a list
+        obj = {'key1': 'nope'}
+        self.assertEqual(main.getAverageOfElementsAtProperty(obj, 'key1'), 0,
+        msg = 'should return 0 if the property is not a list')
+
+
+    def test_3(self):
+        # it should return 0 if the property does not exist
+        obj = {'key1_not_key': [10,20,30]}
+        self.assertEqual(main.getAverageOfElementsAtProperty(obj, 'key'), 0,
+        msg = 'should return 0 if the property does not exist')
+
 
 ```
 
@@ -175,8 +184,8 @@ describe("getAverageOfElementsAtProperty", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 6a474db4-3933-40f0-8af5-d52e55e0dff0
 * title: getEvenLengthWordsAtProperty
 
@@ -184,73 +193,79 @@ describe("getAverageOfElementsAtProperty", function() {
 
 Write a function called "getEvenLengthWordsAtProperty".
 
-Given an object and a key, "getEvenLengthWordsAtProperty" returns an array containing all the even length word elements of the array located at the given key.
+Given a dictionary and a key, "getEvenLengthWordsAtProperty" returns a list containing all the even length word elements of the list located at the given key.
 
 Notes:
-* If the array is empty, it should return an empty array.
-* If it contains no even length elements, it should return an empty array.
-* If the property at the given key is not an array, it should return an empty array.
-* If there is no property at the key, it should return an empty array.
+* If the list is empty, it should return an empty list.
+* If it contains no even length elements, it should return an empty list.
+* If the property at the given key is not a list, it should return an empty list.
+* If there is no property at the key, it should return an empty list.
 
 ```
-var obj = {
-  key: ['a', 'long', 'game']
-};
-var output = getEvenLengthWordsAtProperty(obj, 'key');
-console.log(output); // --> ['long', 'game']
+obj = {key: ['a', 'long', 'game']}
+
+output = getEvenLengthWordsAtProperty(obj, 'key')
+print(output) # --> ['long', 'game']
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getEvenLengthWordsAtProperty(obj, key) {
-  // your code here
-   
+```python
+# your code here
 
-   
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getEvenLengthWordsAtProperty", function() {
-  it("should return an array containing all the even length elements of the array located at key", function() {
-    var obj = {
-      array: ["a", "long", "game"]
-    };
-    expect(getEvenLengthWordsAtProperty(obj, "array")).to.deep.eq(["long", "game"]);
-  });
-  it("should return an empty array if the array has only no even length elements", function() {
-    var obj = {
-      array: ["I", "may", "say"]
-    };
-    expect(getEvenLengthWordsAtProperty(obj, "array")).to.deep.eq([]);
-  });
-  it("should return an empty array if the array is empty", function() {
-    var obj = {
-      array: []
-    };
-    expect(getEvenLengthWordsAtProperty(obj, "array")).to.deep.eq([]);
-  });
-  it("should return an empty array if the property is not an array", function() {
-    var obj = {
-      array: "sike"
-    };
-    expect(getEvenLengthWordsAtProperty(obj, "array")).to.deep.eq([]);
-  });
-  it("should return an empty array if the property does not exist", function() {
-    var obj = {
-      what: "sike"
-    };
-    expect(getEvenLengthWordsAtProperty(obj, "array")).to.deep.eq([]);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test_00(self):
+        # it should return a list
+        obj = {'key': ['It', 'has', 'some', 'words']}
+        self.assertIsInstance(main.getEvenLengthWordsAtProperty(obj, 'key'), list,
+        msg = 'should return a list')
+
+    def test_0(self):
+        # it should return a list containing all the even length elements of the list located at key
+        obj = {'key': ['It', 'has', 'some', 'long','words']}
+        self.assertEqual(main.getEvenLengthWordsAtProperty(obj, 'key')), ['some', 'long'],
+        msg = 'should return a list containing all the even length elements of the list located at key')
+
+
+    def test_1(self):
+        # it should return an empty list if the list has only odd length elements
+        obj = {'key': ['has','odd','words']}
+        self.assertEqual(main.getEvenLengthWordsAtProperty(obj, 'key')), [],
+        msg = 'should return an empty list if the list has only odd length elements')
+
+
+    def test_2(self):
+        # it should return an empty list if the list is empty
+        obj = {'key1': []}
+        self.assertEqual(main.getEvenLengthWordsAtProperty(obj, 'key1'), [],
+        msg = 'should return an empty list if the list is empty')
+
+
+    def test_3(self):
+        # it should return an empty list if the property is not a list
+        obj = {'nope':'nope'}
+        self.assertEqual(main.getEvenLengthWordsAtProperty(obj, 'key'), [],
+        msg = 'should return an empty list if the property is not a list')
+
+
+    def test_4(self):
+        # it should return an empty list if the property does not exist
+        obj = {'nope':['nope', 'still nope']}
+        self.assertEqual(main.getEvenLengthWordsAtProperty(obj, 'key'), [],
+        msg = 'should return an empty list if the property does not exist')
 
 ```
 
