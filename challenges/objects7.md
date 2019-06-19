@@ -72,7 +72,7 @@ class TestScript(unittest.TestCase):
             # it "should return an empty list if the list is empty"
             obj = {'key': []}
             self.assertEqual(main.getElementsThatEqual10AtProperty(obj, 'key'),
-             [], msg = "should return an empty list if the list is empty")
+             [], msg = "should return an empty listy")
 
     def test_4(self):
             # it "should return an empty list if the value of the key is not a list"
