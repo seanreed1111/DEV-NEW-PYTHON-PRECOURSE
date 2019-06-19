@@ -2,7 +2,7 @@ import os
 import re
 import unicodedata
 
-source_file_name = "advanced3.md"
+source_file_name = "objects8.md"
 source_path = os.path.join("challenges-JS", source_file_name)
 target_path = os.path.join("challenges", source_file_name)
 
@@ -79,6 +79,8 @@ for key in test_object:
         acc += result
     output_strings.append(acc)
 
+print(output_strings)
+
 data = re.sub(r'var\s+', '', data)
 data = re.sub(r'local-snippet', 'code-snippet', data)
 data = re.sub(r'javascript', r'python3.6', data)
@@ -96,7 +98,13 @@ data = re.sub(r'!tests', "!tests\n"+test_class_string+"\n".join(output_strings),
 data = re.sub(r'\)\s+:', r'):', data)
 data = re.sub(r'true', 'True', data)
 data = re.sub(r'false', 'False', data)
-data = re.sub(r'(an )*array\b', r'list', data)
+data = re.sub(r'array', r'list', data)
+data = re.sub(r'properties', r'keys', data)
+data = re.sub(r'objects', r'dictionaries', data)
+data = re.sub(r'\bobject\b', r'dictionary', data)
+data = re.sub(r'an dictionary', r'a dictionary', data)
+data = re.sub(r'an list', r'a list', data)
+data = re.sub(r'undefined', r'None', data)
 
 with open(target_path, "wt") as f:
     f.write(data)
