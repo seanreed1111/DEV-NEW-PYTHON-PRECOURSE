@@ -52,6 +52,7 @@ class TestScript(unittest.TestCase):
 
     def test_0(self):
         # it should return a list containing all the odd length elements of the list located at key
+        obj = {'key': ['a', 'night', 'to', 'remember']}
         self.assertEqual(main.getOddLengthWordsAtProperty(obj, 'key'), ["a", "night"],
         msg = 'should return a list containing all the odd length elements of the list located at key')
 
@@ -236,7 +237,7 @@ class TestScript(unittest.TestCase):
     def test_0(self):
         # it should return a list containing all the even length elements of the list located at key
         obj = {'key': ['It', 'has', 'some', 'long','words']}
-        self.assertEqual(main.getEvenLengthWordsAtProperty(obj, 'key')), ['some', 'long'],
+        self.assertEqual(main.getEvenLengthWordsAtProperty(obj, 'key'), ['some', 'long'],
         msg = 'should return a list containing all the even length elements of the list located at key')
 
 
