@@ -55,8 +55,7 @@ class TestScript(unittest.TestCase):
             # it "should return a list
             obj = {'key': [10,20,30,10,100]}
             self.assertIsInstance(main.getElementsThatEqual10AtProperty(obj,
-            'key')
-            , list,
+            'key'), list,
             msg = "should return a list")
 
     def test_1(self):
@@ -71,31 +70,28 @@ class TestScript(unittest.TestCase):
             obj = {'key': [20,100]}
             self.assertEqual(main.getElementsThatEqual10AtProperty(obj, 'key'),
              [],
-            msg = "should return an empty list if the list has no elements that equal 10")        
+            msg = "should return an empty list if the list has no elements that equal 10")
 
     def test_3(self):
             # it "should return an empty list if the list is empty"
             obj = {'key': []}
             self.assertEqual(main.getElementsThatEqual10AtProperty(obj, 'key'),
              [],
-            msg = "should return an empty list if the list is empty"
-            )
+            msg = "should return an empty list if the list is empty")
 
     def test_4(self):
             # it "should return an empty list if the value of the key is not a list"
             obj = {'key': 10}
             self.assertEqual(main.getElementsThatEqual10AtProperty(obj, 'key'),
              [],
-            msg = "should return an empty list if the value of the key is not a list"
-            )
+            msg = "should return an empty list if the value of the key is not a list")
 
     def test_4(self):
             # it "should return an empty list if the key does not exist"
             obj = {'nope': 10}
             self.assertEqual(main.getElementsThatEqual10AtProperty(obj, 'key'),
              [],
-            msg = "should return an empty list if the key does not exist"
-            )
+            msg = "should return an empty list if the key does not exist")
 
 ```
 ### !end-tests
