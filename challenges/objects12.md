@@ -49,7 +49,7 @@ class TestScript(unittest.TestCase):
     def test_0(self):
         #it should return the product of all the elements of the list located at key
         obj = {'key': [1, 2, 3, 4]}
-        self.assertEqual(main.getProductOfAllElementsAtProperty(obj, 'key'), 8,
+        self.assertEqual(main.getProductOfAllElementsAtProperty(obj, 'key'), 24,
         msg = 'should return the product of all the elements of the list located at key')
 
     def test_00(self):
