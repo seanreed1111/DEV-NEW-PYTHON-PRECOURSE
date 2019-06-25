@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 5daa1fba-b275-4f89-a5f5-fafd4f9604d1
 * title: calculateBillTotal
 
@@ -18,39 +18,45 @@ Notes:
 * Do NOT tip on the sales tax, only on the pre tip amount.
 
 ```
-var output = calculateBillTotal(20);
-console.log(output); // --> 24.9
+output = calculateBillTotal(20)
+print(output) # --> 24.9
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function calculateBillTotal(preTaxAndTipAmount) {
-  // your code here
-  
-}
+```python
+def calculateBillTotal(preTaxAndTipAmount):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("calculateBillTotal", function() {
-  it("should return a number", function() {
-    expect(typeof calculateBillTotal(20)).to.deep.eq("number");
-  });
-  it("should return the bill total, incuding tax and tip", function() {
-    expect(calculateBillTotal(20)).to.deep.eq(24.9);
-  });
-});
+class TestScript(unittest.TestCase):
+
+    def test_0(self):
+        # it should return a number
+        self.assertIsInstance(main.calculateBillTotal(20), (float, int),
+        msg = 'should return a number')
+
+
+    def test_1(self):
+        # it should return the bill total, including tax and tip
+        self.assertEqual(main.calculateBillTotal(20), 24.9,
+        msg = 'should return the bill total, including tax and tip')
 
 
 ```
-
 ### !end-tests
 
 ### !explanation
