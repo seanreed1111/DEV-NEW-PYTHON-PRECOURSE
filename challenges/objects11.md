@@ -131,27 +131,28 @@ class TestScript(unittest.TestCase):
     def test_0(self):
         # it should return the largest element of the list located at key
         obj = {'key': [2, 1, 5]}
-        self.assertEqual(main.getLargestElementAtProperty(obj, "list"), 5,
+        self.assertEqual(main.getLargestElementAtProperty(obj, 'key'), 5,
         msg = 'should return the largest element of the list located at key')
 
 
     def test_1(self):
         # it should return None if the list is empty
         obj = {'key': []}
-        self.assertIsNone(main.getLargestElementAtProperty(obj, "list"),
+        self.assertIsNone(main.getLargestElementAtProperty(obj, 'key'),
         msg = 'should return None if the list is empty')
 
 
     def test_2(self):
         # it should return None if the property is not a list
         obj = {'key': 'nope'}
-        self.assertIsNone(main.getLargestElementAtProperty(obj, "list"),
+        self.assertIsNone(main.getLargestElementAtProperty(obj, 'key'),
         msg = 'should return None if the property is not a list')
 
 
     def test_3(self):
         # it should return None if the property does not exist
-        self.assertIsNone(main.getLargestElementAtProperty(obj, "list"),
+        obj = {'nope': [1,2,3]}        
+        self.assertIsNone(main.getLargestElementAtProperty(obj, 'key'),
         msg = 'should return None if the property does not exist')
 
 ```
