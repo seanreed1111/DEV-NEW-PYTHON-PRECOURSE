@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 0c21c708-bcb4-4810-a951-c47b6e27184b
 * title: getStringLength
 
@@ -14,47 +14,60 @@ Write a function called "getStringLength".
 Given a string, "getStringLength" returns the length of the given string.
 
 Notes:
-* Do NOT use any native 'length' methods.
-* You might consider using 'substring' or 'slice' as alternatives.
+* Do NOT use any native 'length' methods, e.g., len().
+
 
 ```
-var output = getStringLength('hello');
-console.log(output); // --> 5
+output = getStringLength('hello')
+print(output) # --> 5
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getStringLength(string) {
-  // your code here
-  
-}
+```python
+def getStringLength(string):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
+import re, inspect
 
-describe("getStringLength", function() {
-  it("should return a number", function() {
-    expect(typeof getStringLength("heyo")).to.deep.eq("number");
-  });
-  it("should not use the native length operator", function() {
-    var body = getStringLength.toString();
-    expect(/length/.test(body)).to.deep.eq(false);
-  });
-  it("should return the length of a string", function() {
-    expect(getStringLength("heyo")).to.deep.eq(4);
-  });
-  it("should return the length of an empty string", function() {
-    expect(getStringLength("")).to.deep.eq(0);
-  });
-});
+class TestScript(unittest.TestCase):
 
+    def test_00(self):
+        # should not have the word "len" anywhere in function body'
+        pattern = re.compile(r'len')
+        source = inspect.getsource(main.getStringLength)
+        self.assertIsNone(pattern.search(source),
+        msg = 'should not have the word "len" anywhere in function body')
+
+
+    def test_0(self):
+        # it should return an int    
+        self.assertIsInstance(main.getStringLength("heyo"), int,
+        msg = 'it should return an int')
+
+
+    def test_1(self):
+        # it should return the length of a string
+        self.assertEqual(main.getStringLength("heyo"), 4,
+        msg = 'should return the length of a string')
+
+    def test_2(self):
+        # it should return the length of a string
+        self.assertEqual(main.getStringLength(""), 0,
+        msg = 'should return the length of an empty string as 0')
 
 ```
 

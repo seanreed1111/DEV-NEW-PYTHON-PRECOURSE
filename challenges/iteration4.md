@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: cbcdeb30-874c-43d4-bf34-efee529c29d9
 * title: computeFactorialOfN
 
@@ -14,43 +14,52 @@ Write a function called "computeFactorialOfN".
 Given a natural number (a whole number greater than 0), "computeFactorialOfN" returns its factorial.
 
 ```
-var output = computeFactorialOfN(3);
-console.log(output); // --> 6
+output = computeFactorialOfN(3)
+print(output) # --> 6
 
-var output = computeFactorialOfN(4);
-console.log(output); // --> 24
+output = computeFactorialOfN(4)
+print(output) # --> 24
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
+```python
 
-function computeFactorialOfN(n) {
-  // your code here
+def computeFactorialOfN(n):
+    # your code here
+    pass
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("computeFactorialOfN", function() {
-  it("should return a number", function() {
-    expect(typeof computeFactorialOfN(7)).to.deep.eq("number");
-  });
-  it("should return the factorial of 'n'", function() {
-    expect(computeFactorialOfN(4)).to.deep.eq(24);
-  });
-  it("should return the factorial of 1", function() {
-    expect(computeFactorialOfN(1)).to.deep.eq(1);
-  });
-});
+class TestScript(unittest.TestCase):
 
+    def test_0(self):
+        # it should return an int
+        self.assertIsInstance(main.computeFactorialOfN(7), int,
+        msg = 'should return an int')
+
+
+    def test_1(self):
+        # it should return the factorial of 'n'
+        self.assertEqual(main.computeFactorialOfN(4), 24,
+        msg = "should return the factorial of 'n'")
+
+
+    def test_2(self):
+        # it should return the factorial of 1
+        self.assertEqual(main.computeFactorialOfN(1), 1,
+        msg = 'should return the factorial of 1')
 
 ```
 
@@ -64,8 +73,8 @@ describe("computeFactorialOfN", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 184175a0-0e1a-4639-9502-825d7e6cc8f3
 * title: repeatString
 
@@ -76,39 +85,48 @@ Write a function called "repeatString".
 Given a string and a number, "repeatString" returns the given string repeated the given number of times.
 
 ```
-var output = repeatString('code', 3);
-console.log(output); // --> 'codecodecode'
+output = repeatString('code', 3)
+print(output) # --> 'codecodecode'
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function repeatString(string, num) {
-  // your code here
-  
-}
+```python
+def repeatString(string, num):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("repeatString", function() {
-  it("should return a string", function() {
-    expect(typeof(repeatString("what", 3))).to.deep.eq("string");
-  });
-  it("should repeat a string a given number of times", function() {
-    expect(repeatString("what", 3)).to.deep.eq("whatwhatwhat");
-  });
-  it("should repeat a string 0 number of times", function() {
-    expect(repeatString("what", 0)).to.deep.eq("");
-  });
-});
+class TestScript(unittest.TestCase):
 
+    def test_0(self):
+        # it should return a string
+        self.assertIsInstance(main.repeatString("what", 3), str,
+        msg = 'should return a string')
+
+
+    def test_1(self):
+        # it should repeat a string a given number of times
+        self.assertEqual(main.repeatString("what", 3), "whatwhatwhat",
+        msg = 'should repeat a string a given number of times')
+
+
+    def test_2(self):
+        # it should repeat a string 0 number of times
+        self.assertEqual(main.repeatString("what", 0), "",
+        msg = 'should repeat a string 0 number of times')
 
 ```
 
