@@ -44,7 +44,7 @@ import unittest
 class TestScript(unittest.TestCase):
     def test_0(self):
         # it should return a number
-        self.assertIsInstance(main.getLargestElement([3, 5, 3, 1]), (float, int)",
+        self.assertIsInstance(main.getLargestElement([3, 5, 3, 1]), (float, int),
         msg = 'should return a number')
 
 
