@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 54143016-2767-47af-9931-408799951ba0
 * title: getLargestElement
 
@@ -11,48 +11,59 @@
 
 Write a function called "getLargestElement".
 
-Given an array, "getLargestElement" returns the largest number in the given array.
+Given a list, "getLargestElement" returns the largest number in the given list.
 
 Notes:
-* It should return 0 if the array is empty.
+* It should return 0 if the list is empty.
 
 ```
-var output = getLargestElement([5, 2, 8, 3]);
-console.log(output); // --> 8;
+output = getLargestElement([5, 2, 8, 3])
+print(output) # --> 8
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getLargestElement(arr) {
-  // your code here
+```python
+def getLargestElement(arr):
+    # your code here
+    pass
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getLargestElement", function() {
-  it("should return a number", function() {
-    expect(typeof getLargestElement([3, 5, 3, 1])).to.deep.eq("number");
-  });
-  it("should return the largest element in an array", function() {
-    expect(getLargestElement([3, 5, 3, 1])).to.deep.eq(5);
-  });
-  it("should return the largest element in an array when there are ties", function() {
-    expect(getLargestElement([3, 5, 3, 1, 5])).to.deep.eq(5);
-  });
-  it("should return the largest element in an array when they are all negative", function() {
-    expect(getLargestElement([-1, -5, -3])).to.deep.eq(-1);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test_0(self):
+        # it should return a number
+        self.assertIsInstance(main.getLargestElement([3, 5, 3, 1]), (float, int)",
+        msg = 'should return a number')
 
+
+    def test_1(self):
+        # it should return the largest element in a list
+        self.assertEqual(main.getLargestElement([3, 5, 3, 1]), 5,
+        msg = 'should return the largest element in a list')
+
+
+    def test_2(self):
+        # it should return the largest element in a list when there are ties
+        self.assertEqual(main.getLargestElement([3, 5, 3, 1, 5]), 5,
+        msg = 'should return the largest element in a list when there are ties')
+
+
+    def test_3(self):
+        # it should return the largest element in a list when they are all negative
+        self.assertEqual(main.getLargestElement([-1, -5, -3]), -1,
+        msg = 'should return the largest element in a list when they are all negative')
 
 ```
 
@@ -66,8 +77,8 @@ describe("getLargestElement", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: baa3bc1e-1a67-4a6b-a66a-72cc6e55c8b4
 * title: computeSumOfAllElements
 
@@ -75,42 +86,51 @@ describe("getLargestElement", function() {
 
 Write a function called "computeSumOfAllElements".
 
-Given an array of numbers, "computeSumOfAllElements" returns the sum of all the elements in the given array.
+Given a list of numbers, "computeSumOfAllElements" returns the sum of all the elements in the given list.
 
 ```
-var output = computeSumOfAllElements([1, 2, 3])
-console.log(output); // --> 6
+output = computeSumOfAllElements([1, 2, 3])
+print(output) # --> 6
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function computeSumOfAllElements(arr) {
-  // your code here
-  
-}
+```python
+def computeSumOfAllElements(arr):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("computeSumOfAllElements", function() {
-  it("should return a number", function() {
-    expect(typeof computeSumOfAllElements([1, 2, 4])).to.deep.eq("number");
-  });
-  it("return the sum of all elements", function() {
-    expect(computeSumOfAllElements([1, 2, 4])).to.deep.eq(7);
-  });
-  it("return 0 if the passed in array is empty", function() {
-    expect(computeSumOfAllElements([])).to.deep.eq(0);
-  });
-});
+class TestScript(unittest.TestCase):
 
+    def test_0(self):
+        # it should return a number
+        self.assertIsInstance(main.computeSumOfAllElements([1, 2, 4]), (float, int),
+        msg = 'should return a number')
+
+
+    def test_1(self):
+        # it return the sum of all elements
+        self.assertEqual(main.computeSumOfAllElements([1, 2, 4]), 7,
+        msg = 'return the sum of all elements')
+
+
+    def test_2(self):
+        # it return 0 if the passed in list is empty
+        self.assertEqual(main.computeSumOfAllElements([]), 0,
+        msg = 'return 0 if the passed in list is empty')
 
 ```
 

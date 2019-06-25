@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 99c43844-c828-47d6-a073-db33a9f9bfb7
 * title: getLongestWordOfMixedElements
 
@@ -11,51 +11,66 @@
 
 Write a function called "getLongestWordOfMixedElements".
 
-Given an array of mixed types, "getLongestWordOfMixedElements" returns the longest string in the given array.
+Given a list of mixed types, "getLongestWordOfMixedElements" returns the longest string in the given list.
 
 Notes:
-* If the array is empty, it should return an empty string ("").
-* If the array contains no strings; it should return an empty string.
+* If the list is empty, it should return an empty string ("").
+* If the list contains no strings it should return an empty string.
 
 ```
-var output = getLongestWordOfMixedElements([3, 'word', 5, 'up', 3, 1]);
-console.log(output); // --> 'word'
+output = getLongestWordOfMixedElements([3, 'word', 5, 'up', 3, 1])
+print(output) # --> 'word'
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getLongestWordOfMixedElements(arr) {
-  // your code here
+```python
+def getLongestWordOfMixedElements(arr):
+    # your code here
+    pass
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getLongestWordOfMixedElements", function() {
-  it("should return a string", function() {
-    expect(typeof getLongestWordOfMixedElements(["these", "are", "strings"])).to.deep.eq("string");
-  });
-  it("should return the longest string in an array", function() {
-    expect(getLongestWordOfMixedElements([3, "word", 5, "up", 3, 1])).to.deep.eq("word");
-  });
-  it("should return the longest string in an array that appears first when there are ties", function() {
-    expect(getLongestWordOfMixedElements(["word", 3, 5, 3, "bird", "up", 1, 5])).to.deep.eq("word");
-  });
-  it("should return an empty string when the array is empty", function() {
-    expect(getLongestWordOfMixedElements([])).to.deep.eq("");
-  });
-  it("should return an empty string there are no strings", function() {
-    expect(getLongestWordOfMixedElements([1, 2, 4])).to.deep.eq("");
-  });
-});
+class TestScript(unittest.TestCase):
+    def test_0(self):
+        # it should return a string
+        self.assertIsInstance(main.getLongestWordOfMixedElements(["these", "are", "strings"]), str,
+        msg = 'should return a string')
+
+
+    def test_1(self):
+        # it should return the longest string in a list
+        self.assertEqual(main.getLongestWordOfMixedElements([3, "word", 5, "up", 3, 1]), "word",
+        msg = 'should return the longest string in a list')
+
+
+    def test_2(self):
+        # it should return the longest string in a list that appears first when there are ties
+        self.assertEqual(main.getLongestWordOfMixedElements(["word", 3, 5, 3, "bird", "up", 1, 5]), "word",
+        msg = 'should return the longest string in a list that appears first when there are ties')
+
+
+    def test_3(self):
+        # it should return an empty string when the list is empty
+        self.assertEqual(main.getLongestWordOfMixedElements([]), "",
+        msg = 'should return an empty string when the list is empty')
+
+
+    def test_4(self):
+        # it should return an empty string there are no strings
+        self.assertEqual(main.getLongestWordOfMixedElements([1, 2, 4]), "",
+        msg = 'should return an empty string there are no strings')
 
 ```
 
@@ -69,8 +84,8 @@ describe("getLongestWordOfMixedElements", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: c73e353f-8655-42e8-8f6b-7e342182ca9c
 * title: getLargestNumberAmongMixedElements
 
@@ -78,56 +93,74 @@ describe("getLongestWordOfMixedElements", function() {
 
 Write a function called "getLargestNumberAmongMixedElements".
 
-Given any array, "getLargestNumberAmongMixedElements" returns the largest number in the given array.
+Given any list, "getLargestNumberAmongMixedElements" returns the largest number in the given list.
 
 Notes:
-* The array might contain values of a type other than numbers.
-* If the array is empty, it should return 0.
-* If the array contains no numbers, it should return 0.
+* The list might contain values of a type other than numbers.
+* If the list is empty, it should return 0.
+* If the list contains no numbers, it should return 0.
 
 ```
-var output = getLargestNumberAmongMixedElements([3, 'word', 5, 'up', 3, 1]);
-console.log(output); // --> 5
+output = getLargestNumberAmongMixedElements([3, 'word', 5, 'up', 3, 1])
+print(output) # --> 5
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getLargestNumberAmongMixedElements(arr) {
-  // your code here
-  
-}
+```python
+def getLargestNumberAmongMixedElements(arr):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getLargestNumberAmongMixedElements", function() {
-  it("should return a number", function() {
-    expect(typeof getLargestNumberAmongMixedElements([3, 5, 3, 1])).to.deep.eq("number");
-  });
-  it("should return the largest element in an array", function() {
-    expect(getLargestNumberAmongMixedElements([3, "word", 5, "up", 3, 1])).to.deep.eq(5);
-  });
-  it("should return the largest element in an array when there are ties", function() {
-    expect(getLargestNumberAmongMixedElements(["word", 3, 5, 3, "wordy", "up", 1, 5])).to.deep.eq(5);
-  });
-  it("should return the largest element in an array when they are all negative", function() {
-    expect(getLargestNumberAmongMixedElements([-1, -5, "word", -3])).to.deep.eq(-1);
-  });
-  it("should return 0 when the array is empty", function() {
-    expect(getLargestNumberAmongMixedElements([])).to.deep.eq(0);
-  });
-  it("should return 0 when there are no numbers", function() {
-    expect(getLargestNumberAmongMixedElements(["word", "up"])).to.deep.eq(0);
-  });
-});
+class TestScript(unittest.TestCase):
 
+    def test_0(self):
+        # it should return a number
+        self.assertEqual(main.getLargestNumberAmongMixedElements([3, 5, 3, 1]), (float, int),
+        msg = 'should return a number')
+
+
+    def test_1(self):
+        # it should return the largest element in a list
+        self.assertEqual(main.getLargestNumberAmongMixedElements([3, "word", 5, "up", 3, 1]), 5,
+        msg = 'should return the largest element in a list')
+
+
+    def test_2(self):
+        # it should return the largest element in a list when there are ties
+        self.assertEqual(main.getLargestNumberAmongMixedElements(["word", 3, 5, 3, "wordy", "up", 1, 5]), 5,
+        msg = 'should return the largest element in a list when there are ties')
+
+
+    def test_3(self):
+        # it should return the largest element in a list when they are all negative
+        self.assertEqual(main.getLargestNumberAmongMixedElements([-1, -5, "word", -3]), -1,
+        msg = 'should return the largest element in a list when they are all negative')
+
+
+    def test_4(self):
+        # it should return 0 when the list is empty
+        self.assertEqual(main.getLargestNumberAmongMixedElements([]), 0,
+        msg = 'should return 0 when the list is empty')
+
+
+    def test_5(self):
+        # it should return 0 when there are no numbers
+        self.assertEqual(main.getLargestNumberAmongMixedElements(["word", "up"]), 0,
+        msg = 'should return 0 when there are no numbers')
 
 ```
 

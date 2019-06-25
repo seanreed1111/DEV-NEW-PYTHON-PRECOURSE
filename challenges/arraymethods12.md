@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 3e9cfffd-1ec6-4243-a91b-4546c2d647aa
 * title: findSmallestElement
 
@@ -11,50 +11,66 @@
 
 Write a function called "findSmallestElement".
 
-Given an array of numbers, "findSmallestElement" returns the smallest number within the given array.
+Given a list of numbers, "findSmallestElement" returns the smallest number within the given list.
 
 Notes:
-* If the given array is empty, it should return 0.
+* If the given list is empty, it should return 0.
 
 ```
-var output = findSmallestElement([4, 1, 9, 10]);
-console.log(output); // --> 1
+output = findSmallestElement([4, 1, 9, 10])
+print(output) # --> 1
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function findSmallestElement(arr) {
-  // your code here
+```python
+def findSmallestElement(arr):
+    # your code here
+    pass
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("findSmallestElement", function() {
-  it("should return a number", function() {
-    expect(typeof findSmallestElement([3, 5, 3, 1])).to.deep.eq("number");
-  });
-  it("should return the smallest element in an array", function() {
-    expect(findSmallestElement([3, 5, 3, 1])).to.deep.eq(1);
-  });
-  it("should return the smallest element in an array when there are ties", function() {
-    expect(findSmallestElement([3, 1, 3, 1, 5])).to.deep.eq(1);
-  });
-  it("should return the smallest element in an array when they are all negative", function() {
-    expect(findSmallestElement([-1, -5, -3])).to.deep.eq(-5);
-  });
-  it("should return 0 if the array is empty", function() {
-    expect(findSmallestElement([])).to.deep.eq(0);
-  })
-});
+class TestScript(unittest.TestCase):
+
+    def test_0(self):
+        # it should return a number
+        self.assertIsInstance(main.findSmallestElement([3, 5, 3, 1]), (float, int),
+        msg = 'should return a number')
+
+
+    def test_1(self):
+        # it should return the smallest element in a list
+        self.assertEqual(main.findSmallestElement([3, 5, 3, 1]), 1,
+        msg = 'should return the smallest element in a list')
+
+
+    def test_2(self):
+        # it should return the smallest element in a list when there are ties
+        self.assertEqual(main.findSmallestElement([3, 1, 3, 1, 5]), 1,
+        msg = 'should return the smallest element in a list when there are ties')
+
+
+    def test_3(self):
+        # it should return the smallest element in a list when they are all negative
+        self.assertEqual(main.findSmallestElement([-1, -5, -3]), -5,
+        msg = 'should return the smallest element in a list when they are all negative')
+
+
+    def test_4(self):
+        # it should return 0 if the list is empty
+        self.assertEqual(main.findSmallestElement([]), 0,
+        msg = 'should return 0 if the list is empty')
 
 ```
 
@@ -68,8 +84,8 @@ describe("findSmallestElement", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 3a3527f5-84ad-4d59-8ba5-5e774661e37e
 * title: findShortestElement
 
@@ -77,49 +93,60 @@ describe("findSmallestElement", function() {
 
 Write a function called "findShortestElement".
 
-Given an array, "findShortestElement" returns the shortest string within the given array.
+Given a list, "findShortestElement" returns the shortest string within the given list.
 
 Notes:
 * If there are ties, it should return the first element to appear.
-* If the given array is empty, it should return an empty string.
+* If the given list is empty, it should return an empty string.
 
 ```
-var output = findShortestElement(['a', 'two', 'three']);
-console.log(output); // --> 'a'
+output = findShortestElement(['a', 'two', 'three'])
+print(output) # --> 'a'
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function findShortestElement(arr) {
-  // your code here
-  
-}
+```python
+def findShortestElement(arr):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("findShortestElement", function() {
-  it("should return a string", function() {
-    expect(typeof(findShortestElement(["one", "two", "three"]))).to.deep.eq("string");
-  });
-  it("should return the shortest element in an array", function() {
-    expect(findShortestElement(["a", "two", "three"])).to.deep.eq("a");
-  });
-  it("should return the first shortest element in an array when there are ties", function() {
-    expect(findShortestElement(["one", "to", "no"])).to.deep.eq("to");
-  });
-  it("should return an empty string if the array is empty", function() {
-    expect(findShortestElement([])).to.deep.eq("");
-  })
-});
+class TestScript(unittest.TestCase):
 
+    def test_0(self):
+        # it should return a string
+        self.assertEqual(main.findShortestElement(["one", "two", "three"]), str,
+        msg = 'should return a string')
+
+
+    def test_1(self):
+        # it should return the shortest element in a list
+        self.assertEqual(main.findShortestElement(["a", "two", "three"]), "a",
+        msg = 'should return the shortest element in a list')
+
+
+    def test_2(self):
+        # it should return the first shortest element in a list when there are ties
+        self.assertEqual(main.findShortestElement(["one", "to", "no"]), "to",
+        msg = 'should return the first shortest element in a list when there are ties')
+
+    def test_3(self):
+        # it should return an empty string if the list is empty
+        self.assertEqual(main.findShortestElement([]), "",
+        msg = 'should return an empty string if the list is empty')
 
 ```
 

@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 4f89dd25-b751-49fe-9fa9-fe8c368c1a7c
 * title: findShortestWordAmongMixedElements
 
@@ -11,56 +11,70 @@
 
 Write a function called "findShortestWordAmongMixedElements".
 
-Given an array, "findShortestWordAmongMixedElements" returns the shortest string within the given array.
+Given a list, "findShortestWordAmongMixedElements" returns the shortest string within the given list.
 
 Notes:
-* If there are ties, it should return the first element to appear in the given array.
-* Expect the given array to have values other than strings.
-* If the given array is empty, it should return an empty string.
-* If the given array contains no strings, it should return an empty string.
+* If there are ties, it should return the first element to appear in the given list.
+* Expect the given list to have values other than strings.
+* If the given list is empty, it should return an empty string.
+* If the given list contains no strings, it should return an empty string.
 
 ```
-var output = findShortestWordAmongMixedElements([4, 'two', 2, 'three']);
-console.log(output); // --> 'two'
+output = findShortestWordAmongMixedElements([4, 'two', 2, 'three'])
+print(output) # --> 'two'
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
+```python
 
-function findShortestWordAmongMixedElements(arr) {
-  // your code here
+def findShortestWordAmongMixedElements(arr):
+    # your code here
+    pass
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
+
+class TestScript(unittest.TestCase):
+
+    def test_0(self):
+        # it should return a string
+        self.assertIsInstance(main.findShortestWordAmongMixedElements(["these", "are", "strings"]), str,
+        msg = 'should return a string')
 
 
-describe("findShortestWordAmongMixedElements", function() {
-  it("should return a string", function() {
-    expect(typeof findShortestWordAmongMixedElements(["these", "are", "strings"])).to.deep.eq("string");
-  });
-  it("should return the shortest string in an array", function() {
-    expect(findShortestWordAmongMixedElements([3, "word", 5, "up", 3, 1])).to.deep.eq("up");
-  });
-  it("should return the shortest string in an array that appears first when there are ties", function() {
-    expect(findShortestWordAmongMixedElements(["word", 3, 5, 3, "yo", "up", 1, 5])).to.deep.eq("yo");
-  });
-  it("should return an empty string when the array is empty", function() {
-    expect(findShortestWordAmongMixedElements([])).to.deep.eq("");
-  });
-  it("should return an empty string there are no strings", function() {
-    expect(findShortestWordAmongMixedElements([1, 2, 4])).to.deep.eq("");
-  });
-});
+    def test_1(self):
+        # it should return the shortest string in a list
+        self.assertEqual(main.findShortestWordAmongMixedElements([3, "word", 5, "up", 3, 1]), "up",
+        msg = 'should return the shortest string in a list')
 
+
+    def test_2(self):
+        # it should return the shortest string in a list that appears first when there are ties
+        self.assertEqual(main.findShortestWordAmongMixedElements(["word", 3, 5, 3, "yo", "up", 1, 5]), "yo",
+        msg = 'should return the shortest string in a list that appears first when there are ties')
+
+
+    def test_3(self):
+        # it should return an empty string when the list is empty
+        self.assertEqual(main.findShortestWordAmongMixedElements([]), "",
+        msg = 'should return an empty string when the list is empty')
+
+
+    def test_4(self):
+        # it should return an empty string there are no strings
+        self.assertEqual(main.findShortestWordAmongMixedElements([1, 2, 4]), "",
+        msg = 'should return an empty string there are no strings')
 
 ```
 
@@ -74,8 +88,8 @@ describe("findShortestWordAmongMixedElements", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 0bbe947d-3174-4fe2-98c4-1a84331477d7
 * title: findSmallestNumberAmongMixedElements
 
@@ -83,55 +97,72 @@ describe("findShortestWordAmongMixedElements", function() {
 
 Write a function called "findSmallestNumberAmongMixedElements".
 
-Given an array of mixed elements, "findSmallestNumberAmongMixedElements" returns the smallest number within the given array.
+Given a list of mixed elements, "findSmallestNumberAmongMixedElements" returns the smallest number within the given list.
 
 Notes:
-* If the given array is empty, it should return 0.
-* If the array contains no numbers, it should return 0.
+* If the given list is empty, it should return 0.
+* If the list contains no numbers, it should return 0.
 
 ```
-var output = findSmallestNumberAmongMixedElements([4, 'lincoln', 9, 'octopus']);
-console.log(output); // --> 4
+output = findSmallestNumberAmongMixedElements([4, 'lincoln', 9, 'octopus'])
+print(output) # --> 4
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function findSmallestNumberAmongMixedElements(arr) {
-  // your code here
-  
-}
+```python
+def findSmallestNumberAmongMixedElements(arr):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
+
+class TestScript(unittest.TestCase):
+    def test_0(self):
+        # it should return a number
+        self.assertIsInstance(main.findSmallestNumberAmongMixedElements([3, 5, 3, 1]), (float, int),
+        msg = 'should return a number')
 
 
-describe("findSmallestNumberAmongMixedElements", function() {
-  it("should return a number", function() {
-    expect(typeof findSmallestNumberAmongMixedElements([3, 5, 3, 1])).to.deep.eq("number");
-  });
-  it("should return the smallest element in an array", function() {
-    expect(findSmallestNumberAmongMixedElements([3, "word", 5, "up", 3, 1])).to.deep.eq(1);
-  });
-  it("should return the smallest element in an array when there are ties", function() {
-    expect(findSmallestNumberAmongMixedElements(["word", 3, 1, 3, "wordy", "up", 1, 5])).to.deep.eq(1);
-  });
-  it("should return the smallest element in an array when they are all negative", function() {
-    expect(findSmallestNumberAmongMixedElements([-1, -5, "word", -3])).to.deep.eq(-5);
-  });
-  it("should return 0 when the array is empty", function() {
-    expect(findSmallestNumberAmongMixedElements([])).to.deep.eq(0);
-  });
-  it("should return 0 when there are no numbers", function() {
-    expect(findSmallestNumberAmongMixedElements(["word", "up"])).to.deep.eq(0);
-  });
-});
+    def test_1(self):
+        # it should return the smallest element in a list
+        self.assertEqual(main.findSmallestNumberAmongMixedElements([3, "word", 5, "up", 3, 1]), 1,
+        msg = 'should return the smallest element in a list')
+
+
+    def test_2(self):
+        # it should return the smallest element in a list when there are ties
+        self.assertEqual(main.findSmallestNumberAmongMixedElements(["word", 3, 1, 3, "wordy", "up", 1, 5]), 1,
+        msg = 'should return the smallest element in a list when there are ties')
+
+
+    def test_3(self):
+        # it should return the smallest element in a list when they are all negative
+        self.assertEqual(main.findSmallestNumberAmongMixedElements([-1, -5, "word", -3]), -5,
+        msg = 'should return the smallest element in a list when they are all negative')
+
+
+    def test_4(self):
+        # it should return 0 when the list is empty
+        self.assertEqual(main.findSmallestNumberAmongMixedElements([]), 0,
+        msg = 'should return 0 when the list is empty')
+
+
+    def test_5(self):
+        # it should return 0 when there are no numbers
+        self.assertEqual(main.findSmallestNumberAmongMixedElements(["word", "up"]), 0,
+        msg = 'should return 0 when there are no numbers')
 
 
 ```

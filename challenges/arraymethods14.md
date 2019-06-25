@@ -2,62 +2,79 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: a67d49da-9135-4b9b-96be-37a1accc9b5f
 * title: joinArraysOfArrays
 
 ### !question
 
-Write a function called "joinArrayOfArrays".
+Write a function called "flatten".
 
-Given an array of arrays, "joinArrayOfArrays" returns a single array containing the elements of the nested arrays.
+Given a list of lists, "flatten" returns a single list containing the elements of the nested lists.
 
 ```
-var output = joinArrayOfArrays([[1, 4], [true, false], ['x', 'y']]);
-console.log(output); // --> [1, 4, true, false, 'x', 'y']
+output = flatten([[1, 4], [True, False], ['x', 'y']])
+print(output) # --> [1, 4, True, False, 'x', 'y']
 ```
 
-You should be familiar with the "concat" method for this problem.
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function joinArrayOfArrays(arr) {
-  // your code here
-  
-}
+```python
+def flatten(arr):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
+
+class TestScript(unittest.TestCase):
+
+    def test_0(self):
+        # it should return a list
+        self.assertIsInstance(main.flatten([['a', 'b'], [1, 3], [True, False]]), list,
+        msg = 'should return a list')
 
 
-describe("joinArrayOfArrays", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(joinArrayOfArrays([['a', 'b'], [1, 3], [true, false]]))).to.deep.eq(true);
-  });
-  it("should return an array with the elements from all the nested arrays", function() {
-    expect(joinArrayOfArrays([['a', 'b'], [1, 3], [true, false]])).to.deep.eq(['a', 'b', 1, 3, true, false]);
-  });
-  it("should handle empty arrays in the first position", function() {
-    expect(joinArrayOfArrays([[], [1, 3], [true, false]])).to.deep.eq([1, 3, true, false]);
-  });
-  it("should handle empty arrays in the second position", function() {
-    expect(joinArrayOfArrays([['a', 'b'], [], [true, false]])).to.deep.eq(['a', 'b', true, false]);
-  });
-  it("should handle empty arrays in the third position", function() {
-    expect(joinArrayOfArrays([['a', 'b'], [1, 3], []])).to.deep.eq(['a', 'b', 1, 3]);
-  });
-  it("should handle empty arrays in all positions", function() {
-    expect(joinArrayOfArrays([[], [], []])).to.deep.eq([]);
-  });
-});
+    def test_1(self):
+        # it should return a list with the elements from all the nested lists
+        self.assertEqual(main.flatten([['a', 'b'], [1, 3], [True, False]]), ['a', 'b', 1, 3, True, False],
+        msg = 'should return a list with the elements from all the nested lists')
+
+
+    def test_2(self):
+        # it should handle empty lists in the first position
+        self.assertEqual(main.flatten([[], [1, 3], [True, False]]), [1, 3, True, False],
+        msg = 'should handle empty lists in the first position')
+
+
+    def test_3(self):
+        # it should handle empty lists in the second position
+        self.assertEqual(main.flatten([['a', 'b'], [], [True, False]]), ['a', 'b', True, False],
+        msg = 'should handle empty lists in the second position')
+
+
+    def test_4(self):
+        # it should handle empty lists in the third position
+        self.assertEqual(main.flatten([['a', 'b'], [1, 3], []]), ['a', 'b', 1, 3],
+        msg = 'should handle empty lists in the third position')
+
+
+    def test_5(self):
+        # it should handle empty lists in all positions
+        self.assertEqual(main.flatten([[], [], []]), [],
+        msg = 'should handle empty lists in all positions')
 
 ```
 
