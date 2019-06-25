@@ -60,7 +60,7 @@ class TestScript(unittest.TestCase):
 
     def test_2(self):
         # it should return None if the property is not a list
-        obj = {'list1': 'Nope']}
+        obj = {'list1': 'Nope'}
         self.assertIsNone(main.getSmallestElementAtProperty(obj, "list1"),
         msg = 'should return None if the property is not a list')
 
