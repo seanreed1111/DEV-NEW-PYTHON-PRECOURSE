@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: be23ee89-7ea7-4f26-8194-5cc405d6b7a4
 * title: getSumOfAllElementsAtProperty
 
@@ -11,64 +11,74 @@
 
 Write a function called "getSumOfAllElementsAtProperty".
 
-Given an object and a key, "getSumOfAllElementsAtProperty" returns the sum of all the elements in the array located at the given key.
+Given a dictionary and a key, "getSumOfAllElementsAtProperty" returns the sum of all the elements in the list located at the given key.
 
 Notes:
-* If the array is empty, it should return 0.
-* If the property at the given key is not an array, it should return 0.
+* If the list is empty, it should return 0.
+* If the property at the given key is not a list, it should return 0.
 * If there is no property at the key, it should return 0.
 
 ```
-var obj = {
-  key: [4, 1, 8]
-};
-var output = getSumOfAllElementsAtProperty(obj, 'key');
-console.log(output); // --> 13
+obj = {'key': [4, 1, 8]}
+
+output = getSumOfAllElementsAtProperty(obj, 'key')
+print(output) # --> 13
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
+```python
 
-function getSumOfAllElementsAtProperty(obj, key) {
-  // your code here
-}
+def getSumOfAllElementsAtProperty(obj, key):
+    # your code here
+    pass
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getSumOfAllElementsAtProperty", function() {
-  it("should return the sum of all the elements of the array located at key", function() {
-    var obj = {
-      array: [1, 2, 4]
-    };
-    expect(getSumOfAllElementsAtProperty(obj, "array")).to.deep.eq(7);
-  });
-  it("should return 0 if the array is empty", function() {
-    var obj = {
-      array: []
-    };
-    expect(getSumOfAllElementsAtProperty(obj, "array")).to.deep.eq(0);
-  });
-  it("should return 0 if the property is not an array", function() {
-    var obj = {
-      array: "sike"
-    };
-    expect(getSumOfAllElementsAtProperty(obj, "array")).to.deep.eq(0);
-  });
-  it("should return 0 if the property does not exist", function() {
-    var obj = {
-      what: "sike"
-    };
-    expect(getSumOfAllElementsAtProperty(obj, "array")).to.deep.eq(0);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test_00(self):
+        # it should return a number
+        obj = {'key': [4, 1, 8]}
+        self.assertIsInstance(main.getSumOfAllElementsAtProperty(obj, 'key'), (int, float),
+        msg = 'should return a number')
+
+    def test_0(self):
+        # it should return the sum of all the elements of the list located at key
+        obj = {'key': [40, 10, 80]}
+        self.assertEqual(main.getSumOfAllElementsAtProperty(obj, 'key'), 130,
+        msg = 'should return the sum of all the elements of the list located at key')
+
+
+    def test_1(self):
+        # it should return 0 if the list is empty
+        obj = {'key': []}
+        self.assertEqual(main.getSumOfAllElementsAtProperty(obj, 'key'), 0,
+        msg = 'should return 0 if the list is empty')
+
+
+    def test_2(self):
+        # it should return 0 if the property is not a list
+        obj = {'key': 'nope'}
+        self.assertEqual(main.getSumOfAllElementsAtProperty(obj, 'key'), 0,
+        msg = 'should return 0 if the property is not a list')
+
+
+    def test_3(self):
+        # it should return 0 if the property does not exist
+        obj = {'nope': 'nope'}
+        self.assertEqual(main.getSumOfAllElementsAtProperty(obj, 'key'), 0,
+        msg = 'should return 0 if the property does not exist')
+
 
 ```
 
