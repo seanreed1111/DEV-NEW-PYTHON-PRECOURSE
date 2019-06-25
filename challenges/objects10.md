@@ -147,7 +147,7 @@ class TestScript(unittest.TestCase):
         # it should return an empty list if the list has only no odd elements
         obj = {'key': [2, 2, 4]}
         self.assertEqual(main.getOddElementsAtProperty(obj, 'key'), [],
-        msg = 'should return an empty list if the list has only no odd elements')
+        msg = 'should return an empty list if the list has no odd elements')
 
 
     def test_2(self):
@@ -240,7 +240,7 @@ class TestScript(unittest.TestCase):
         # it should return an empty list if the list has only no even elements
         obj = {'key': [1, 3, 7]}
         self.assertEqual(main.getEvenElementsAtProperty(obj, 'key'), [],
-        msg = 'should return an empty list if the list has only no even elements')
+        msg = 'should return an empty list if the list has no even elements')
 
 
     def test_2(self):
