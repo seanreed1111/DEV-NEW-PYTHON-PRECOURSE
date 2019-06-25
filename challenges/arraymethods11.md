@@ -38,11 +38,9 @@ import main
 import unittest
 
 class TestScript(unittest.TestCase):
-```
-
     def test_0(self):
         # it should return a list
-        self.assertEqual(main.filterEvenElements([1, 2, 3, 4]), True,
+        self.assertIsInstance(main.filterEvenElements([1, 2, 3, 4]), list,
         msg = 'should return a list')
 
 
@@ -59,67 +57,9 @@ class TestScript(unittest.TestCase):
 
 
     def test_3(self):
-        # it should return a list if given an emtpy list
+        # it should return a list if given an empty list
         self.assertEqual(main.filterEvenElements([]), [],
-        msg = 'should return a list if given an emtpy list')
-
-
-
-    def test_0(self):
-        # it should return a number
-        self.assertEqual(main.getLengthOfShortestElement(["one", "two", "three"]), "number",
-        msg = 'should return a number')
-
-
-    def test_1(self):
-        # it should return the length of the shortest element in a list
-        self.assertEqual(main.getLengthOfShortestElement(["one", "four", "three"]), 3,
-        msg = 'should return the length of the shortest element in a list')
-
-
-    def test_2(self):
-        # it it should handle ties
-        self.assertEqual(main.getLengthOfShortestElement(["one", "to", "no"]), 2,
-        msg = 'it should handle ties')
-
-
-    def test_3(self):
-        # it it should return 0 when given an empty list
-        self.assertEqual(main.getLengthOfShortestElement([]), 0,
-        msg = 'it should return 0 when given an empty list')
-
-
-
-    def test_0(self):
-        # it should return a string
-        self.assertEqual(main.getLongestElement(["one", "two", "three"]), "string",
-        msg = 'should return a string')
-
-
-    def test_1(self):
-        # it should return the longest element in a list
-        self.assertEqual(main.getLongestElement(["one", "two", "three"]), "three",
-        msg = 'should return the longest element in a list')
-
-
-    def test_2(self):
-        # it should return the first longest element in a list when there are ties
-        self.assertEqual(main.getLongestElement(["one", "two", "one"]), "one",
-        msg = 'should return the first longest element in a list when there are ties')
-
-
-
-```python
-
-describe("filterEvenElements", function():it("should return a list", function():expect(Array.isArray(filterEvenElements([1, 2, 3, 4]))).to.deep.eq(True)
-  )
-  it("should return a list with the even elements from the passed in list", function():expect(filterEvenElements([1, 2, 3, 4, 5])).to.deep.eq([2, 4])
-  )
-  it("should return a list if there are no even numbers", function():expect(filterEvenElements([1, 3, 5])).to.deep.eq([])
-  )
-  it("should return a list if given an emtpy list", function():expect(filterEvenElements([])).to.deep.eq([])
-  )
-)
+        msg = 'should return a list if given an empty list')
 
 
 ```
@@ -158,9 +98,6 @@ print(output) # --> 3
 ### !placeholder
 
 ```python
-def getLengthOfShortestElement(arr):
-    # your code here
-    pass
 
 
 ```
@@ -174,36 +111,10 @@ import main
 import unittest
 
 class TestScript(unittest.TestCase):
-```
-
-    def test_0(self):
-        # it should return a list
-        self.assertEqual(main.filterEvenElements([1, 2, 3, 4]), True,
-        msg = 'should return a list')
-
-
-    def test_1(self):
-        # it should return a list with the even elements from the passed in list
-        self.assertEqual(main.filterEvenElements([1, 2, 3, 4, 5]), [2, 4],
-        msg = 'should return a list with the even elements from the passed in list')
-
-
-    def test_2(self):
-        # it should return a list if there are no even numbers
-        self.assertEqual(main.filterEvenElements([1, 3, 5]), [],
-        msg = 'should return a list if there are no even numbers')
-
-
-    def test_3(self):
-        # it should return a list if given an emtpy list
-        self.assertEqual(main.filterEvenElements([]), [],
-        msg = 'should return a list if given an emtpy list')
-
-
 
     def test_0(self):
         # it should return a number
-        self.assertEqual(main.getLengthOfShortestElement(["one", "two", "three"]), "number",
+        self.assertIsInstance(main.getLengthOfShortestElement(["one", "two", "three"]), (float, int),
         msg = 'should return a number')
 
 
@@ -223,40 +134,6 @@ class TestScript(unittest.TestCase):
         # it it should return 0 when given an empty list
         self.assertEqual(main.getLengthOfShortestElement([]), 0,
         msg = 'it should return 0 when given an empty list')
-
-
-
-    def test_0(self):
-        # it should return a string
-        self.assertEqual(main.getLongestElement(["one", "two", "three"]), "string",
-        msg = 'should return a string')
-
-
-    def test_1(self):
-        # it should return the longest element in a list
-        self.assertEqual(main.getLongestElement(["one", "two", "three"]), "three",
-        msg = 'should return the longest element in a list')
-
-
-    def test_2(self):
-        # it should return the first longest element in a list when there are ties
-        self.assertEqual(main.getLongestElement(["one", "two", "one"]), "one",
-        msg = 'should return the first longest element in a list when there are ties')
-
-
-
-```python
-
-describe("getLengthOfShortestElement", function():it("should return a number", function():expect(typeof getLengthOfShortestElement(["one", "two", "three"])).to.deep.eq("number")
-  )
-  it("should return the length of the shortest element in a list", function():expect(getLengthOfShortestElement(["one", "four", "three"])).to.deep.eq(3)
-  )
-  it("it should handle ties", function():expect(getLengthOfShortestElement(["one", "to", "no"])).to.deep.eq(2)
-  )
-  it("it should return 0 when given an empty list", function():expect(getLengthOfShortestElement([])).to.deep.eq(0)
-  )
-)
-
 
 ```
 
@@ -295,10 +172,6 @@ print(output) # --> 'three'
 ### !placeholder
 
 ```python
-def getLongestElement(arr):
-    # your code here
-    pass
-  
 
 ```
 
@@ -311,87 +184,23 @@ import main
 import unittest
 
 class TestScript(unittest.TestCase):
-```
 
-    def test_0(self):
-        # it should return a list
-        self.assertEqual(main.filterEvenElements([1, 2, 3, 4]), True,
-        msg = 'should return a list')
-
-
-    def test_1(self):
-        # it should return a list with the even elements from the passed in list
-        self.assertEqual(main.filterEvenElements([1, 2, 3, 4, 5]), [2, 4],
-        msg = 'should return a list with the even elements from the passed in list')
+        def test_0(self):
+            # it should return a string
+            self.assertIsInstance(main.getLongestElement(["one", "two", "three"]), str,
+            msg = 'should return a string')
 
 
-    def test_2(self):
-        # it should return a list if there are no even numbers
-        self.assertEqual(main.filterEvenElements([1, 3, 5]), [],
-        msg = 'should return a list if there are no even numbers')
+        def test_1(self):
+            # it should return the longest element in a list
+            self.assertEqual(main.getLongestElement(["one", "two", "three"]), "three",
+            msg = 'should return the longest element in a list')
 
 
-    def test_3(self):
-        # it should return a list if given an emtpy list
-        self.assertEqual(main.filterEvenElements([]), [],
-        msg = 'should return a list if given an emtpy list')
-
-
-
-    def test_0(self):
-        # it should return a number
-        self.assertEqual(main.getLengthOfShortestElement(["one", "two", "three"]), "number",
-        msg = 'should return a number')
-
-
-    def test_1(self):
-        # it should return the length of the shortest element in a list
-        self.assertEqual(main.getLengthOfShortestElement(["one", "four", "three"]), 3,
-        msg = 'should return the length of the shortest element in a list')
-
-
-    def test_2(self):
-        # it it should handle ties
-        self.assertEqual(main.getLengthOfShortestElement(["one", "to", "no"]), 2,
-        msg = 'it should handle ties')
-
-
-    def test_3(self):
-        # it it should return 0 when given an empty list
-        self.assertEqual(main.getLengthOfShortestElement([]), 0,
-        msg = 'it should return 0 when given an empty list')
-
-
-
-    def test_0(self):
-        # it should return a string
-        self.assertEqual(main.getLongestElement(["one", "two", "three"]), "string",
-        msg = 'should return a string')
-
-
-    def test_1(self):
-        # it should return the longest element in a list
-        self.assertEqual(main.getLongestElement(["one", "two", "three"]), "three",
-        msg = 'should return the longest element in a list')
-
-
-    def test_2(self):
-        # it should return the first longest element in a list when there are ties
-        self.assertEqual(main.getLongestElement(["one", "two", "one"]), "one",
-        msg = 'should return the first longest element in a list when there are ties')
-
-
-
-```python
-
-describe("getLongestElement", function():it("should return a string", function():expect(typeof(getLongestElement(["one", "two", "three"]))).to.deep.eq("string")
-  )
-  it("should return the longest element in a list", function():expect(getLongestElement(["one", "two", "three"])).to.deep.eq("three")
-  )
-  it("should return the first longest element in a list when there are ties", function():expect(getLongestElement(["one", "two", "one"])).to.deep.eq("one")
-  )
-)
-
+        def test_2(self):
+            # it should return the first longest element in a list when there are ties
+            self.assertEqual(main.getLongestElement(["one", "two", "one"]), "one",
+            msg = 'should return the first longest element in a list when there are ties')
 
 ```
 
