@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 3fb77f32-bfa4-46a3-b207-3b7cf58ba011
 * title: filterEvenElements
 
@@ -11,43 +11,115 @@
 
 Write a function called "filterEvenElements".
 
-Given an array of numbers, "filterEvenElements" returns an array containing only the even numbers of the given array.
+Given a list of numbers, "filterEvenElements" returns a list containing only the even numbers of the given list.
 ```
-var output = filterEvenElements([2, 3, 4, 5, 6]);
-console.log(output); // --> [2, 4, 6]
+output = filterEvenElements([2, 3, 4, 5, 6])
+print(output) # --> [2, 4, 6]
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function filterEvenElements(arr) {
-  // your code here
+```python
+def filterEvenElements(arr):
+    # your code here
+    pass
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("filterEvenElements", function() {
-  it("should return an array", function() {
-    expect(Array.isArray(filterEvenElements([1, 2, 3, 4]))).to.deep.eq(true);
-  });
-  it("should return an array with the even elements from the passed in array", function() {
-    expect(filterEvenElements([1, 2, 3, 4, 5])).to.deep.eq([2, 4]);
-  });
-  it("should return an array if there are no even numbers", function() {
-    expect(filterEvenElements([1, 3, 5])).to.deep.eq([]);
-  });
-  it("should return an array if given an emtpy array", function() {
-    expect(filterEvenElements([])).to.deep.eq([]);
-  });
-});
+class TestScript(unittest.TestCase):
+```
+
+    def test_0(self):
+        # it should return a list
+        self.assertEqual(main.filterEvenElements([1, 2, 3, 4]), True,
+        msg = 'should return a list')
+
+
+    def test_1(self):
+        # it should return a list with the even elements from the passed in list
+        self.assertEqual(main.filterEvenElements([1, 2, 3, 4, 5]), [2, 4],
+        msg = 'should return a list with the even elements from the passed in list')
+
+
+    def test_2(self):
+        # it should return a list if there are no even numbers
+        self.assertEqual(main.filterEvenElements([1, 3, 5]), [],
+        msg = 'should return a list if there are no even numbers')
+
+
+    def test_3(self):
+        # it should return a list if given an emtpy list
+        self.assertEqual(main.filterEvenElements([]), [],
+        msg = 'should return a list if given an emtpy list')
+
+
+
+    def test_0(self):
+        # it should return a number
+        self.assertEqual(main.getLengthOfShortestElement(["one", "two", "three"]), "number",
+        msg = 'should return a number')
+
+
+    def test_1(self):
+        # it should return the length of the shortest element in a list
+        self.assertEqual(main.getLengthOfShortestElement(["one", "four", "three"]), 3,
+        msg = 'should return the length of the shortest element in a list')
+
+
+    def test_2(self):
+        # it it should handle ties
+        self.assertEqual(main.getLengthOfShortestElement(["one", "to", "no"]), 2,
+        msg = 'it should handle ties')
+
+
+    def test_3(self):
+        # it it should return 0 when given an empty list
+        self.assertEqual(main.getLengthOfShortestElement([]), 0,
+        msg = 'it should return 0 when given an empty list')
+
+
+
+    def test_0(self):
+        # it should return a string
+        self.assertEqual(main.getLongestElement(["one", "two", "three"]), "string",
+        msg = 'should return a string')
+
+
+    def test_1(self):
+        # it should return the longest element in a list
+        self.assertEqual(main.getLongestElement(["one", "two", "three"]), "three",
+        msg = 'should return the longest element in a list')
+
+
+    def test_2(self):
+        # it should return the first longest element in a list when there are ties
+        self.assertEqual(main.getLongestElement(["one", "two", "one"]), "one",
+        msg = 'should return the first longest element in a list when there are ties')
+
+
+
+```python
+
+describe("filterEvenElements", function():it("should return a list", function():expect(Array.isArray(filterEvenElements([1, 2, 3, 4]))).to.deep.eq(True)
+  )
+  it("should return a list with the even elements from the passed in list", function():expect(filterEvenElements([1, 2, 3, 4, 5])).to.deep.eq([2, 4])
+  )
+  it("should return a list if there are no even numbers", function():expect(filterEvenElements([1, 3, 5])).to.deep.eq([])
+  )
+  it("should return a list if given an emtpy list", function():expect(filterEvenElements([])).to.deep.eq([])
+  )
+)
 
 
 ```
@@ -62,8 +134,8 @@ describe("filterEvenElements", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 0c0a6c72-d8a0-488e-a0c7-c3a8df27630f
 * title: getLengthOfShortestElement
 
@@ -71,47 +143,119 @@ describe("filterEvenElements", function() {
 
 Write a function called "getLengthOfShortestElement".
 
-Given an array, "getLengthOfShortestElement" returns the length of the shortest string in the given array.
+Given a list, "getLengthOfShortestElement" returns the length of the shortest string in the given list.
 
 Notes:
-* It should return 0 if the array is empty.
+* It should return 0 if the list is empty.
 
 ```
-var output = getLengthOfShortestElement(['one', 'two', 'three']);
-console.log(output); // --> 3
+output = getLengthOfShortestElement(['one', 'two', 'three'])
+print(output) # --> 3
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getLengthOfShortestElement(arr) {
-  // your code here
+```python
+def getLengthOfShortestElement(arr):
+    # your code here
+    pass
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getLengthOfShortestElement", function() {
-  it("should return a number", function() {
-    expect(typeof getLengthOfShortestElement(["one", "two", "three"])).to.deep.eq("number");
-  });
-  it("should return the length of the shortest element in an array", function() {
-    expect(getLengthOfShortestElement(["one", "four", "three"])).to.deep.eq(3);
-  });
-  it("it should handle ties", function() {
-    expect(getLengthOfShortestElement(["one", "to", "no"])).to.deep.eq(2);
-  });
-  it("it should return 0 when given an empty array", function() {
-    expect(getLengthOfShortestElement([])).to.deep.eq(0);
-  });
-});
+class TestScript(unittest.TestCase):
+```
+
+    def test_0(self):
+        # it should return a list
+        self.assertEqual(main.filterEvenElements([1, 2, 3, 4]), True,
+        msg = 'should return a list')
+
+
+    def test_1(self):
+        # it should return a list with the even elements from the passed in list
+        self.assertEqual(main.filterEvenElements([1, 2, 3, 4, 5]), [2, 4],
+        msg = 'should return a list with the even elements from the passed in list')
+
+
+    def test_2(self):
+        # it should return a list if there are no even numbers
+        self.assertEqual(main.filterEvenElements([1, 3, 5]), [],
+        msg = 'should return a list if there are no even numbers')
+
+
+    def test_3(self):
+        # it should return a list if given an emtpy list
+        self.assertEqual(main.filterEvenElements([]), [],
+        msg = 'should return a list if given an emtpy list')
+
+
+
+    def test_0(self):
+        # it should return a number
+        self.assertEqual(main.getLengthOfShortestElement(["one", "two", "three"]), "number",
+        msg = 'should return a number')
+
+
+    def test_1(self):
+        # it should return the length of the shortest element in a list
+        self.assertEqual(main.getLengthOfShortestElement(["one", "four", "three"]), 3,
+        msg = 'should return the length of the shortest element in a list')
+
+
+    def test_2(self):
+        # it it should handle ties
+        self.assertEqual(main.getLengthOfShortestElement(["one", "to", "no"]), 2,
+        msg = 'it should handle ties')
+
+
+    def test_3(self):
+        # it it should return 0 when given an empty list
+        self.assertEqual(main.getLengthOfShortestElement([]), 0,
+        msg = 'it should return 0 when given an empty list')
+
+
+
+    def test_0(self):
+        # it should return a string
+        self.assertEqual(main.getLongestElement(["one", "two", "three"]), "string",
+        msg = 'should return a string')
+
+
+    def test_1(self):
+        # it should return the longest element in a list
+        self.assertEqual(main.getLongestElement(["one", "two", "three"]), "three",
+        msg = 'should return the longest element in a list')
+
+
+    def test_2(self):
+        # it should return the first longest element in a list when there are ties
+        self.assertEqual(main.getLongestElement(["one", "two", "one"]), "one",
+        msg = 'should return the first longest element in a list when there are ties')
+
+
+
+```python
+
+describe("getLengthOfShortestElement", function():it("should return a number", function():expect(typeof getLengthOfShortestElement(["one", "two", "three"])).to.deep.eq("number")
+  )
+  it("should return the length of the shortest element in a list", function():expect(getLengthOfShortestElement(["one", "four", "three"])).to.deep.eq(3)
+  )
+  it("it should handle ties", function():expect(getLengthOfShortestElement(["one", "to", "no"])).to.deep.eq(2)
+  )
+  it("it should return 0 when given an empty list", function():expect(getLengthOfShortestElement([])).to.deep.eq(0)
+  )
+)
 
 
 ```
@@ -126,8 +270,8 @@ describe("getLengthOfShortestElement", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: c910016d-56a3-4e65-88d8-01111d85a609
 * title: getLongestElement
 
@@ -135,45 +279,118 @@ describe("getLengthOfShortestElement", function() {
 
 Write a function called "getLongestElement".
 
-Given an array, "getLongestElement" returns the longest string in the given array.
+Given a list, "getLongestElement" returns the longest string in the given list.
 
 Notes:
 * If there are ties, it returns the first element to appear.
-* If the array is empty, it should return an empty string.
+* If the list is empty, it should return an empty string.
 
 ```
-var output = getLongestElement(['one', 'two', 'three']);
-console.log(output); // --> 'three'
+output = getLongestElement(['one', 'two', 'three'])
+print(output) # --> 'three'
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getLongestElement(arr) {
-  // your code here
+```python
+def getLongestElement(arr):
+    # your code here
+    pass
   
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getLongestElement", function() {
-  it("should return a string", function() {
-    expect(typeof(getLongestElement(["one", "two", "three"]))).to.deep.eq("string");
-  });
-  it("should return the longest element in an array", function() {
-    expect(getLongestElement(["one", "two", "three"])).to.deep.eq("three");
-  });
-  it("should return the first longest element in an array when there are ties", function() {
-    expect(getLongestElement(["one", "two", "one"])).to.deep.eq("one");
-  });
-});
+class TestScript(unittest.TestCase):
+```
+
+    def test_0(self):
+        # it should return a list
+        self.assertEqual(main.filterEvenElements([1, 2, 3, 4]), True,
+        msg = 'should return a list')
+
+
+    def test_1(self):
+        # it should return a list with the even elements from the passed in list
+        self.assertEqual(main.filterEvenElements([1, 2, 3, 4, 5]), [2, 4],
+        msg = 'should return a list with the even elements from the passed in list')
+
+
+    def test_2(self):
+        # it should return a list if there are no even numbers
+        self.assertEqual(main.filterEvenElements([1, 3, 5]), [],
+        msg = 'should return a list if there are no even numbers')
+
+
+    def test_3(self):
+        # it should return a list if given an emtpy list
+        self.assertEqual(main.filterEvenElements([]), [],
+        msg = 'should return a list if given an emtpy list')
+
+
+
+    def test_0(self):
+        # it should return a number
+        self.assertEqual(main.getLengthOfShortestElement(["one", "two", "three"]), "number",
+        msg = 'should return a number')
+
+
+    def test_1(self):
+        # it should return the length of the shortest element in a list
+        self.assertEqual(main.getLengthOfShortestElement(["one", "four", "three"]), 3,
+        msg = 'should return the length of the shortest element in a list')
+
+
+    def test_2(self):
+        # it it should handle ties
+        self.assertEqual(main.getLengthOfShortestElement(["one", "to", "no"]), 2,
+        msg = 'it should handle ties')
+
+
+    def test_3(self):
+        # it it should return 0 when given an empty list
+        self.assertEqual(main.getLengthOfShortestElement([]), 0,
+        msg = 'it should return 0 when given an empty list')
+
+
+
+    def test_0(self):
+        # it should return a string
+        self.assertEqual(main.getLongestElement(["one", "two", "three"]), "string",
+        msg = 'should return a string')
+
+
+    def test_1(self):
+        # it should return the longest element in a list
+        self.assertEqual(main.getLongestElement(["one", "two", "three"]), "three",
+        msg = 'should return the longest element in a list')
+
+
+    def test_2(self):
+        # it should return the first longest element in a list when there are ties
+        self.assertEqual(main.getLongestElement(["one", "two", "one"]), "one",
+        msg = 'should return the first longest element in a list when there are ties')
+
+
+
+```python
+
+describe("getLongestElement", function():it("should return a string", function():expect(typeof(getLongestElement(["one", "two", "three"]))).to.deep.eq("string")
+  )
+  it("should return the longest element in a list", function():expect(getLongestElement(["one", "two", "three"])).to.deep.eq("three")
+  )
+  it("should return the first longest element in a list when there are ties", function():expect(getLongestElement(["one", "two", "one"])).to.deep.eq("one")
+  )
+)
 
 
 ```
