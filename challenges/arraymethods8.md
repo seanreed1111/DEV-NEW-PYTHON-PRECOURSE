@@ -42,7 +42,7 @@ import unittest
 class TestScript(unittest.TestCase):
     def test_0(self):
         # it should return a list
-        self.assertIsInstance(main.removeElement(["there", "it", "is", "there"]), list,
+        self.assertIsInstance(main.removeElement(["there", "it", "is", "there"], 3), list,
         msg = 'should return a list')
 
 
@@ -126,7 +126,7 @@ import unittest
 class TestScript(unittest.TestCase):
     def test_0(self):
         # it should return a list
-        self.assertIsInstance(main.keep(["there", "it", "is", "there"]), list,
+        self.assertIsInstance(main.keep(["there", "it", "is", "there"], 2), list,
         msg = 'should return a list')
 
 
@@ -235,7 +235,7 @@ class TestScript(unittest.TestCase):
         # it should return 0 if given an empty list
         self.assertEqual(main.computeAverageOfNumbers([]), 0,
         msg = 'should return 0 if given an empty list')
-        
+
 ```
 
 ### !end-tests
