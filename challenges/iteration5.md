@@ -53,7 +53,7 @@ class TestScript(unittest.TestCase):
     def test_1(self):
         # it should not use the multiply operator
         pattern = re.compile(r'\*')
-        source = inspect.getsource(main.getStringLength)
+        source = inspect.getsource(main.multiply)
         self.assertIsNone(pattern.search(source),
         msg = 'should not have the multiply operator in the function body')
 
