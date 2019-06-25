@@ -161,8 +161,8 @@ class TestScript(unittest.TestCase):
 
     def test_2(self):
         # it should return 0 if the property is not a list
-        obj = {'key1': 'nope'}
-        self.assertEqual(main.getAverageOfElementsAtProperty(obj, 'key1'), 0,
+        obj = {'key': 'nope'}
+        self.assertEqual(main.getAverageOfElementsAtProperty(obj, 'key'), 0,
         msg = 'should return 0 if the property is not a list')
 
 

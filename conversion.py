@@ -2,7 +2,7 @@ import os
 import re
 import unicodedata
 
-source_file_name = "objects8.md"
+source_file_name = "objects10.md"
 source_path = os.path.join("challenges-JS", source_file_name)
 target_path = os.path.join("challenges", source_file_name)
 
@@ -79,7 +79,7 @@ for key in test_object:
         acc += result
     output_strings.append(acc)
 
-print(output_strings)
+#print(output_strings)
 
 data = re.sub(r'var\s+', '', data)
 data = re.sub(r'local-snippet', 'code-snippet', data)
