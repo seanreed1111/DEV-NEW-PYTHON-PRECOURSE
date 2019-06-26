@@ -41,6 +41,7 @@ def isOddWithoutModulo(num):
 ```python
 import main
 import unittest
+import re, inspect
 
 class TestScript(unittest.TestCase):
     def test_00(self):
