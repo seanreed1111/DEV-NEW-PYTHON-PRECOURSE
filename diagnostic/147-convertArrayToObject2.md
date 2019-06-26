@@ -48,7 +48,7 @@ class TestScript(unittest.TestCase):
     def test2(self):
         self.assertEqual(main.fromListToObject([
         ['Kevin', 'Bacon'],[ 'Denzel', 'Washington'],[ 'Uma', 'Thurman']]),
-        , {'Kevin': 'Bacon', 'Denzel':'Washington', 'Uma':'Thurman' }
+         {'Kevin': 'Bacon', 'Denzel':'Washington', 'Uma':'Thurman' }
         msg = "should properly assign key and value pairs")    
 
     def test3(self):
