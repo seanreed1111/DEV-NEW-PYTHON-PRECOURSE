@@ -53,7 +53,7 @@ class TestScript(unittest.TestCase):
     def test_1(self):
         # it should return a boolean
         self.assertIsInstance(main.isEvenWithoutModulo(40), bool,
-        msg = 'should return a bool)
+        msg = 'should return a bool')
 
     def test_2(self):
         # it should return True when a number is even
