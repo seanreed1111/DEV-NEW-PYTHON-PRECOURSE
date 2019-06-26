@@ -61,11 +61,12 @@ expected_result = re.compile(r'eq\(([^\)]*)\)')
 test_object = {}  #container for parsed describe block
 
 for block in describe_blocks:
-    name = function_name.findall(block)[0]
-    function_with_args = re.compile(r'{}\([^)]+\)'.format(name))
-    test_object[name] = list(zip(function_with_args.findall(block),
-                                 expected_result.findall(block),
-                                 test_description.findall(block)))
+    if function_name.findall(block):
+        name = function_name.findall(block)[0]
+        function_with_args = re.compile(r'{}\([^)]+\)'.format(name))
+        test_object[name] = list(zip(function_with_args.findall(block),
+                                     expected_result.findall(block),
+                                     test_description.findall(block)))
 
 output_strings = []  # creates final test strings for insertion at each function after test_class_string
 

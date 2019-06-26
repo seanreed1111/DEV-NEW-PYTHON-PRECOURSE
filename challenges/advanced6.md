@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: e28598a1-0acf-488f-af4d-e8e01e6af1b6
 * title: modulo
 
@@ -13,91 +13,165 @@ Write a function called "modulo".
 
 Given 2 numbers, "modulo" returns the remainder after dividing num1 by num2.
 
-It should behave as described in the canonical documentation (MDN) for the JavaScript remainder operator:
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()
+It should behave as described in the Python documentation for the modulo operator given in this section:
+https://docs.python.org/3.3/reference/expressions.html#binary-arithmetic-operations
 
 Notes:
-* Do NOT use the actual built-in modulo (aka "remainder") operator (%) in your implementation.
+* Do NOT use the actual built-in modulo (aka "remainder") operator (%) anywhere in your code.
 * 0 % ANYNUMBER = 0.
-* ANYNUMBER % 0 = NaN.
-* If either operand is NaN, then the result is NaN.
-* Modulo always returns the sign of the first number, even if the remainder is 0.
+* ANYNUMBER % 0 = None.
+* If either operand is None or not a number, then the result is None.
+* Modulo always returns the sign of the second operand, even if the remainder is 0.
 
 ```
-var output = modulo(25, 4);
-console.log(output); // --> 1
+output = modulo(25, 4)
+print(output) # --> 1
+
+output = modulo(1007, -13)
+print(output) # --> -7
+
+output = modulo(1007, 13)
+print(output) # --> 6
+
+output = modulo(-1007, 13)
+print(output) # --> 7
+
+output = modulo(-7, 3)
+print(output) # --> 2
+
+output = modulo(7, -3)
+print(output) # --> -2
+
+output = modulo(7, 3)
+print(output) # --> 1
+
+output = modulo(-100, 8)
+print(output) # --> 4
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function modulo(num1, num2) {
-  // your code here
+```python
+# your code here
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
+
+class TestScript(unittest.TestCase):
+    def test_00(self):
+        # should not have "%" anywhere in function body'
+        pattern = re.compile(r'[%|(mod\()]')
+        source = inspect.getsource(main.modulo)
+        self.assertIsNone(pattern.search(source),
+        msg = 'should not have "%" or mod() anywhere in function body')
+
+    def test_0(self):
+        # it should return a number or None
+        self.assertIsInstance(main.modulo(8, 2), (int, float, NoneType),
+        msg = 'should return a number or None')
 
 
-describe("modulo", function() {
-  it("should return a number", function() {
-    expect(typeof modulo(8, 2)).to.deep.eq("number");
-  });
-  it("should not use the modulo operator", function() {
-    var body = modulo.toString();
-    expect(/%/.test(body)).to.deep.eq(false);
-  });
-  it("should return 0 when there is no remainder", function() {
-    expect(modulo(4, 4)).to.deep.eq(0);
-  });
-  it("should return a negative number when the first number is negative", function() {
-    expect(modulo(-4, 3)).to.deep.eq(-1);
-  });
-  it("should return a positive number when the second number is negative", function() {
-    expect(modulo(4, -3)).to.deep.eq(1);
-  });
-  it("should return 0 when the first number is 0", function() {
-    expect(modulo(0, 4)).to.deep.eq(0);
-  });
-  it("should return NaN when the first number is NaN", function() {
-    expect(isNaN(modulo(NaN, 2))).to.deep.eq(true);
-  });
-  it("should return NaN when the second number is NaN", function() {
-    expect(isNaN(modulo(2, NaN))).to.deep.eq(true);
-  });
-  it("should return NaN when the second number is 0", function() {
-    expect(isNaN(modulo(4, 0))).to.deep.eq(true);
-  });
-  it("should return 2 when given 12 and 5", function() {
-    expect(modulo(12, 5)).to.deep.eq(2);
-  });
-  it("should return minus_1 when given minus_1 and 2", function() {
-    expect(modulo(-1, 2)).to.deep.eq(-1);
-  });
-  it("should return 2 when given 12 and 5", function() {
-    expect(modulo(12, 5)).to.deep.eq(2);
-  });
-  it("should return 1 when given 1 and 2", function() {
-    expect(modulo(1, 2)).to.deep.eq(1);
-  });
-  it("should return 2 when given 2 and 3", function() {
-    expect(modulo(2, 3)).to.deep.eq(2);
-  });
-  it("should return -0 when given minus 4 and 2", function() {
-    expect(modulo(-4, 2)).to.deep.eq(-0);
-  });
-  it("should return 1 point 5 when given 5 point 5 and 2", function() {
-    expect(modulo(5.5, 2)).to.deep.eq(1.5);
-  });
+    def test_2(self):
+        # it should return 0 when there is no remainder
+        self.assertEqual(main.modulo(114, 114), 0,
+        msg = 'should return 0 when there is no remainder')
 
-});
+
+    def test_3(self):
+        # it should return a negative number when the first number is negative
+        self.assertEqual(main.modulo(7, -3), -2,
+        msg = 'should return a negative number when the second number is negative')
+
+
+    def test_4(self):
+        # it should return a positive number when the second number is negative
+        self.assertEqual(main.modulo(-7, 3), 2,
+        msg = 'should return a positive number when the second number is positive')
+
+
+    def test_5(self):
+        # it should return 0 when the first number is 0
+        self.assertEqual(main.modulo(0, 2), 0,
+        msg = 'should return 0 when the first number is 0')
+
+
+    def test_6(self):
+        # it should return None when the first number is None
+        self.assertIsNone(main.modulo(None, 2),
+        msg = 'should return None when the first number is None')
+
+
+    def test_7(self):
+        # it should return NaN when the second number is None
+        self.assertIsNone(main.modulo(4, None),
+        msg = 'should return None when the second number is None')
+
+
+    def test_8(self):
+        # it should return None when the second number is 0
+        self.assertIsNone(main.modulo(12, 0),
+        msg = 'should return None when the second number is 0')
+
+
+    def test_9(self):
+        # it should return 2 when given 12 and 5
+        self.assertEqual(main.modulo(12, 5), 2,
+        msg = 'should return 2 when given 12 and 5')
+
+
+    def test_10(self):
+        # it should return minus_1 when given minus_1 and 2
+        self.assertEqual(main.modulo(-1, 2), 1,
+        msg = 'should return minus_1 when given minus_1 and 2')
+
+
+    def test_12(self):
+        # it should return 1 when given 1 and 2
+        self.assertEqual(main.modulo(1, 2), 1,
+        msg = 'should return 1 when given 1 and 2')
+
+
+    def test_13(self):
+        # it should return 2 when given 2 and 3
+        self.assertEqual(main.modulo(2, 3), 2,
+        msg = 'should return 2 when given 2 and 3')
+
+
+    def test_14(self):
+        # it should return -0 when given minus 4 and 2
+        self.assertEqual(main.modulo(4, -2), -0,
+        msg = 'should return -0 when given minus 4 and 2')
+
+    def test_15(self):
+        # it should return 1.5 when given 5.5 and 2
+        self.assertEqual(main.modulo(5.5, 2), 1.5,
+        msg = 'it should return 1.5 when given 5.5 and 2')
+
+    def test_15(self):
+        # it should return 1.5 when given 5.5 and 2
+        self.assertEqual(main.modulo(5.5, 2), 1.5,
+        msg = 'it should return 1.5 when given 5.5 and 2')
+
+    def test_15(self):
+        # it should return -7 when given 1007 and -13
+        self.assertEqual(main.modulo(1007, -13), -7,
+        msg = ' it should return -7 when given 1007 and -13')
+
+    def test_15(self):
+        # it should return 7 when given -1007 and 13
+        self.assertEqual(main.modulo(-1007, 13), 7,
+        msg = ' it should return 7 when given -1007 and 13')
+
 
 ```
 
