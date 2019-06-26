@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: a51b922c-0c0b-42b1-b372-f57a7e3cc12e
 * title: getLongestOfThreeWords
 
@@ -17,38 +17,48 @@ Notes:
 * If there is a tie, it should return the first word in the tie.
 
 ```
-var output = getLongestOfThreeWords('these', 'three', 'words');
-console.log(output); // --> 'these'
+output = getLongestOfThreeWords('these', 'three', 'words')
+print(output) # --> 'these'
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getLongestOfThreeWords(word1, word2, word3) {
-  // your code here
+```python
+def getLongestOfThreeWords(word1, word2, word3):
+    # your code here
+    pass
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("getLongestOfThreeWords", function() {
-  it("should return a string", function() {
-    expect(typeof(getLongestOfThreeWords("a", "be", "see"))).to.deep.eq("string");
-  });
-  it("should return the longest of three words", function() {
-    expect(getLongestOfThreeWords("a", "be", "see")).to.deep.eq("see");
-  });
-  it("should return the first occurence of a longest word when there is a tie", function() {
-    expect(getLongestOfThreeWords("these", "three", "words")).to.deep.eq("these");
-  });
-});
+class TestScript(unittest.TestCase):
+
+    def test_0(self):
+        # it should return a string
+        self.assertIsInstance(main.getLongestOfThreeWords("a", "be", "see"), str,
+        msg = 'should return a string')
+
+
+    def test_1(self):
+        # it should return the longest of three words
+        self.assertEqual(main.getLongestOfThreeWords("a", "be", "see"), "see",
+        msg = 'should return the longest of three words')
+
+
+    def test_2(self):
+        # it should return the first occurrence of a longest word when there is a tie
+        self.assertEqual(main.getLongestOfThreeWords("these", "three", "words"), "these",
+        msg = 'should return the first occurrence of a longest word when there is a tie')
 
 ```
 
@@ -62,8 +72,8 @@ describe("getLongestOfThreeWords", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: e70b8323-50dd-4588-a4c7-56138c5c4bdd
 * title: findShortestOfThreeWords
 
@@ -77,39 +87,48 @@ Notes:
 * If there are ties, it should return the first word in the parameters list.
 
 ```
-var output = findShortestOfThreeWords('a', 'two', 'three');
-console.log(output); // --> 'a'
+output = findShortestOfThreeWords('a', 'two', 'three')
+print(output) # --> 'a'
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function findShortestOfThreeWords(word1, word2, word3) {
-  // your code here
-  
-}
+```python
+def findShortestOfThreeWords(word1, word2, word3):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("findShortestOfThreeWords", function() {
-  it("should return a string", function() {
-    expect(typeof(findShortestOfThreeWords("a", "be", "see"))).to.deep.eq("string");
-  });
-  it("should return the shortest of three words", function() {
-    expect(findShortestOfThreeWords("abacus", "be", "see")).to.deep.eq("be");
-  });
-  it("should return the first occurence of a shortest word when there is a tie", function() {
-    expect(findShortestOfThreeWords("these", "apple", "words")).to.deep.eq("these");
-  });
-});
+class TestScript(unittest.TestCase):
 
+    def test_0(self):
+        # it should return a string
+        self.assertIsInstance(main.findShortestOfThreeWords("a", "be", "see"), str,
+        msg = 'should return a string')
+
+
+    def test_1(self):
+        # it should return the shortest of three words
+        self.assertEqual(main.findShortestOfThreeWords("abacus", "be", "see"), "be",
+        msg = 'should return the shortest of three words')
+
+
+    def test_2(self):
+        # it should return the first occurrence of a shortest word when there is a tie
+        self.assertEqual(main.findShortestOfThreeWords("these", "apple", "words"), "these",
+        msg = 'should return the first occurrence of a shortest word when there is a tie')
 ```
 
 ### !end-tests
