@@ -47,7 +47,7 @@ class TestScript(unittest.TestCase):
     def test_00(self):
         # should not have "%" or mod anywhere in function body'
         pattern = re.compile(r'[%|(mod\()]')
-        source = inspect.getsource(isOddWithoutModulo.modulo)
+        source = inspect.getsource(main.isOddWithoutModulo)
         self.assertIsNone(pattern.search(source),
         msg = 'should not have "%" or mod() anywhere in function body')
 
