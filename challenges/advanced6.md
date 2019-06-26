@@ -70,17 +70,12 @@ import unittest
 import re, inspect
 
 class TestScript(unittest.TestCase):
-    def test_00(self):
+    def test_1(self):
         # should not have "%" anywhere in function body'
         pattern = re.compile(r'[%|(mod\()]')
         source = inspect.getsource(main.modulo)
         self.assertIsNone(pattern.search(source),
         msg = 'should not have "%" or mod() anywhere in function body')
-
-    def test_0(self):
-        # it should return a number or None
-        self.assertIsInstance(main.modulo(8, 2), (int, float, None),
-        msg = 'should return a number or None')
 
 
     def test_2(self):
