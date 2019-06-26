@@ -57,17 +57,21 @@ import main
 import unittest
 
 class TestScript(unittest.TestCase):
+    def test0(self):
+        input1 = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']],
+                [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']]]
+        try:
+            main.transformEmployeeData(input1)[0]
+        except TypeError:
+            self.fail('It should return a nested list')
+
+
     def test1(self):
         input1 = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']],
                 [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']]]
         self.assertIsInstance(main.transformEmployeeData(input1),list,
         msg = "It should return a list")
 
-    def test1(self):
-        input1 = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']],
-                [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']]]
-        self.assertIsInstance(main.transformEmployeeData(input1)[0],list,
-        msg = "It should return a nested list")
 
     def test2(self):
         input1 = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']],
@@ -76,7 +80,7 @@ class TestScript(unittest.TestCase):
         self.assertEqual(main.transformEmployeeData(input1)[0]['firstName'],'Joe', msg = "should properly assign key and value pairs")
 
     def test2(self):
-        input2 = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['favoriteIceCream', 'chocolate'], ['role', 'clerk']],
+        input1 = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['favoriteIceCream', 'chocolate'], ['role', 'clerk']],
                        [['firstName', 'Carl'], ['lastName', 'Sagan'], ['favoriteIceCream', 'starfruit'], ['role', 'seer']],
                        [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['favoriteIceCream', 'vanilla'], ['role', 'manager']]]
 
