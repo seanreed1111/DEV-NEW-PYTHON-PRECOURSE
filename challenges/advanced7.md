@@ -59,25 +59,25 @@ class TestScript(unittest.TestCase):
 
     def test_2(self):
         # it should return True when a negative number is odd
-        self.assertEqual(main.isOddWithoutModulo(-41), True,
+        self.assertTrue(main.isOddWithoutModulo(-41),
         msg = 'should return True when a negative number is odd')
 
 
     def test_3(self):
         # it should return True when a number is odd
-        self.assertEqual(main.isOddWithoutModulo(43), True,
+        self.assertTrue(main.isOddWithoutModulo(43), 
         msg = 'should return True when a positive number is odd')
 
 
     def test_4(self):
         # it should return False when a negative number is even
-        self.assertEqual(main.isOddWithoutModulo(-40), False,
+        self.assertFalse(main.isOddWithoutModulo(-40),
         msg = 'should return False when a negative number is even')
 
 
     def test_5(self):
         # it should return False when a number is even
-        self.assertEqual(main.isOddWithoutModulo(0), False,
+        self.assertFalse(main.isOddWithoutModulo(0),
         msg = 'should return False when a number is even')
 
 ```
