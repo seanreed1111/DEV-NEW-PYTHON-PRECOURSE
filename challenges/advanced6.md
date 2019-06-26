@@ -17,9 +17,10 @@ It should behave as described in the Python documentation for the modulo operato
 https://docs.python.org/3.3/reference/expressions.html#binary-arithmetic-operations
 
 Notes:
-* Do NOT use the actual built-in modulo (aka "remainder") operator (%) anywhere in your code.
-* 0 % ANYNUMBER = 0.
-* ANYNUMBER % 0 = None.
+* Do NOT use either of the actual built-in modulo operators { mod() or % } anywhere in your code.
+
+* 0 % NUMBER = 0.
+* NUMBER % 0 = None.
 * If either operand is None or not a number, then the result is None.
 * Modulo always returns the sign of the second operand, even if the remainder is 0.
 
@@ -66,6 +67,7 @@ print(output) # --> 4
 ```python
 import main
 import unittest
+import re, inspect
 
 class TestScript(unittest.TestCase):
     def test_00(self):
@@ -77,7 +79,7 @@ class TestScript(unittest.TestCase):
 
     def test_0(self):
         # it should return a number or None
-        self.assertIsInstance(main.modulo(8, 2), (int, float, NoneType),
+        self.assertIsInstance(main.modulo(8, 2), (int, float, None),
         msg = 'should return a number or None')
 
 
