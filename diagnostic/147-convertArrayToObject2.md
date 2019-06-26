@@ -7,14 +7,15 @@
 
 ### !question
 
-Write a def 'fromListToObject' which takes in a list of lists, and returns a dictionary with each pair of elements in the list as a key-value pair.
+Write a function 'fromListToObject' which takes in a list of lists, and returns a dictionary with each pair of elements in the list as a key-value pair.
 
 Example input:
 ```
 input1 = [['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]]
 output = fromListToObject(input1)
 
-print(output) # -> {'make' : 'Ford', 'model' : 'Mustang', 'year' : 1964}
+print(output)  
+# -> {'make' : 'Ford', 'model' : 'Mustang', 'year' : 1964}
 
 ```
 

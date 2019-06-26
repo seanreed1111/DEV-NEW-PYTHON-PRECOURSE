@@ -1,7 +1,7 @@
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 5c6e257b-c85d-4a59-9df2-777bc47d4d92
 * title: convertArrayToObject3.md
 
@@ -26,8 +26,8 @@ Given that input, the return value should look like this:
 
 ```
 [
-    {firstName: 'Joe', lastName: 'Blow', age: 42, role: 'clerk'},
-    {firstName: 'Mary', lastName: 'Jenkins', age: 36, role: 'manager'}
+    :firstName: 'Joe', lastName: 'Blow', age: 42, role: 'clerk',
+    :firstName: 'Mary', lastName: 'Jenkins', age: 36, role: 'manager'
 ]
 ```
 
@@ -40,36 +40,47 @@ Your code should flexibly accommodate that.
 
 ### !placeholder
 
-```js
-function transformEmployeeData(employeeData) {
-  // your code here
-}
+```python
+def transformEmployeeData(employeeData):
+    # your code here
+    pass
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
 
-describe('transformEmployeeData', function() {
-  it('transforms_the_sample_data', function() {
-    var input = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']],
-                 [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']]];
-    var output = transformEmployeeData(input);
-    expect(output[0].firstName).to.deep.eq('Joe');
-    expect(output[1].age).to.deep.eq(36);
-  });
+```python
+import main
+import unittest
 
-  it('transforms_some_other_data', function() {
-    var input = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['favoriteIceCream', 'chocolate'], ['role', 'clerk']],
-                 [['firstName', 'Carl'], ['lastName', 'Sagan'], ['favoriteIceCream', 'starfruit'], ['role', 'seer']],
-                 [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['favoriteIceCream', 'vanilla'], ['role', 'manager']]];
-    var output = transformEmployeeData(input);
-    expect(output[1].favoriteIceCream).to.deep.eq('starfruit');
-  });
+class TestScript(unittest.TestCase):
+    def test1(self):
+        input1 = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']],
+                [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']]]
+        self.assertIsInstance(main.transformEmployeeData(input1),list,
+        msg = "It should return a list")
 
-});
+    def test1(self):
+        input1 = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']],
+                [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']]]
+        self.assertIsInstance(main.transformEmployeeData(input1)[0],list,
+        msg = "It should return a nested list")
+
+    def test2(self):
+        input1 = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']],
+                [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']]]
+
+        self.assertEqual(main.transformEmployeeData(input1)[0]['firstName'],'Joe', msg = "should properly assign key and value pairs")
+
+    def test2(self):
+        input2 = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['favoriteIceCream', 'chocolate'], ['role', 'clerk']],
+                       [['firstName', 'Carl'], ['lastName', 'Sagan'], ['favoriteIceCream', 'starfruit'], ['role', 'seer']],
+                       [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['favoriteIceCream', 'vanilla'], ['role', 'manager']]]
+
+        self.assertEqual(main.transformEmployeeData(input1)[1]['favoriteIceCream'],'starfruit', msg = "should properly assign key and value pairs")
 
 ```
 
