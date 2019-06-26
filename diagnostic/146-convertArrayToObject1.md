@@ -1,85 +1,59 @@
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: c27c7922-479a-41ca-a400-d3bc984468f4
 * title: convertArrayToObject1.md
 
 ### !question
 
 
-Write a function 'transformFirstAndLast' that takes in an array, and returns an object with:
-1) the first element of the array as the object's key, and
-2) the last element of the array as that key's value.
+Write a function 'transformFirstAndLast' that takes in a list, and returns a dictionary with:
+1) the first element of the list as the dictionary's key, and
+2) the last element of the list as that key's value.
 
-Example input:
-```
-['Queen', 'Elizabeth', 'Of Hearts', 'Beyonce']
-```
+Do not change the input list. Assume all elements in the input list will be of type 'string'.
 
-Function's return value (output):
-```
-{
-  Queen : 'Beyonce'
-}
-```
+Note that the input list may have a varying number of elements. Your code should flexibly accommodate that.
 
-Do not change the input array. Assume all elements in the input array will be of type 'string'.
-
-Note that the input array may have a varying number of elements. Your code should flexibly accommodate that.
-
-E.g. it should handle input like:
 ```
-['Kevin', 'Bacon', 'Love', 'Hart', 'Costner', 'Spacey']
-```
+input1 = ['Kevin', 'Bacon', 'Love', 'Heart', 'Costner', 'Hart']
+output = transformFirstAndLast(input1)
+print(output) #--> {'Kevin':'Hart'}
 
-Function's return value (output):
-```
-{
-  Kevin : 'Spacey'
-}
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function transformFirstAndLast(array) {
-  // your code here
-}
+```python
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe('transformFirstAndLast', function() {
-  it('should_properly_assign_key_and_value_pair', function (){
+class TestScript(unittest.TestCase):
 
-    var input = ['Marie', 'Kayla', 'Jackson', 'Richard', 'Kyle', 'Sarah', 'Mars', 'Wayne', 'Mary'];
+    def test1(self):
+        assertIsInstance(main.transformFirstAndLast(['Kevin', 'Bacon']),dict,
+        msg = "It should return a dict")
 
-    var output = transformFirstAndLast(input);
+    def test2(self):
+        assertEqual(main.transformFirstAndLast(['Kevin', 'Bacon', 'Love', 'Heart', 'Costner', 'Hart']), {'Kevin':'Hart'},
+        msg = "should properly assign key and value pair")    
 
-    expect(output).not.to.deep.eq(undefined);
-    expect(typeof output).to.deep.eq('object');
-    expect(output.Marie).to.deep.eq('Mary');
-  });
-
-  it('should_not_modify_input_array', function() {
-    var input = ['Mars', 'Wayne', 'Mary'];
-    var copy = input.slice(0);
-    var output = transformFirstAndLast(input);
-
-    expect(input.length).to.deep.eq(copy.length);
-    expect(copy[0]).to.deep.eq(input[0]);
-    expect(copy[1]).to.deep.eq(input[1]);
-    expect(copy[2]).to.deep.eq(input[2]);
-
-  });
-});
+    def test3(self):
+        input1 = ['Mars', 'Wayne', 'Mary']
+        main.transformFirstAndLast(input1)
+        assertEqual(input1, ['Mars', 'Wayne', 'Mary'],
+        msg = 'it should not modify input list')
 
 ```
 
