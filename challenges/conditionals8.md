@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: f328e513-d275-4a7b-aa70-b3ac917ce57a
 * title: convertScoreToGrade
 
@@ -22,59 +22,90 @@ Notes:
 * If the given score is greater than 100 or less than 0, it should return 'INVALID SCORE'.
 
 ```
-var output = convertScoreToGrade(91);
-console.log(output); // --> 'A'
+output = convertScoreToGrade(91)
+print(output) # --> 'A'
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function convertScoreToGrade(score) {
-  // your code here
+```python
+def convertScoreToGrade(score):
+    # your code here
+    pass
 
-}
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("convertScoreToGrade", function() {
-  it("should return a string", function() {
-    expect(typeof(convertScoreToGrade(95))).to.deep.eq("string");
-  });
-  it("should return 'A' for scores between 90 and 100", function() {
-    expect(convertScoreToGrade(95)).to.deep.eq("A");
-  });
-  it("should return 'B' for scores between 80 and 89", function() {
-    expect(convertScoreToGrade(80)).to.deep.eq("B");
-  });
-  it("should return 'C' for scores between 70 and 79", function() {
-    expect(convertScoreToGrade(79)).to.deep.eq("C");
-  });
-  it("should return 'D' for scores between 60 and 69", function() {
-    expect(convertScoreToGrade(60)).to.deep.eq("D");
-  });
-  it("should return 'F' for 59", function() {
-    expect(convertScoreToGrade(59)).to.deep.eq("F");
-  });
-  it("should return 'F' for scores between 0 and 59", function() {
-    expect(convertScoreToGrade(50)).to.deep.eq("F");
-  });
-  it("should return 'F' for 0", function() {
-    expect(convertScoreToGrade(0)).to.deep.eq("F");
-  });
-  it("should return 'INVALID SCORE' for scores less than 0", function() {
-    expect(convertScoreToGrade(-1)).to.deep.eq("INVALID SCORE");
-  });
-  it("should return 'INVALID SCORE' for scores greater than 100", function() {
-    expect(convertScoreToGrade(101)).to.deep.eq("INVALID SCORE");
-  });
-});
+class TestScript(unittest.TestCase):
+
+    def test_0(self):
+        # it should return a string
+        self.assertIsInstance(main.convertScoreToGrade(95), str,
+        msg = 'should return a string')
+
+
+    def test_1(self):
+        # it should return 'A' for scores between 90 and 100
+        self.assertEqual(main.convertScoreToGrade(95), "A",
+        msg = "should return 'A' for scores between 90 and 100")
+
+
+    def test_2(self):
+        # it should return 'B' for scores between 80 and 89
+        self.assertEqual(main.convertScoreToGrade(80), "B",
+        msg = "should return 'B' for scores between 80 and 89")
+
+
+    def test_3(self):
+        # it should return 'C' for scores between 70 and 79
+        self.assertEqual(main.convertScoreToGrade(79), "C",
+        msg = "should return 'C' for scores between 70 and 79")
+
+
+    def test_4(self):
+        # it should return 'D' for scores between 60 and 69
+        self.assertEqual(main.convertScoreToGrade(60), "D",
+        msg = "should return 'D' for scores between 60 and 69")
+
+
+    def test_5(self):
+        # it should return 'F' for 59
+        self.assertEqual(main.convertScoreToGrade(59), "F",
+        msg = "should return 'F' for 59")
+
+
+    def test_6(self):
+        # it should return 'F' for scores between 0 and 59
+        self.assertEqual(main.convertScoreToGrade(50), "F",
+        msg = "should return 'F' for scores between 0 and 59")
+
+
+    def test_7(self):
+        # it should return 'F' for 0
+        self.assertEqual(main.convertScoreToGrade(0), "F",
+        msg = "should return 'F' for 0")
+
+
+    def test_8(self):
+        # it should return 'INVALID SCORE' for scores less than 0
+        self.assertEqual(main.convertScoreToGrade(-1), "INVALID SCORE",
+        msg = "should return 'INVALID SCORE' for scores less than 0")
+
+
+    def test_9(self):
+        # it should return 'INVALID SCORE' for scores greater than 100
+        self.assertEqual(main.convertScoreToGrade(101), "INVALID SCORE",
+        msg = "should return 'INVALID SCORE' for scores greater than 100")
 
 ```
 
@@ -88,8 +119,8 @@ describe("convertScoreToGrade", function() {
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: d53cbbaf-dfb4-44ab-a0a9-9512018da2be
 * title: convertScoreToGradeWithPlus
 
@@ -111,77 +142,126 @@ Notes:
 * There are is no F+ and there is no F-.
 
 ```
-var output = convertScoreToGradeWithPlusAndMinus(91);
-console.log(output); // --> 'A-'
+output = convertScoreToGradeWithPlusAndMinus(91)
+print(output) # --> 'A-'
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function convertScoreToGradeWithPlusAndMinus(score) {
-  // your code here
-  
-}
+```python
+def convertScoreToGradeWithPlusAndMinus(score):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("convertScoreToGradeWithPlusAndMinus", function() {
-  it("should return a string", function() {
-    expect(typeof(convertScoreToGradeWithPlusAndMinus(95))).to.deep.eq("string");
-  });
-  it("should return 'A+' for scores between 98 and 100", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(100)).to.deep.eq("A+");
-  });
-  it("should return 'A-' for scores between 90 and 92", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(90)).to.deep.eq("A-");
-  });
-  it("should return 'A' for scores between 93 and 97", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(95)).to.deep.eq("A");
-  });
-  it("should return 'B+' for scores between 88 and 89", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(89)).to.deep.eq("B+");
-  });
-  it("should return 'B-' for scores between 80 and 82", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(80)).to.deep.eq("B-");
-  });
-  it("should return 'B' for scores between 83 and 87", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(84)).to.deep.eq("B");
-  });
-  it("should return 'C+' for scores between 78 and 79", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(79)).to.deep.eq("C+");
-  });
-  it("should return 'C-' for scores between 70 and 72", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(70)).to.deep.eq("C-");
-  });
-  it("should return 'C' for scores between 73 and 77", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(76)).to.deep.eq("C");
-  });
-  it("should return 'D+' for scores between 68 and 69", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(69)).to.deep.eq("D+");
-  });
-  it("should return 'D' for scores between 63 and 67", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(64)).to.deep.eq("D");
-  });
-  it("should return 'D-' for scores between 60 and 62", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(60)).to.deep.eq("D-");
-  });
-  it("should return 'F' for scores between 0 and 59", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(0)).to.deep.eq("F");
-  });
-  it("should return 'INVALID SCORE' for scores less than 0", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(-1)).to.deep.eq("INVALID SCORE");
-  });
-  it("should return 'INVALID SCORE' for scores greater than 100", function() {
-    expect(convertScoreToGradeWithPlusAndMinus(101)).to.deep.eq("INVALID SCORE");
-  });
-});
+class TestScript(unittest.TestCase):
+
+    def test_0(self):
+        # it should return a string
+        self.assertIsInstance(main.convertScoreToGradeWithPlusAndMinus(95), str,
+        msg = 'should return a string')
+
+
+    def test_1(self):
+        # it should return 'A+' for scores between 98 and 100
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(100), "A+",
+        msg = 'should return "A+" for scores between 98 and 100')
+
+
+    def test_2(self):
+        # it should return 'A-' for scores between 90 and 92
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(90), "A-",
+        msg = 'should return "A-" for scores between 90 and 92')
+
+
+    def test_3(self):
+        # it should return 'A' for scores between 93 and 97
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(95), "A",
+        msg = 'should return "A" for scores between 93 and 97')
+
+
+    def test_4(self):
+        # it should return 'B+' for scores between 88 and 89
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(89), "B+",
+        msg = 'should return "B+" for scores between 88 and 89')
+
+
+    def test_5(self):
+        # it should return 'B-' for scores between 80 and 82
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(80), "B-",
+        msg = 'should return "B-" for scores between 80 and 82')
+
+
+    def test_6(self):
+        # it should return 'B' for scores between 83 and 87
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(84), "B",
+        msg = 'should return "B" for scores between 83 and 87')
+
+
+    def test_7(self):
+        # it should return 'C+' for scores between 78 and 79
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(79), "C+",
+        msg = 'should return "C+" for scores between 78 and 79')
+
+
+    def test_8(self):
+        # it should return 'C-' for scores between 70 and 72
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(70), "C-",
+        msg = 'should return "C-" for scores between 70 and 72')
+
+
+    def test_9(self):
+        # it should return 'C' for scores between 73 and 77
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(76), "C",
+        msg = 'should return "C" for scores between 73 and 77')
+
+
+    def test_10(self):
+        # it should return 'D+' for scores between 68 and 69
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(69), "D+",
+        msg = 'should return "D+" for scores between 68 and 69')
+
+
+    def test_11(self):
+        # it should return 'D' for scores between 63 and 67
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(64), "D",
+        msg = 'should return "D" for scores between 63 and 67')
+
+
+    def test_12(self):
+        # it should return 'D-' for scores between 60 and 62
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(60), "D-",
+        msg = 'should return "D-" for scores between 60 and 62')
+
+
+    def test_13(self):
+        # it should return 'F' for scores between 0 and 59
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(0), "F",
+        msg = 'should return "F" for scores between 0 and 59')
+
+
+    def test_14(self):
+        # it should return 'INVALID SCORE' for scores less than 0
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(-1), "INVALID SCORE",
+        msg = 'should return "INVALID SCORE" for scores less than 0')
+
+
+    def test_15(self):
+        # it should return 'INVALID SCORE' for scores greater than 100
+        self.assertEqual(main.convertScoreToGradeWithPlusAndMinus(101), "INVALID SCORE",
+        msg = 'should return "INVALID SCORE" for scores greater than 100')
 
 ```
 
