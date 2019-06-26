@@ -46,7 +46,7 @@ import re, inspect
 class TestScript(unittest.TestCase):
     def test_00(self):
         # should not have "%" or mod anywhere in function body'
-        pattern = re.compile(r'[%|(mod\()]')
+        pattern = re.compile(r'(%|mod\()')
         source = inspect.getsource(main.isOddWithoutModulo)
         self.assertIsNone(pattern.search(source),
         msg = 'should not have "%" or mod() anywhere in function body')
@@ -65,7 +65,7 @@ class TestScript(unittest.TestCase):
 
     def test_3(self):
         # it should return True when a number is odd
-        self.assertTrue(main.isOddWithoutModulo(43), 
+        self.assertTrue(main.isOddWithoutModulo(43),
         msg = 'should return True when a positive number is odd')
 
 
