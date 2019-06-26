@@ -2,8 +2,8 @@
 
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 8bf521f7-88bd-47f1-a173-4a0a4d1d8389
 * title: isOddWithoutModulo
 
@@ -18,51 +18,66 @@ Note:
 * It should work for negative numbers and zero.
 
 ```
-var output = isOddWithoutModulo(17);
-console.log(output); // --> true
+output = isOddWithoutModulo(17)
+print(output) # --> True
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function isOddWithoutModulo(num) {
-  // your code here
-  
-}
+```python
+def isOddWithoutModulo(num):
+    # your code here
+    pass
+
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe("isOddWithoutModulo", function() {
-  it("should return a boolean", function() {
-    expect(typeof isOddWithoutModulo(40)).to.deep.eq("boolean");
-  });
-  it("should not use the modulo operator", function() {
-    var body = isOddWithoutModulo.toString();
-    expect(/%/.test(body)).to.deep.eq(false);
-  });
-  it("should return true when a number is odd", function() {
-    expect(isOddWithoutModulo(41)).to.deep.eq(true);
-  });
-  it("should return true when a negative number is odd", function() {
-    expect(isOddWithoutModulo(-41)).to.deep.eq(true);
-  });
-  it("should return false when a number is even", function() {
-    expect(isOddWithoutModulo(40)).to.deep.eq(false);
-  });
-  it("should return false when a negative number is even", function() {
-    expect(isOddWithoutModulo(-40)).to.deep.eq(false);
-  });
-  it("should return false when a passed 0", function() {
-    expect(isOddWithoutModulo(0)).to.deep.eq(false);
-  });
-});
+class TestScript(unittest.TestCase):
+    def test_00(self):
+        # should not have "%" or mod anywhere in function body'
+        pattern = re.compile(r'[%|(mod\()]')
+        source = inspect.getsource(main.modulo)
+        self.assertIsNone(pattern.search(source),
+        msg = 'should not have "%" or mod() anywhere in function body')
+
+    def test_0(self):
+        # it should return a boolean
+        self.assertIsInstance(main.isOddWithoutModulo(40), bool,
+        msg = 'should return a boolean')
+
+
+    def test_2(self):
+        # it should return True when a negative number is odd
+        self.assertEqual(main.isOddWithoutModulo(-41), True,
+        msg = 'should return True when a negative number is odd')
+
+
+    def test_3(self):
+        # it should return True when a number is odd
+        self.assertEqual(main.isOddWithoutModulo(43), True,
+        msg = 'should return True when a positive number is odd')
+
+
+    def test_4(self):
+        # it should return False when a negative number is even
+        self.assertEqual(main.isOddWithoutModulo(-40), False,
+        msg = 'should return False when a negative number is even')
+
+
+    def test_5(self):
+        # it should return False when a number is even
+        self.assertEqual(main.isOddWithoutModulo(0), False,
+        msg = 'should return False when a number is even')
 
 ```
 
