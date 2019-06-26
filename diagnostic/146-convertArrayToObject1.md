@@ -42,17 +42,17 @@ import unittest
 class TestScript(unittest.TestCase):
 
     def test1(self):
-        assertIsInstance(main.transformFirstAndLast(['Kevin', 'Bacon']),dict,
+        self.assertIsInstance(main.transformFirstAndLast(['Kevin', 'Bacon']),dict,
         msg = "It should return a dict")
 
     def test2(self):
-        assertEqual(main.transformFirstAndLast(['Kevin', 'Bacon', 'Love', 'Heart', 'Costner', 'Hart']), {'Kevin':'Hart'},
+        self.assertEqual(main.transformFirstAndLast(['Kevin', 'Bacon', 'Love', 'Heart', 'Costner', 'Hart']), {'Kevin':'Hart'},
         msg = "should properly assign key and value pair")    
 
     def test3(self):
         input1 = ['Mars', 'Wayne', 'Mary']
         main.transformFirstAndLast(input1)
-        assertEqual(input1, ['Mars', 'Wayne', 'Mary'],
+        self.assertEqual(input1, ['Mars', 'Wayne', 'Mary'],
         msg = 'it should not modify input list')
 
 ```
