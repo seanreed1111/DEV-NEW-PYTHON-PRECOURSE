@@ -26,8 +26,8 @@ Given that input, the return value should look like this:
 
 ```
 [
-    :firstName: 'Joe', lastName: 'Blow', age: 42, role: 'clerk',
-    :firstName: 'Mary', lastName: 'Jenkins', age: 36, role: 'manager'
+    {'firstName': 'Joe', 'lastName': 'Blow', 'age': 42, 'role': 'clerk'},
+    {'firstName': 'Mary', 'lastName': 'Jenkins', 'age': 36, 'role': 'manager'}
 ]
 ```
 
@@ -63,28 +63,35 @@ class TestScript(unittest.TestCase):
         try:
             main.transformEmployeeData(input1)[0]
         except TypeError:
-            self.fail('It should return a nested list')
+            self.fail('It should return a list of dictionaries')
 
 
     def test1(self):
         input1 = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']],
                 [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']]]
         self.assertIsInstance(main.transformEmployeeData(input1),list,
-        msg = "It should return a list")
+        msg = "It should return a list of dictionaries")
 
 
     def test2(self):
         input1 = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['age', 42], ['role', 'clerk']],
                 [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['age', 36], ['role', 'manager']]]
+        try:
+            main.transformEmployeeData(input1)[0]['firstName']
+            self.assertEqual(main.transformEmployeeData(input1)[0]['firstName'],'Joe', msg = "should properly assign key and value pairs")
+        except TypeError:
+            self.fail("It should return a list of dictionaries")
 
-        self.assertEqual(main.transformEmployeeData(input1)[0]['firstName'],'Joe', msg = "should properly assign key and value pairs")
 
     def test2(self):
         input1 = [[['firstName', 'Joe'], ['lastName', 'Blow'], ['favoriteIceCream', 'chocolate'], ['role', 'clerk']],
                        [['firstName', 'Carl'], ['lastName', 'Sagan'], ['favoriteIceCream', 'starfruit'], ['role', 'seer']],
                        [['firstName', 'Mary'], ['lastName', 'Jenkins'], ['favoriteIceCream', 'vanilla'], ['role', 'manager']]]
-
-        self.assertEqual(main.transformEmployeeData(input1)[1]['favoriteIceCream'],'starfruit', msg = "should properly assign key and value pairs")
+        try:
+            main.transformEmployeeData(input1)[0]['firstName']
+            self.assertEqual(main.transformEmployeeData(input1)[1]['favoriteIceCream'],'starfruit', msg = "should properly assign key and value pairs")
+        except TypeError:
+            self.fail("It should return a list of dictionaries")
 
 ```
 
