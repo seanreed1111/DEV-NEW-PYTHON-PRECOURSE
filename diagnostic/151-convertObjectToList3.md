@@ -1,82 +1,62 @@
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 862b3ed4-83e2-4253-9e53-e7d2263c2727
 * title: convertObjectToList3.md
 
 ### !question
 
-Write a function called "convertObjectToList" which converts an object literal into an array of arrays, like this:
-
-Argument:
+Write a function called "convertObjectToList" which converts a dictionary literal into a list of lists, like this:
 
 ```
-{
-  name: 'Holly',
-  age: 35,
-  role: 'producer'
-}
-```
+inp = {'name': 'Holly', 'age': 35, 'role': 'producer'}
+output = convertObjectToList(inp)
+print(output) # -> [['name', 'Holly'], ['age', 35], ['role', 'producer']]
 
-Return value:
-
-```
-[['name', 'Holly'], ['age', 35], ['role', 'producer']]
 ```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function convertObjectToList(obj) {
-  // your code here
-}
+```python
+def convertObjectToList(obj):
+    # your code here
+    pass
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe('convertObjectToList', function() {
-  it('converts_the_sample_data', function() {
-    var input = {
-      name: 'Holly',
-      age: 35,
-      role: 'producer'
-    };
-    var output = convertObjectToList(input);
-    expect(output[0][0]).to.deep.eq('name');
-    expect(output[0][1]).to.deep.eq('Holly');
-    expect(output[1][0]).to.deep.eq('age');
-    expect(output[1][1]).to.deep.eq(35);
-    expect(output[2][0]).to.deep.eq('role');
-    expect(output[2][1]).to.deep.eq('producer');
-  });
-});
+class TestScript(unittest.TestCase):
+    def test_00(self):
+        self.assertIsInstance(main.convertObjectToList({'first':1, 'second':2}), list,
+        msg = "it should return a list")
 
-describe('convertObjectToList', function() {
-  it('converts_some_other_data', function() {
-    var input = {
-      foo: 'FOO',
-      bar: 'BAR',
-      baz: 123,
-      'another key': null
-    };
-    var output = convertObjectToList(input);
-    expect(output[0][0]).to.deep.eq('foo');
-    expect(output[0][1]).to.deep.eq('FOO');
-    expect(output[1][0]).to.deep.eq('bar');
-    expect(output[1][1]).to.deep.eq('BAR');
-    expect(output[2][0]).to.deep.eq('baz');
-    expect(output[2][1]).to.deep.eq(123);
-    expect(output[3][0]).to.deep.eq('another key');
-    expect(output[3][1]).to.deep.eq(null);
-  })
-});
+    def test0(self):
+        input1 = {'name': 'Holly', 'age': 35, 'role': 'producer'}
+        self.assertEqual(main.convertObjectToList(input1),
+        [['name', 'Holly'], ['age', 35], ['role', 'producer']],
+        msg = "it should return a list of lists")
+
+    def test1(self):
+        input1 = {'name': 'Holly', 'age': 35, 'role': 'producer'}  
+
+        try:
+            holly = main.convertObjectToList(input1)[0][1]
+            self.assertEqual(main.convertObjectToList(input1),
+            'Holly',
+            msg = "it should have the correct nesting")
+            
+        except TypeError:
+            self.fail('It should return a list of lists')
 
 ```
 
