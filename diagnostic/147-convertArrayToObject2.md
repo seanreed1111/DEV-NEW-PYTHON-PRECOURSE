@@ -19,7 +19,7 @@ print(output)
 
 ```
 
-Do not change the input string. Assume that all elements in the list will be of type 'str'.
+Do not mutate the input. Assume that all elements in the list will be of type 'str'.
 
 Note that the input may have a different number of elements than the given sample.
 For instance, if the input had 6 pairs of values instead of 3, your code should flexibly accommodate that.

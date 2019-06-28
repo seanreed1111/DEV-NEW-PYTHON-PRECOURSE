@@ -39,12 +39,12 @@ import inspect, re
 
 class TestScript(unittest.TestCase):
     def test_00(self):
-        assertIsInstance(main.getAllKeys({'first':1}),list,
+        self.assertIsInstance(main.getAllKeys({'first':1}),list,
         msg = "it should return a list")
 
     def test0(self):
         input1 = {'name' : 'Sam', 'age' : 25, 'hasPets' : True}
-        assertEqual(main.getAllKeys(input1),
+        self.assertEqual(main.getAllKeys(input1),
         ['name', 'age', 'hasPets'],
         msg = "it should return a list of keys")
 
