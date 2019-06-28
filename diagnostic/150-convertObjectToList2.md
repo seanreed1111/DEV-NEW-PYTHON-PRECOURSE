@@ -36,7 +36,7 @@ import inspect, re
 
 class TestScript(unittest.TestCase):
     def test_00(self):
-        self.assertIsInstance(main.getAllValues({'first':1}),list,
+        self.assertIsInstance(main.getAllValues({'first':1, 'second':2}), list,
         msg = "it should return a list")
 
     def test0(self):
@@ -50,7 +50,7 @@ class TestScript(unittest.TestCase):
         pattern = re.compile(r'\.values')
         source = inspect.getsource(main.getAllValues)
         self.assertIsNone(pattern.search(source),
-        msg = 'should not call the "keys" method on the input dictionary in the function body')
+        msg = 'should not call the "values" method on the input dictionary in the function body')
 
 ```
 
