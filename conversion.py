@@ -2,9 +2,9 @@ import os
 import re
 import unicodedata
 
-source_file_name = "advanced6.md"
-source_path = os.path.join("challenges-JS", source_file_name)
-target_path = os.path.join("challenges", source_file_name)
+source_file_name = "148-convertArrayToObject3.md"
+source_path = os.path.join("diagnostic-JS", source_file_name)
+target_path = os.path.join("diagnostic", source_file_name)
 
 test_class_string = '''
 ```python
