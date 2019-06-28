@@ -1,86 +1,56 @@
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: af0470f5-db25-4019-881b-3f73c0bda343
 * title: convertObjectToList2.md
 
 ### !question
 
-Write a function called "listAllValues" which returns an array of all the input object's values.
-Example input:
+Write a function called "getAllValues" which returns a list of all the input dictionary's values.
 
 ```
-{
-  name : 'Krysten',
-  age : 33,
-  hasPets : false
-}
+inp = {'name' : 'Sam', 'age' : 25, 'hasPets' : True}
+output = getAllValues(inp)
+print(output) # -> ['Sam', 25, True]
 ```
 
-Function's return value (output):
-
-```
-['Krysten', 33, false]
-```
-
-Note that the input may have a different number of keys and values than the given sample.
-E.g. it should also handle an input like:
-
-```
-{
-  a : 'a',
-  number : 11,
-  hungry : true,
-  grammyWins : 1
-}
-```
-
-Function's return value (output):
-
-```
-['a', 11, true, 1]
-```
+Do not use "dict.values()" to solve this exercise.
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function listAllValues(obj) {
-  // your code here
-}
+```python
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
+import inspect, re
 
-describe ('listAllValues', function() {
-  it ('should_output_an_array_of_values', function(){
-    var input = {
-      foo: 'bar',
-      level: 1,
-      red: 'green',
-      number: true,
-      cry: 'excelsior'
-    }
+class TestScript(unittest.TestCase):
+    def test_00(self):
+        self.assertIsInstance(main.getAllValues({'first':1}),list,
+        msg = "it should return a list")
 
-    var output = listAllValues(input);
-    console.log(Array.isArray(output));
-    console.log(output);
+    def test0(self):
+        input1 = {'name' : 'Sam', 'age' : 25, 'hasPets' : True}
+        self.assertEqual(main.getAllValues(input1),
+        ['Sam', 25, True],
+        msg = "it should return a list of values")
 
-    expect(output).not.to.deep.eq(undefined);
-    expect(output[0]).to.deep.eq('bar');
-    expect(output[1]).to.deep.eq(1);
-    expect(output[2]).to.deep.eq('green');
-    expect(output[3]).to.deep.eq(true);
-    expect(output[4]).to.deep.eq('excelsior');
-  });
-
-});
+    def test_1(self):
+        # it should not use the multiply operator
+        pattern = re.compile(r'\.values')
+        source = inspect.getsource(main.getAllValues)
+        self.assertIsNone(pattern.search(source),
+        msg = 'should not call the "keys" method on the input dictionary in the function body')
 
 ```
 
