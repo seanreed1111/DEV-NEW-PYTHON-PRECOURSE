@@ -1,5 +1,5 @@
 ---
-Title: Data Analyst Training Accelerator Pre-course
+Title: Python Practice Exercises
 Standards:
     #-
     #
@@ -137,7 +137,7 @@ Standards:
     UID: 2c549be4-cd7a-4e99-8010-4eea8c094d98
     Description: Solve Code Challenges
     SuccessCriteria:
-      - Solve JavaScript code challenges
+      - Solve Python code challenges
       # - (optional) Another success criteria, uncomment to use
     ContentFiles:
       -
@@ -198,7 +198,7 @@ Standards:
     UID: 29e76b90-d7ce-4541-9706-bf73cc7a2178
     Description: Solve Code Challenges
     SuccessCriteria:
-      - Solve JavaScript code challenges
+      - Solve Python code challenges
       # - (optional) Another success criteria, uncomment to use
     ContentFiles:
       -
@@ -247,7 +247,7 @@ Standards:
     UID: aa8fbca0-be5e-418c-8165-ae834b79d225
     Description: Solve Code Challenges
     SuccessCriteria:
-      - Solve JavaScript code challenges
+      - Solve Python code challenges
       # - (optional) Another success criteria, uncomment to use
     ContentFiles:
       -

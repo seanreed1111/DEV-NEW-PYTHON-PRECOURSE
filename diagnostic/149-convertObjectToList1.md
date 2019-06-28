@@ -1,87 +1,59 @@
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: c484fcc2-9db9-4e13-9362-a1377b196679
 * title: convertObjectToList1.md
 
 ### !question
 
-Write a function called "getAllKeys" which returns an array of all the input object's keys.
-Example input:
+Write a function called "getAllKeys" which returns a list of all the input dictionary's keys.
+
 ```
-{
-  name : 'Sam',
-  age : 25,
-  hasPets : true
-}
+inp = {'name' : 'Sam', 'age' : 25, 'hasPets' : True}
+output = getAllKeys(inp)
+print(output) # -> ['name', 'age', 'hasPets']
 ```
 
-Function's return value (output) :
-```
-['name', 'age', 'hasPets']
-```
+Do not use "dict.keys()" to solve this exercise.
 
-Do not use "Object.keys" to solve this prompt.
+Note that your def should be able to handle any dictionary passed in it regardless of the number of keys.
 
-Note that your function should be able to handle any object passed in it.
-
-E.g. it should also handle an input like:
-```
-{
-  a : 'a',
-  number : 11,
-  hungry : true,
-  grammyWins : 1
-}
-```
-
-Function's return value (output):
-```
-['a', 'number', 'hungry', 'grammyWins']
-```
 
 ### !end-question
 
 ### !placeholder
 
-```js
-function getAllKeys(obj) {
-  // your code here
-}
+```python
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
+import inspect, re
 
-describe('getAllKeys', function() {
-  it('should_output_an_array_of_key_names', function(){
-    var input = {
-      foo: 'bar',
-      level: 1,
-      red: 'green',
-      number: true
-    }
-    var expected = Object.keys(input);
-    var actual = getAllKeys(input);
+class TestScript(unittest.TestCase):
+    def test_00(self):
+        assertIsInstance(main.getAllKeys({'first':1}),list,
+        msg = "it should return a list")
 
-    expect(actual).not.to.deep.eq(undefined);
-    expect(actual[0]).to.deep.eq(expected[0]);
-    expect(actual[1]).to.deep.eq(expected[1]);
-    expect(actual[2]).to.deep.eq(expected[2]);
-    expect(actual[3]).to.deep.eq(expected[3]);
-  });
+    def test0(self):
+        input1 = {'name' : 'Sam', 'age' : 25, 'hasPets' : True}
+        assertEqual(main.getAllKeys(input1),
+        ['name', 'age', 'hasPets'],
+        msg = "it should return a list of keys")
 
-  it ('should_not_use_restricted_methods', function() {
-    var body = getAllKeys.toString();
-
-    expect(/Object\.keys/.test(body)).to.deep.eq(false);
-  });
-
-});
+    def test_1(self):
+        # it should not use the multiply operator
+        pattern = re.compile(r'\.keys')
+        source = inspect.getsource(main.getAllKeys)
+        self.assertIsNone(pattern.search(source),
+        msg = 'should not call the "keys" method on the input dictionary in the function body')
 
 ```
 
