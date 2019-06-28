@@ -2,7 +2,7 @@ import os
 import re
 import unicodedata
 
-source_file_name = "149-convertObjectToList1.md"
+source_file_name = "152-greetCustomer.md"
 source_path = os.path.join("diagnostic-JS", source_file_name)
 target_path = os.path.join("diagnostic", source_file_name)
 

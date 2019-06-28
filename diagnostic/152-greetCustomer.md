@@ -1,7 +1,7 @@
 ### !challenge
 
-* type: local-snippet
-* language: javascript
+* type: code-snippet
+* language: python3.6
 * id: 1c684aae-9cf8-4c7b-907f-eb1e88a7084d
 * title: greetCustomer.md
 
@@ -9,120 +9,102 @@
 
 Write a function called "greetCustomers".
 
-Given a name, "greetCustomers" returns a greeting based on how many times that customer has visited the restaurant.  Please refer to the customerData object.
+Given a name string and a customerData dictionary, "greetCustomers" returns a greeting string based on how many times that customer has visited the restaurant.  Please refer to the following sample customerData dictionary.
+
+Suppose the customer data is given by:
+
+customerData = {'Joe': {'visits': 1},
+  'Carol': {'visits': 2},
+  'Howard': {'visits': 3},
+  'Carrie': {'visits': 4}}
 
 The greeting should be different, depending on the name on their reservation.
 
 Case 1 - Unknown customer ( Name is not present in customerData ):
 
 ```
-var output = greetCustomer('Terrance');
-console.log(output); // --> 'Welcome! Is this your first time?'
+output = greetCustomer('Terrance', customerData)
+print(output) # --> 'Welcome! Is this your first time?'
 ```
 
 Case 2 - Customer who has visited only once ( 'visits' value is 1 ):
 
 ```
-var output = greetCustomer('Joe');
-console.log(output); // --> 'Welcome back, Joe! We're glad you liked us the first time!'
+output = greetCustomer('Joe', customerData)
+print(output) # --> 'Welcome back, Joe! We're glad you liked us the first time!'
 ```
 
 Case 3 - Repeat customer: ( 'visits' value is greater than 1 ):
 
 ```
-var output = greetCustomer('Carol');
-console.log(output); // --> 'Welcome back, Carol! So glad to see you again!'
+output = greetCustomer('Carol', customerData)
+print(output) # --> 'Welcome back, Carol! So glad to see you again!'
 ```
 
 Notes:
-* Your function should not alter the customerData object to update the number of visits.
-* Do not hardcode to the exact sample data. This is a BAD IDEA:
+* Your function should NOT alter the customerData dictionary to update the number of visits.
+* Do NOT hardcode to the exact sample data!
+Your program will be tested on different sample data!
+
+* You cannot do something like this:
+```
+if (firstName === 'Joe'):  # do something
 
 ```
-if (firstName === 'Joe') {
-  // do something
-}
-```
+It won't work , because YOUR FUNCTION MIGHT BE
+TESTED ON A CUSTOMER DICTIONARY THAT DOES NOT HAVE 'JOE' in it.
+
 
 ### !end-question
 
 ### !placeholder
 
-```js
-var customerData = {
-  'Joe': {
-    visits: 1
-  },
-  'Carol': {
-    visits: 2
-  },
-  'Howard': {
-    visits: 3,
-  },
-  'Carrie': {
-    visits: 4
-  }
-};
+```python
 
-function greetCustomer(firstName) {
-  // your code here
-}
+def greetCustomer(firstName, customerData):
+    # your code here
+    pass
+
 ```
 
 ### !end-placeholder
 
 ### !tests
 
-```js
+```python
+import main
+import unittest
 
-describe('greetCustomer', function() {
-  it('handles 1st time visitor from sample data', function() {
-    var output = greetCustomer('Voldemort');
-    var expected = 'Welcome! Is this your first time?';
-    expect(output).to.deep.eq(expected);
-  });
+class TestScript(unittest.TestCase):
+    def setup(self):
+        self.data = {'Alice': {'visits': 1},
+          'Bob': {'visits': 2},
+          'David': {'visits': 14}}
 
-  it('handles 2nd time visitor from sample data', function() {
-    var output = greetCustomer('Joe');
-    var expected = "Welcome back, Joe! We're glad you liked us the first time!";
-    expect(output).to.deep.eq(expected);
-  });
+    def test_00(self):
+        self.assertIsInstance(main.greetCustomer('Voldemort', self.data),
+        str,
+        msg = "it should return a string")
 
-  it('handles 2nd time visitor from new nonsample data', function() {
-    var oldCustomerDataJSON = JSON.stringify(customerData);
+    def test_0(self):
+        self.assertEqual(main.greetCustomer('Voldemort', self.data),
+        'Welcome! Is this your first time?',
+        msg = "should properly greet a brand new customer")
 
-    customerData['Ben'] = {
-      visits: 1
-    };
+    def test_1(self):
+        self.assertEqual(main.greetCustomer('Alice', self.data),
+        "Welcome back, Alice! We're glad you liked us the first time!",
+        msg = "should properly greet a customer who has 1 visit")
 
-    var output = greetCustomer('Ben');
-    var expected = "Welcome back, Ben! We're glad you liked us the first time!";
-    expect(output).to.deep.eq(expected);
+    def test_2(self):
+        self.assertEqual(main.greetCustomer('Bob', self.data),
+        'Welcome back, Bob! So glad to see you again!',
+        msg = "should properly greet a customer who has 2 visits")
 
-    customerData = JSON.parse(oldCustomerDataJSON);
-  });
-
-  it('handles 3rd time visitor from sample data', function() {
-    var output = greetCustomer('Howard');
-    var expected = 'Welcome back, Howard! So glad to see you again!';
-    expect(output).to.deep.eq(expected);
-  });
-
-  it('handles 4th time visitor from new nonsample data', function() {
-    var oldCustomerDataJSON = JSON.stringify(customerData);
-
-    customerData['Macklemore'] = {
-      visits: 3
-    };
-
-    var output = greetCustomer('Macklemore');
-    var expected = 'Welcome back, Macklemore! So glad to see you again!';
-    expect(output).to.deep.eq(expected);
-
-    customerData = JSON.parse(oldCustomerDataJSON);
-  });
-
-});
+    def test_3(self):
+        self.assertEqual(main.greetCustomer('David', self.data),
+        'Welcome back, David! So glad to see you again!',
+        msg = "should properly greet a customer who has more than 2 visits")
 
 ```
 
