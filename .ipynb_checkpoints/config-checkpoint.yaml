@@ -1,34 +1,28 @@
 ---
-Title: Python Practice Exercises
 Standards:
-    #-
-    #
-    #  This Standard had one file, moved to the start of the next unit.
-
-    # Title: Introduction
-    # UID: dd74222d-c31d-4870-9310-4532dda4e634
-    # Description: Context and reading for Module 1.
-    # SuccessCriteria:
-    #   - Understand purpose of Module 1.
-    #   # - (optional) Another success criteria, uncomment to use
-    # ContentFiles:
-    #   -
-    #     Type: Lesson
-    #     UID: c0cb9b1d-c8af-49c9-a91a-54e2b1c4bd24
-    #     Path: /reading/syllabus.md
-    #   -
-    #     Type: Checkpoint
-    #     UID: de3b19e1-a850-429d-b4a7-d17116987631
-    #     Path: /reading/intro_checkpoint.md
-    #     Autoscore: true
-
-    #
-    #
-    #
-
+  # -
+  #
+  #   This Standard had one file, moved to the start of the next unit.
+  #
+  #   Title: Introduction
+  #   UID: e4af066c-c195-484e-81af-ee21e50f9a5a
+  #   Description: Context and reading for Module 1.
+  #   SuccessCriteria:
+  #     - Understand purpose of Module 1.
+  #     # - (optional) Another success criteria, uncomment to use
+  #   ContentFiles:
+  #     -
+  #       Type: Lesson
+  #       UID: f528826d-7341-494e-b280-aba53f11f4f0
+  #       Path: /reading/synopsis.md
+  #     -
+  #       Type: Checkpoint
+  #       UID: 98853a0b-db1c-4548-a408-46124d2363b6
+  #       Path: /reading/intro_checkpoint.md
+  #       Autoscore: true
   -
     Title: Part 1
-    UID: 47567dbe-9f6a-451b-b52c-803b1ea45025
+    UID: 93c723b7-5c5a-4b11-8db3-b888e49e6af6
     Description: Solve Code Challenges
     SuccessCriteria:
       - Solve Python code challenges
@@ -40,7 +34,7 @@ Standards:
       #   Path: /reading/synopsis.md
       -
         Type: Lesson
-        UID: bbd9c4ac-32ee-4474-b697-35173143e155
+        UID: a4588fae-b578-4d0b-a906-3ffed48865cb
         Path: /challenges/conditionals1.md
       -
         Type: Lesson
@@ -80,7 +74,7 @@ Standards:
     UID: 9182cb5e-7e40-4e64-be22-e9ae72b69b01
     Description: Solve Code Challenges
     SuccessCriteria:
-      - Solve Python code challenges
+      - Solve JavaScript code challenges
       # - (optional) Another success criteria, uncomment to use
     ContentFiles:
       # -
@@ -137,7 +131,7 @@ Standards:
     UID: 2c549be4-cd7a-4e99-8010-4eea8c094d98
     Description: Solve Code Challenges
     SuccessCriteria:
-      - Solve Python code challenges
+      - Solve JavaScript code challenges
       # - (optional) Another success criteria, uncomment to use
     ContentFiles:
       -
@@ -198,7 +192,7 @@ Standards:
     UID: 29e76b90-d7ce-4541-9706-bf73cc7a2178
     Description: Solve Code Challenges
     SuccessCriteria:
-      - Solve Python code challenges
+      - Solve JavaScript code challenges
       # - (optional) Another success criteria, uncomment to use
     ContentFiles:
       -
@@ -247,7 +241,7 @@ Standards:
     UID: aa8fbca0-be5e-418c-8165-ae834b79d225
     Description: Solve Code Challenges
     SuccessCriteria:
-      - Solve Python code challenges
+      - Solve JavaScript code challenges
       # - (optional) Another success criteria, uncomment to use
     ContentFiles:
       -
@@ -365,6 +359,6 @@ Standards:
         Path: /diagnostic/151-convertObjectToList3.md
       -
         Type: Lesson
-        UID:  957ae7b3-9149-4095-9c7b-367ca59590b8
+        UID: unique-id (option-command-G from uuidgen plugin)
         Path: /diagnostic/152-greetCustomer.md
         Autoscore: true
